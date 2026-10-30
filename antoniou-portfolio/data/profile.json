@@ -1,0 +1,51 @@
+{
+  "_comment": "Who the site is about. Edit freely; every page reads from here.",
+  "name": "Prof. Dr. Constantinos Antoniou",
+  "short_name": "Costas Antoniou",
+  "title": "Full Professor, Chair of Transportation Systems Engineering",
+  "institution": "Technical University of Munich, School of Engineering and Design",
+  "chair_name": "Chair of Transportation Systems Engineering (TSE)",
+  "chair_name_de": "Lehrstuhl für Vernetzte Verkehrssysteme",
+  "founded": "2016-09-01",
+  "address": "Arcisstraße 21, 80333 München",
+  "visiting_address": "Parkring 37, 1st floor, 85748 Garching",
+  "email": "c.antoniou@tum.de",
+  "secretariat_email": "sekretariat.vvs@ed.tum.de",
+  "phone": "+49 89 289 10460",
+  "website": "https://www.mos.ed.tum.de/en/vvs",
+  "orcid": "0000-0003-0203-9542",
+  "openalex_author_id": "A5001459918",
+  "scopus_author_id": "7004031914",
+  "google_scholar_id": "0rDCk00AAAAJ",
+  "bio": "Constantinos Antoniou is Full Professor and head of the Chair of Transportation Systems Engineering at TUM since September 2016. He holds a Diploma in Civil Engineering from NTUA (1995), and an MS (1997) and PhD (2004) in Transportation from MIT. He was a postdoctoral researcher at MIT (2004 to 2008) and a faculty member at NTUA (2009 to 2015). His research covers modelling and simulation of transportation systems, calibration and optimisation, road safety and human factors, and machine learning for transport.",
+  "roles": [
+    {"role": "Co-Editor-in-Chief", "where": "Transportation Research Part A: Policy and Practice", "since": 2025, "note": "Associate Editor before"},
+    {"role": "Editorial board", "where": "Transportation Research Part C; Accident Analysis & Prevention; Communications in Transportation Research"},
+    {"role": "Director", "where": "M.Sc. Transportation Systems, TUM"},
+    {"role": "Director", "where": "M.Sc. Rail Transport and Logistics, TUM Asia (Singapore)"},
+    {"role": "Steering Committee", "where": "hEART, European Association for Research in Transportation", "since": 2014}
+  ],
+  "career": [
+    {"from": 1990, "to": 1995, "what": "Diploma in Civil Engineering, NTUA"},
+    {"from": 1995, "to": 1997, "what": "MS in Transportation, MIT (Milton Pikarsky Award 1997)"},
+    {"from": 2001, "to": 2004, "what": "PhD in Transportation Systems, MIT"},
+    {"from": 2004, "to": 2008, "what": "Postdoctoral Research Associate, MIT"},
+    {"from": 2009, "to": 2015, "what": "Assistant, then tenured Associate Professor, NTUA"},
+    {"from": 2016, "to": 2016, "what": "Visiting Professor, EPFL and ETH Zurich"},
+    {"from": 2016, "to": null, "what": "Full Professor, Chair of Transportation Systems Engineering, TUM"}
+  ],
+  "honours": [
+    {"year": 2025, "what": "Henriette Herz Scout", "by": "Alexander von Humboldt Foundation"},
+    {"year": 2025, "what": "Co-Editor-in-Chief, Transportation Research Part A"},
+    {"year": 2023, "what": "Francqui Chair", "by": "UHasselt"},
+    {"year": 2011, "what": "IEEE ITS Outstanding Application Award (DynaMIT)"},
+    {"year": 2006, "what": "Marie Curie International Reintegration Grant"},
+    {"year": 1997, "what": "Milton Pikarsky Memorial Award", "by": "Council of University Transportation Centers"}
+  ],
+  "next_decade": [
+    {"title": "AI-driven transport engineering", "text": "Geometric deep learning that transfers between cities and learns from live data: traffic management, resilience, demand prediction."},
+    {"title": "Mobility behaviour modelling", "text": "How people adapt under extreme events; networks that anticipate and recover from disruption."},
+    {"title": "Autonomous & connected mobility", "text": "Mixed traffic, connected infrastructure, safety first; behavioural response to automated vehicles measured with our own app."},
+    {"title": "Climate & sustainable transport", "text": "Data-driven emission models for cities and freight; transfer learning for data-scarce cities."}
+  ]
+}

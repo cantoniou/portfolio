@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Portfolio Help Desk</title>
+<meta name="description" content="How to keep the TSE portfolio site current with Claude: what to say, what happens, where things live.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: task cards in a filterable grid; each card = situation → what to say to Claude (copyable) → what happens → where it lands. Light look by design. */
+:root{--bg:#F7F4EC;--surface:#FFFDF8;--sunken:#EFE9DC;--line:#E6DDD2;--ink:#3D2C38;--ink2:#84727E;--ink3:#B5A6AF;--plum:#584053;--coral:#F97B4F;--coral-deep:#C24F1E;--coral-soft:#FDE6DC;--teal-deep:#3E8C82;--teal-soft:#E3F1EE;--gold-deep:#B07E23;--gold-soft:#FCEFD8;--shadow:0 8px 24px rgba(61,44,56,.12);--sans:'Plus Jakarta Sans',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding-block:clamp(28px,5vh,56px);padding-inline:clamp(16px,5vw,48px)}
+.eye{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);font-weight:600;display:inline-flex;align-items:center;gap:11px;margin:0 0 14px}
+.eye::before{content:"";width:22px;height:1px;background:var(--coral)}
+h1{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1;font-weight:800;letter-spacing:-.03em;color:var(--plum);margin:0;text-wrap:balance}
+h1 em,h2 em{font-style:normal;color:var(--coral-deep)}
+h2{font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:800;letter-spacing:-.02em;color:var(--plum);margin:48px 0 14px}
+p{margin:0}
+.lead{color:var(--ink2);max-width:60ch;margin-top:14px;font-size:1.05rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;margin-top:22px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.step .n{font-family:var(--mono);font-size:11px;color:var(--coral-deep);letter-spacing:.08em}
+.step b{display:block;margin-top:6px;font-size:1.02rem;color:var(--plum);letter-spacing:-.01em}
+.step p{color:var(--ink2);font-size:14px;margin-top:4px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:18px 0 6px;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:2}
+.toolbar input{flex:1;min-width:200px;font:inherit;font-size:15px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.toolbar input:focus-visible{outline:2px solid var(--coral-deep);outline-offset:1px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font:inherit;font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink2);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tab:focus-visible{outline:2px solid var(--coral-deep);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);min-width:0;display:flex;flex-direction:column;gap:10px}
+.card[hidden]{display:none}
+.card .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);display:flex;justify-content:space-between;gap:8px}
+.card .k i{font-style:normal;color:var(--coral-deep)}
+.card h3{margin:0;font-size:1.12rem;font-weight:800;letter-spacing:-.015em;color:var(--plum);line-height:1.2}
+.when{color:var(--ink2);font-size:14px}
+.say{position:relative;background:var(--sunken);border-radius:10px;padding:12px 44px 12px 14px;font-size:14.5px;line-height:1.45;color:var(--ink)}
+.say::before{content:"Say to Claude";display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:4px}
+.say button{position:absolute;right:8px;top:8px;font:inherit;font-size:11px;font-weight:600;padding:5px 8px;border-radius:7px;border:1px solid var(--line);background:var(--surface);color:var(--ink2);cursor:pointer}
+.say button:hover{color:var(--coral-deep);border-color:var(--coral)}
+.say button:focus-visible{outline:2px solid var(--coral-deep)}
+.then{font-size:13.5px;color:var(--ink2)}
+.then b{color:var(--ink);font-weight:600}
+.where{font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.04em}
+.where span{color:var(--teal-deep)}
+.tagrow{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-family:var(--mono);font-size:10.5px;padding:4px 8px;border-radius:999px;background:var(--teal-soft);color:var(--teal-deep)}
+.tag.c{background:var(--coral-soft);color:var(--coral-deep)}.tag.g{background:var(--gold-soft);color:var(--gold-deep)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);font-weight:600;background:var(--sunken)}
+td code,.code{font-family:var(--mono);font-size:12.5px;background:var(--sunken);padding:2px 6px;border-radius:5px;color:var(--plum)}
+.tablewrap{overflow-x:auto;min-width:0}
+.rhythm{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
+.rhythm .card h3{font-size:1rem}
+.rhythm .big{font-size:2rem;font-weight:800;letter-spacing:-.03em;color:var(--coral-deep);line-height:1}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px}
+summary{cursor:pointer;font-weight:700;color:var(--plum)}
+details p{margin-top:8px;color:var(--ink2);font-size:14.5px}
+.foot{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--ink3);font-size:13px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--plum);color:#fff;padding:9px 14px;border-radius:999px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="eye">TSE portfolio · how to keep it current</p>
+<h1>What do you want to do <em>today?</em></h1>
+<p class="lead">Open the portfolio folder in Claude, find your situation below, and say the sentence. Claude edits the data, checks the numbers, and nothing goes public until you say "publish". Every sentence here has a copy button.</p>
+
+<div class="steps">
+  <div class="step"><div class="n">STEP 1</div><b>Open the folder in Claude</b><p>Cowork: add the <code class="code">antoniou-portfolio</code> folder. Terminal: <code class="code">cd antoniou-portfolio && claude</code>. The skills load by themselves.</p></div>
+  <div class="step"><div class="n">STEP 2</div><b>Say what changed</b><p>In plain words, with names, dates and numbers. Claude asks if something is missing; it never guesses a figure.</p></div>
+  <div class="step"><div class="n">STEP 3</div><b>Read the summary</b><p>Claude lists the edits and the result of the consistency check.</p></div>
+  <div class="step"><div class="n">STEP 4</div><b>Say "publish"</b><p>Checks, commit, push. Live at your domain about a minute later.</p></div>
+</div>
+
+<div class="toolbar">
+  <input id="q" type="search" placeholder="Search tasks: student, project, Scopus, conference, publish…" aria-label="Search tasks">
+  <div class="tabs" id="tabs">
+    <button class="tab" aria-pressed="true" data-f="all">All</button>
+    <button class="tab" aria-pressed="false" data-f="people">People</button>
+    <button class="tab" aria-pressed="false" data-f="projects">Projects &amp; funding</button>
+    <button class="tab" aria-pressed="false" data-f="numbers">Publication numbers</button>
+    <button class="tab" aria-pressed="false" data-f="profile">Profile &amp; honours</button>
+    <button class="tab" aria-pressed="false" data-f="publish">Publish &amp; fix</button>
+  </div>
+</div>
+
+<div class="grid" id="cards">
+
+<div class="card" data-f="publish" data-t="start first time onboard scratch new setup begin day one">
+  <div class="k"><span>Day one</span><i>20 min, once</i></div>
+  <h3>Starting from scratch</h3>
+  <p class="when">You have the folder on your computer and nothing else yet. Claude checks what exists and walks you through git, GitHub, Pages and your domain, one step at a time.</p>
+  <div class="say"><button type="button">Copy</button>Onboard me: set up this portfolio from scratch.</div>
+  <p class="then"><b>Then:</b> repository created and pushed, Pages on, domain pointed, one test change published so you see the loop work. Two moments need you at a browser: GitHub and your domain registrar.</p>
+  <p class="where"><span>START-HERE.md</span> · <span>.claude/skills/onboard</span></p>
+</div>
+
+<div class="card" data-f="people" data-t="new phd doctoral student researcher joins start team">
+  <div class="k"><span>People</span><i>2 min</i></div>
+  <h3>A new doctoral researcher joins</h3>
+  <p class="when">When someone starts at the chair, including external candidates based in industry.</p>
+  <div class="say"><button type="button">Copy</button>Add a new doctoral researcher: M.Sc. Anna Beispiel, started 1 October 2026. External candidate at BMW.</div>
+  <p class="then"><b>Then:</b> added to the team list, the "researchers today" and "doctoral researchers" counts go up by one, consistency check runs.</p>
+  <p class="where"><span>data/people.json</span> team · <span>data/metrics.json</span> people</p>
+</div>
+
+<div class="card" data-f="people" data-t="leaves alumni graduated defended phd finished position moved">
+  <div class="k"><span>People</span><i>2 min</i></div>
+  <h3>Someone leaves or graduates</h3>
+  <p class="when">A PhD defended, a postdoc moved on. Tell Claude where they went, if you know.</p>
+  <div class="say"><button type="button">Copy</button>Tao Guo defended his PhD in March 2027 and is now Assistant Professor at Tongji University. Move him to alumni.</div>
+  <p class="then"><b>Then:</b> moved from team to alumni with position and kind (faculty, industry, public, research); counts updated, including "alumni in faculty positions" and "doctorates completed" if you confirm it.</p>
+  <p class="where"><span>data/people.json</span> team → alumni · <span>data/metrics.json</span> people</p>
+</div>
+
+<div class="card" data-f="people" data-t="alumni new job position changed professor moved">
+  <div class="k"><span>People</span><i>1 min</i></div>
+  <h3>An alumnus changed position</h3>
+  <p class="when">You hear that a former member got a new job.</p>
+  <div class="say"><button type="button">Copy</button>Hao Wu is now Associate Professor at Tsinghua University. Update his alumni entry.</div>
+  <p class="then"><b>Then:</b> the chip under "Where our alumni are now" changes; faculty count re-checked.</p>
+  <p class="where"><span>data/people.json</span> alumni</p>
+</div>
+
+<div class="card" data-f="people" data-t="visiting professor guest fellow humboldt hosted">
+  <div class="k"><span>People</span><i>1 min</i></div>
+  <h3>We hosted a visiting professor</h3>
+  <div class="say"><button type="button">Copy</button>We hosted Prof. Jane Example from the University of Melbourne as a visiting professor, March to May 2027. Add her.</div>
+  <p class="then"><b>Then:</b> added to the visiting professors list; the count goes up.</p>
+  <p class="where"><span>data/people.json</span> visiting_professors · <span>data/metrics.json</span> people.visiting_professors</p>
+</div>
+
+<div class="card" data-f="projects" data-t="new project funded grant dfg eu horizon proposal accepted PI">
+  <div class="k"><span>Projects</span><i>3 min</i></div>
+  <h3>A new project was funded</h3>
+  <p class="when">Give the name, funder, years, your role and one sentence on what it does. Budget is optional.</p>
+  <div class="say"><button type="button">Copy</button>New project: TRAFFIC-X, funded by the DFG, 2027 to 2030, I am PI. It develops transferable traffic prediction for mid-sized cities. TUM share 420,000 euros.</div>
+  <p class="then"><b>Then:</b> appears in the project list, the timeline chart and the funder chart as "ongoing"; if you gave a TUM share, Claude asks whether to add it to the active funding figures.</p>
+  <p class="where"><span>data/projects.json</span> projects · active_funding_tum_share_eur</p>
+</div>
+
+<div class="card" data-f="projects" data-t="project ended extended finished end date closed">
+  <div class="k"><span>Projects</span><i>1 min</i></div>
+  <h3>A project ended or was extended</h3>
+  <div class="say"><button type="button">Copy</button>AgiMo was extended to 2030. And PHOEBE has formally ended.</div>
+  <p class="then"><b>Then:</b> end year changed; the project moves between "ongoing" and "finished" automatically at the end of its last year, or at once if you say it ended early.</p>
+  <p class="where"><span>data/projects.json</span> projects[].end / status</p>
+</div>
+
+<div class="card" data-f="projects" data-t="funding euro share active money amount budget">
+  <div class="k"><span>Funding</span><i>1 min</i></div>
+  <h3>The active funding figures changed</h3>
+  <p class="when">The big euro numbers (DFG, Horizon Europe, IGSSE shares) are typed in by you; nothing computes them.</p>
+  <div class="say"><button type="button">Copy</button>Update active funding: DFG share is now 1.9 million euros, Horizon Europe 1.4 million, IGSSE unchanged.</div>
+  <p class="then"><b>Then:</b> the three big numbers and their total update.</p>
+  <p class="where"><span>data/projects.json</span> active_funding_tum_share_eur</p>
+</div>
+
+<div class="card" data-f="projects" data-t="missing projects 33 30 override count magazine complete list">
+  <div class="k"><span>Projects</span><i>5 min, once</i></div>
+  <h3>Complete the project list (one-time)</h3>
+  <p class="when">The 2026 magazine counted 33 projects but named 30. Until the missing three are added, the funder chart uses the magazine's counts.</p>
+  <div class="say"><button type="button">Copy</button>Here are the three projects missing from the list: [name, funder, years, role]. Add them and remove the funder count override.</div>
+  <p class="then"><b>Then:</b> the chart counts the list itself from now on.</p>
+  <p class="where"><span>data/projects.json</span> funder_counts_override</p>
+</div>
+
+<div class="card" data-f="numbers" data-t="refresh openalex publications citations h-index chart per year top papers">
+  <div class="k"><span>Numbers</span><i>2 min</i></div>
+  <h3>Refresh the publication charts</h3>
+  <p class="when">Every quarter, or before a talk. Fetches OpenAlex: works per year, most-cited papers, partner institutions.</p>
+  <div class="say"><button type="button">Copy</button>Refresh the publication numbers from OpenAlex and show me what changed.</div>
+  <p class="then"><b>Then:</b> Claude shows before/after (works, citations, h-index, this year's count), writes the OpenAlex block, runs the check. It never touches your Scopus numbers.</p>
+  <p class="where"><span>data/metrics.json</span> openalex · <span>scripts/refresh_openalex.py</span></p>
+</div>
+
+<div class="card" data-f="numbers" data-t="scopus google scholar h-index citations headline numbers career totals">
+  <div class="k"><span>Numbers</span><i>1 min</i></div>
+  <h3>New Scopus or Google Scholar figures</h3>
+  <p class="when">You looked at your Scopus or Scholar page. Read the numbers to Claude; nobody can fetch these for you.</p>
+  <div class="say"><button type="button">Copy</button>New Scopus figures as of today: 395 publications, h-index 54, 11,200 citations, 580 co-authors. Google Scholar: h-index 71, 18k citations.</div>
+  <p class="then"><b>Then:</b> the headline tiles on the landing page change, with today's date as "as of".</p>
+  <p class="where"><span>data/metrics.json</span> scopus · scholar</p>
+</div>
+
+<div class="card" data-f="numbers" data-t="monthly automatic pull request github action merge">
+  <div class="k"><span>Numbers</span><i>30 sec</i></div>
+  <h3>Merge the monthly refresh</h3>
+  <p class="when">On the 1st of each month GitHub opens a pull request titled "Monthly OpenAlex refresh".</p>
+  <div class="say"><button type="button">Copy</button>Review the open "Monthly OpenAlex refresh" pull request. If the numbers look plausible, merge it.</div>
+  <p class="then"><b>Then:</b> merged into main; the site updates by itself. If a number moved the wrong way (an h-index that fell), Claude will stop and tell you.</p>
+  <p class="where"><span>.github/workflows/refresh-openalex.yml</span></p>
+</div>
+
+<div class="card" data-f="profile" data-t="award honour prize fellowship editor appointment recognition">
+  <div class="k"><span>Profile</span><i>1 min</i></div>
+  <h3>A new honour or appointment</h3>
+  <div class="say"><button type="button">Copy</button>I was elected Fellow of the Example Society in May 2027. Add it to honours and to the timeline.</div>
+  <p class="then"><b>Then:</b> appears under Recognition (newest first) and as a milestone.</p>
+  <p class="where"><span>data/profile.json</span> honours · <span>data/timeline.json</span> events</p>
+</div>
+
+<div class="card" data-f="profile" data-t="editorial board editor journal role director committee">
+  <div class="k"><span>Profile</span><i>1 min</i></div>
+  <h3>Editorial or programme roles changed</h3>
+  <div class="say"><button type="button">Copy</button>Add: Associate Editor of Transportation Science since 2027. Remove the Transportation Letters role.</div>
+  <p class="then"><b>Then:</b> the role chips under your name change.</p>
+  <p class="where"><span>data/profile.json</span> roles</p>
+</div>
+
+<div class="card" data-f="profile" data-t="conference organised hosted symposium event milestone timeline">
+  <div class="k"><span>Profile</span><i>1 min</i></div>
+  <h3>We organised a conference, or a milestone happened</h3>
+  <div class="say"><button type="button">Copy</button>We organised hEART 2028 in Munich, 12 to 14 June 2028, with the Chair of Traffic Engineering and Control. Add it to conferences and the timeline.</div>
+  <p class="then"><b>Then:</b> one chip under "Conferences organised" and one entry on the timeline.</p>
+  <p class="where"><span>data/timeline.json</span> conferences_organised · events</p>
+</div>
+
+<div class="card" data-f="profile" data-t="bio text wording about me next decade directions contact phone email address">
+  <div class="k"><span>Profile</span><i>2 min</i></div>
+  <h3>Change the bio, contact or next-decade themes</h3>
+  <div class="say"><button type="button">Copy</button>Rewrite my bio to mention the Collaborative Research Centre, and change the secretariat phone number to +49 89 289 00000.</div>
+  <p class="then"><b>Then:</b> text changes only; no numbers touched. Claude keeps it in the chair's voice and short.</p>
+  <p class="where"><span>data/profile.json</span> bio · contact · next_decade</p>
+</div>
+
+<div class="card" data-f="publish" data-t="publish deploy go live push website update online">
+  <div class="k"><span>Publish</span><i>1 min</i></div>
+  <h3>Put the changes online</h3>
+  <p class="when">After any of the above. Nothing is public until this step.</p>
+  <div class="say"><button type="button">Copy</button>Publish.</div>
+  <p class="then"><b>Then:</b> consistency check, commit with a plain-words message, push; Claude confirms the live site answers with the new date. About one minute.</p>
+  <p class="where"><span>.claude/skills/deploy-site</span></p>
+</div>
+
+<div class="card" data-f="publish" data-t="check audit verify consistent wrong numbers proofread before talk evaluation">
+  <div class="k"><span>Fix</span><i>2 min</i></div>
+  <h3>Check everything before a talk or evaluation</h3>
+  <div class="say"><button type="button">Copy</button>Check the whole site for inconsistent or outdated numbers, and compare the anniversary deck against the data.</div>
+  <p class="then"><b>Then:</b> a short list of what disagrees and where, with proposed fixes; you say which to apply.</p>
+  <p class="where"><span>scripts/check_consistency.py</span> · <span>.claude/skills/check-consistency</span></p>
+</div>
+
+<div class="card" data-f="publish" data-t="rollback undo revert broken mistake wrong live">
+  <div class="k"><span>Fix</span><i>1 min</i></div>
+  <h3>Something went wrong on the live site</h3>
+  <div class="say"><button type="button">Copy</button>Roll back the last deploy.</div>
+  <p class="then"><b>Then:</b> the previous version is restored and republished; you can then describe what was wrong.</p>
+  <p class="where"><span>git revert</span></p>
+</div>
+
+<div class="card" data-f="publish" data-t="preview see look local before publishing">
+  <div class="k"><span>Fix</span><i>1 min</i></div>
+  <h3>Preview before publishing</h3>
+  <div class="say"><button type="button">Copy</button>Start a local preview of the site so I can look at it.</div>
+  <p class="then"><b>Then:</b> Claude starts a small local server and gives you http://localhost:8000. Opening index.html straight from the disk will not work, it needs the server.</p>
+  <p class="where"><span>python3 -m http.server 8000</span></p>
+</div>
+
+<div class="card" data-f="publish" data-t="first time setup github pages domain dns cname repository create">
+  <div class="k"><span>Setup</span><i>15 min, once</i></div>
+  <h3>First-time setup: GitHub, Pages, your domain</h3>
+  <p class="when">Only once. Claude walks you through creating the repository, enabling Pages and setting the DNS records at your domain registrar.</p>
+  <div class="say"><button type="button">Copy</button>Set up this folder as a GitHub repository with GitHub Pages on my domain antoniou.org. Walk me through the DNS records.</div>
+  <p class="then"><b>Then:</b> repository created and pushed, Pages enabled, CNAME set; you add four A records and one CNAME at the registrar; HTTPS switches on once DNS resolves.</p>
+  <p class="where"><span>.claude/skills/deploy-site</span> · <span>CNAME</span></p>
+</div>
+
+<div class="card" data-f="profile" data-t="anniversary deck presentation ten years slides update">
+  <div class="k"><span>Deck</span><i>varies</i></div>
+  <h3>Update the ten-year presentation</h3>
+  <p class="when">The anniversary deck is a frozen 2026 snapshot; the data site is the living one. Only if you want the deck refreshed too.</p>
+  <div class="say"><button type="button">Copy</button>Update the anniversary presentation to the current data: people, projects and funding slides. Keep one idea per slide.</div>
+  <p class="then"><b>Then:</b> Claude edits the deck slide by slide and lists the numbers it changed.</p>
+  <p class="where"><span>anniversary/index.html</span></p>
+</div>
+
+</div>
+
+<h2>When to do what</h2>
+<div class="rhythm">
+  <div class="card"><div class="big">Semester</div><h3>October and April</h3><p class="then">Team changes, graduations, new projects. Ten minutes: "Here is what changed this semester: …"</p></div>
+  <div class="card"><div class="big">Quarter</div><h3>Publication numbers</h3><p class="then">"Refresh the publication numbers", or just merge the monthly pull request GitHub opens for you.</p></div>
+  <div class="card"><div class="big">Event</div><h3>When it happens</h3><p class="then">An honour, a conference, a big paper: one sentence to Claude, one line on the timeline.</p></div>
+  <div class="card"><div class="big">Before</div><h3>Talks and evaluations</h3><p class="then">"Check the whole site", then "publish".</p></div>
+</div>
+
+<h2>Where everything lives</h2>
+<div class="tablewrap"><table>
+  <tr><th>File</th><th>Holds</th><th>Who changes it</th></tr>
+  <tr><td><code>data/profile.json</code></td><td>Name, bio, roles, career, honours, next-decade themes, contact</td><td>You, through Claude</td></tr>
+  <tr><td><code>data/metrics.json</code></td><td>Scopus and Scholar headline numbers, people and teaching counts, OpenAlex block</td><td>You (Scopus, Scholar, counts) · script (OpenAlex)</td></tr>
+  <tr><td><code>data/projects.json</code></td><td>Every funded project, active funding shares</td><td>You, through Claude</td></tr>
+  <tr><td><code>data/people.json</code></td><td>Team, alumni with positions, visiting professors, industry partners</td><td>You, through Claude</td></tr>
+  <tr><td><code>data/timeline.json</code></td><td>Milestones, conferences organised</td><td>You, through Claude</td></tr>
+  <tr><td><code>index.html</code>, <code>assets/</code></td><td>The landing page; reads the JSON at load</td><td>Only for design changes</td></tr>
+  <tr><td><code>anniversary/</code></td><td>Ten-year presentation (2026 snapshot)</td><td>Rarely</td></tr>
+  <tr><td><code>scripts/</code></td><td>OpenAlex refresh, consistency check</td><td>Run, not edited</td></tr>
+  <tr><td><code>.claude/skills/</code></td><td>The procedures Claude follows for the tasks above</td><td>Nobody, normally</td></tr>
+</table></div>
+
+<h2>Three sources of numbers</h2>
+<div class="grid">
+  <div class="card"><div class="tagrow"><span class="tag c">headline</span></div><h3>Scopus and Google Scholar</h3><p class="then">Your career totals: 380+ publications, h-index 53, 10k+ citations (Scopus, Sept 2026). You read them from your profile and tell Claude. These are the numbers you quote.</p></div>
+  <div class="card"><div class="tagrow"><span class="tag">charts</span></div><h3>OpenAlex</h3><p class="then">Free and scriptable. Drives works-per-year, most-cited papers and partner institutions. Counts preprints and reports too, so its totals run above Scopus; the site says which is which.</p></div>
+  <div class="card"><div class="tagrow"><span class="tag g">yours</span></div><h3>Your own records</h3><p class="then">Team, alumni, projects, funding. Only you can keep these right, and they are what visitors notice first.</p></div>
+</div>
+
+<h2>If something looks off</h2>
+<details><summary>Claude says the consistency check failed</summary><p>It found two numbers that disagree, for example 24 people listed but a count of 23. Tell Claude which is right; it fixes the other. Never ask it to "make the check pass" without saying which number is correct.</p></details>
+<details><summary>The live site did not change after publishing</summary><p>Wait two minutes and reload with Shift held. If still old: "Check whether the deploy went through." Claude looks at git and GitHub Pages and reports.</p></details>
+<details><summary>The page is blank or says it cannot load data</summary><p>You opened index.html from your disk. Ask Claude for a local preview, or look at the live site.</p></details>
+<details><summary>Claude asks me for a number I don't have</summary><p>Say "leave it out" and the field stays empty. The site never shows a guessed figure.</p></details>
+<details><summary>I want to change how the site looks</summary><p>Describe it: "Make the hero numbers bigger", "add a photo of the team on the people section". That edits <code class="code">index.html</code> and <code class="code">assets/</code>; Claude will preview before publishing.</p></details>
+
+<p class="foot">Portfolio help desk · prepared for Prof. Dr. Constantinos Antoniou · the same text lives in MAINTAINING.md in the repository.</p>
+</div>
+<div class="toast" id="toast">Copied</div>
+
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('#cards .card')),q=document.getElementById('q'),tabs=document.getElementById('tabs'),f='all',toast=document.getElementById('toast');
+  function apply(){var s=q.value.trim().toLowerCase();cards.forEach(function(c){var ok=(f==='all'||c.dataset.f===f)&&(!s||(c.textContent+' '+c.dataset.t).toLowerCase().indexOf(s)>-1);c.hidden=!ok;});}
+  q.addEventListener('input',apply);
+  tabs.addEventListener('click',function(e){var b=e.target.closest('.tab');if(!b)return;f=b.dataset.f;[].forEach.call(tabs.children,function(t){t.setAttribute('aria-pressed',t===b?'true':'false');});apply();});
+  document.querySelectorAll('.say button').forEach(function(b){b.addEventListener('click',function(){var t=b.parentNode.textContent.replace(/^Copy/,'').replace(/^Say to Claude/,'').trim();var done=function(){toast.classList.add('on');setTimeout(function(){toast.classList.remove('on');},1200);};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){sel();});}else{sel();}function sel(){var r=document.createRange();r.selectNodeContents(b.parentNode);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}});});
+  try{var h=location.hash.replace('#','');if(h){q.value=h;apply();}}catch(e){}
+})();
+</script>
+</body>
+</html>

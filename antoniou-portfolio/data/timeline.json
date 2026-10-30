@@ -1,0 +1,30 @@
+{
+  "_comment": "Milestones shown on the site timeline, newest last. 'kind' is chair, event or honour. Add a line when something happens; keep it to one line each.",
+  "events": [
+    {"date": "2016-09-01", "kind": "chair", "title": "Chair founded", "detail": "Lehrstuhl für Vernetzte Verkehrssysteme, TUM"},
+    {"date": "2017-01-01", "kind": "chair", "title": "First H2020 project", "detail": "NOESIS; FuturTrans with the Indo-German CRC"},
+    {"date": "2018-09-05", "kind": "event", "title": "hEART 2018, Athens", "detail": "7th hEART Symposium, co-organised with NTUA"},
+    {"date": "2018-01-01", "kind": "chair", "title": "D-Vanpool and HumAV", "detail": "DFG with Tsinghua; Marie Skłodowska-Curie"},
+    {"date": "2019-05-01", "kind": "chair", "title": "Three H2020 projects start", "detail": "i-DREAMS, MOMENTUM, Drive2theFuture"},
+    {"date": "2019-09-11", "kind": "event", "title": "mobil.TUM 2019, Munich", "detail": "International Scientific Conference on Mobility and Transport"},
+    {"date": "2020-02-01", "kind": "chair", "title": "Shared autonomous vehicle review published", "detail": "700+ citations since"},
+    {"date": "2021-06-16", "kind": "event", "title": "IEEE MT-ITS 2021", "detail": "7th conference on Models and Technologies for ITS, online"},
+    {"date": "2021-01-01", "kind": "chair", "title": "MCube, DARUMA, PANAMERA", "detail": "BMBF, EIG CONCERT-Japan, BMWK"},
+    {"date": "2022-01-01", "kind": "chair", "title": "PHOEBE and AMI-AirShuttle", "detail": "Horizon Europe; Bavaria"},
+    {"date": "2023-05-01", "kind": "honour", "title": "Francqui Chair", "detail": "UHasselt"},
+    {"date": "2024-01-01", "kind": "chair", "title": "Four new EU and DFG projects", "detail": "MI-TRAP, AUTOSUP, CulturalRoad, VOTAVI"},
+    {"date": "2025-03-01", "kind": "honour", "title": "Co-Editor-in-Chief, Transportation Research Part A", "detail": "Associate Editor before"},
+    {"date": "2025-06-10", "kind": "event", "title": "hEART 2025, Munich", "detail": "13th hEART Symposium, with the Chair of Traffic Engineering and Control"},
+    {"date": "2025-10-01", "kind": "chair", "title": "DFG CRC AgiMo starts", "detail": "with SCUDO and SEE-FAr the same year"},
+    {"date": "2025-12-12", "kind": "honour", "title": "Henriette Herz Scout", "detail": "Alexander von Humboldt Foundation"},
+    {"date": "2026-07-20", "kind": "event", "title": "ISTTT26, Munich", "detail": "26th International Symposium on Transportation and Traffic Theory"},
+    {"date": "2026-09-01", "kind": "chair", "title": "Ten years", "detail": "i-TRAUM and PROMETHEUS funded through 2029"}
+  ],
+  "conferences_organised": [
+    {"year": 2018, "name": "hEART 2018", "where": "Athens", "with": "NTUA"},
+    {"year": 2019, "name": "mobil.TUM 2019", "where": "Munich"},
+    {"year": 2021, "name": "IEEE MT-ITS 2021", "where": "online"},
+    {"year": 2025, "name": "hEART 2025", "where": "Munich", "with": "Chair of Traffic Engineering and Control"},
+    {"year": 2026, "name": "ISTTT26", "where": "Munich", "with": "Chair of Traffic Engineering and Control"}
+  ]
+}

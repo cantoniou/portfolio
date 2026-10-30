@@ -1,0 +1,102 @@
+{
+  "_comment": "Headline numbers. 'scopus' and 'scholar' are typed in by hand from the profile pages. 'openalex' is written by scripts/refresh_openalex.py; do not edit it by hand. Pages show Scopus for career totals and OpenAlex for the per-year chart, and say so.",
+  "as_of": "2026-10-03",
+  "scopus": {
+    "as_of": "2026-09-30",
+    "publications": "380+",
+    "h_index": 53,
+    "citations": "10k+",
+    "coauthors": "550+",
+    "journal_articles": "240+",
+    "conference_papers": "80+",
+    "book_chapters": "25+",
+    "books": 4,
+    "research_topics": "65+",
+    "journals": "90+"
+  },
+  "scholar": {
+    "as_of": "2026-09-30",
+    "h_index": 69,
+    "citations": "17k+"
+  },
+  "openalex": {
+    "as_of": "2026-10-03",
+    "author_id": "A5001459918",
+    "works_count": 533,
+    "cited_by_count": 11785,
+    "h_index": 55,
+    "i10_index": 224,
+    "tum_era": {
+      "from_year": 2016,
+      "works": 362,
+      "citations": 6665,
+      "works_over_100_citations": 12,
+      "open_access_share": 0.62
+    },
+    "by_year": [
+      {"year": 2016, "works": 19, "citations": 384},
+      {"year": 2017, "works": 22, "citations": 335},
+      {"year": 2018, "works": 22, "citations": 324},
+      {"year": 2019, "works": 37, "citations": 1249},
+      {"year": 2020, "works": 21, "citations": 1549},
+      {"year": 2021, "works": 38, "citations": 933},
+      {"year": 2022, "works": 38, "citations": 728},
+      {"year": 2023, "works": 31, "citations": 515},
+      {"year": 2024, "works": 34, "citations": 435},
+      {"year": 2025, "works": 47, "citations": 206},
+      {"year": 2026, "works": 52, "citations": 7}
+    ],
+    "top_papers": [
+      {"title": "Shared autonomous vehicle services: A comprehensive review", "first_author": "S. Narayanan", "year": 2020, "citations": 700, "doi": "10.1016/j.trc.2019.12.008", "tse": true},
+      {"title": "Factors affecting the adoption and use of urban air mobility", "first_author": "C. Al Haddad", "year": 2019, "citations": 345, "doi": "10.1016/j.tra.2019.12.020", "tse": true},
+      {"title": "Exploring preferences for transportation modes in an urban air mobility environment: Munich case study", "first_author": "M. Fu", "year": 2019, "citations": 225, "doi": "10.1177/0361198119843858", "tse": false},
+      {"title": "Long-term application potential of urban air mobility complementing public transport: an upper Bavaria example", "first_author": "K. O. Ploetner", "year": 2020, "citations": 157, "doi": "10.1007/s13272-020-00468-5", "tse": false},
+      {"title": "Hybrid machine learning algorithm and statistical time series model for network-wide traffic forecast", "first_author": "T. Ma", "year": 2020, "citations": 151, "doi": "10.1016/j.trc.2019.12.022", "tse": true},
+      {"title": "Comparing machine learning and deep learning methods for real-time crash prediction", "first_author": "A. Theofilatos", "year": 2019, "citations": 136, "doi": "10.1177/0361198119841571", "tse": true},
+      {"title": "Potential urban air mobility travel time savings: Munich, Paris, and San Francisco", "first_author": "R. Rothfeld", "year": 2021, "citations": 129, "doi": "10.3390/su13042217", "tse": true},
+      {"title": "The economics of automated public transport", "first_author": "A. Tirachini", "year": 2019, "citations": 124, "doi": "10.1016/j.ecotra.2019.100151", "tse": false},
+      {"title": "Prediction of lane-changing maneuvers with automatic labeling and deep learning", "first_author": "V. Mahajan", "year": 2020, "citations": 106, "doi": "10.1177/0361198120922210", "tse": true},
+      {"title": "The sustainability of shared mobility: can a platform for shared rides reduce motorized traffic in cities?", "first_author": "A. Tirachini", "year": 2020, "citations": 104, "doi": "10.1016/j.trc.2020.102707", "tse": false},
+      {"title": "Electric cargo cycles: a comprehensive review", "first_author": "S. Narayanan", "year": 2021, "citations": 102, "doi": "10.1016/j.tranpol.2021.12.011", "tse": true},
+      {"title": "Shared mobility services towards Mobility as a Service (MaaS): what, who and when?", "first_author": "M. Abouelela", "year": 2023, "citations": 101, "doi": "10.1016/j.tra.2023.103581", "tse": true}
+    ],
+    "partners_since_2016": [
+      {"institution": "NTUA Athens", "country": "GR", "works": 50, "alumni_host": false},
+      {"institution": "UCL", "country": "GB", "works": 28, "alumni_host": true},
+      {"institution": "DTU", "country": "DK", "works": 26, "alumni_host": true},
+      {"institution": "Bauhaus Luftfahrt", "country": "DE", "works": 15, "alumni_host": false},
+      {"institution": "University of Cyprus", "country": "CY", "works": 13, "alumni_host": false},
+      {"institution": "Hasselt University", "country": "BE", "works": 13, "alumni_host": false},
+      {"institution": "SVNIT Surat", "country": "IN", "works": 12, "alumni_host": false},
+      {"institution": "Universidad de Chile", "country": "CL", "works": 12, "alumni_host": false},
+      {"institution": "TU Delft", "country": "NL", "works": 12, "alumni_host": false},
+      {"institution": "MIT", "country": "US", "works": 10, "alumni_host": false},
+      {"institution": "Tsinghua University", "country": "CN", "works": 9, "alumni_host": false},
+      {"institution": "University of Twente", "country": "NL", "works": 8, "alumni_host": true},
+      {"institution": "Central South University", "country": "CN", "works": 7, "alumni_host": true},
+      {"institution": "TU Dresden", "country": "DE", "works": 7, "alumni_host": true}
+    ],
+    "countries_since_2016": 40
+  },
+  "people": {
+    "_comment": "Hand-maintained from the chair's records.",
+    "as_of": "2026-09-30",
+    "researchers_today": 23,
+    "postdocs": 2,
+    "doctoral_researchers": 21,
+    "external_doctoral_candidates": 5,
+    "alumni": 25,
+    "alumni_in_faculty_positions": 10,
+    "doctorates_completed": "15+",
+    "theses_supervised": "100+",
+    "visiting_professors": 8,
+    "visiting_phd_candidates": 19,
+    "industrial_collaborations": "20+",
+    "partner_institutions": "150+",
+    "partner_countries": "40+"
+  },
+  "teaching": {
+    "courses_this_year": 16,
+    "courses_since_2016": "40+"
+  }
+}
