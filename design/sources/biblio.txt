@@ -1,0 +1,248 @@
+Constantinos Antoniou Research Profile
+Oct 3, 2026 · @Rakib
+At a glance
+Prof. Constantinos Antoniou has produced 533 indexed research works since 1997, cited
+about 11,800 times, with an h-index of 55 in OpenAlex (53 in Scopus, 69 in Google Scholar).
+Two thirds of that output dates from his decade at TUM, and 2025 and 2026 are the two
+most productive years of his career.
+Beyond the citation counts: 550+ distinct co-authors across 150+ institutions in 40
+countries; co-authorship on 24 papers with over 100 citations each; 58% of works open
+access; 9 EU-funded projects as PI and over €4 million in third-party funding in the last
+five years; Co-Editor-in-Chief of Transportation Research Part A; 7 doctorates completed
+and 17+ in progress. Scopus and Scholar figures come from the chair's own profile text;
+OpenAlex figures were extracted on 3 October 2026.
+Three decades, three gears
+Productivity has stepped up with each career stage rather than drifting: 45 works in the
+MIT and industry years (1997 to 2008, about 4 a year), 127 in seven NTUA faculty years
+(about 18 a year), and 361 in the TUM decade so far (about 33 a year).
+Measure 	OpenAlex Scopus Google Scholar
+Works indexed 	533 	380+ 	500+
+Citations 	11,785 	10,000+ 17,000+
+h-index 	55 	53 	69
+i10-index (works with 10+ citations) 224 	– 	206
+Works with 100+ citations 	24 	– 	30
+Constantinos Antoniou Research Profile
+Page 1 of 10
+
+-- 1 of 10 --
+
+The NTUA era peaks in 2013 (30 works), the first year above 20. At TUM the floor itself
+moved: no year since 2016 has fallen below 19, and the last six years average 40. The 2026
+count (52 by early October) already exceeds every previous full year, driven partly by the
+growth of the chair's doctoral group, which now exceeds 17 students.
+Impact shape
+Impact is concentrated in a few landmark papers but rests on a broad base: 407 of 533
+works have been cited at least once, 224 ten or more times, and the top 25 papers alone
+account for 42% of all citations. The citation record has three peaks, each marking a
+different research agenda.
+OpenAlex counts_by_year for author A5001459918, extracted 3 Oct 2026 · 30 years
+Constantinos Antoniou Research Profile
+Page 2 of 10
+
+-- 2 of 10 --
+
+The 2007 peak is methodological (calibration of dynamic traffic assignment and
+microscopic simulation models); 2013 is the NTUA policy-and-safety peak (vehicle sharing
+adoption, weather and accident risk, infrastructure and house prices); 2019 to 2020 is the
+TUM future-mobility peak (urban air mobility, shared autonomous vehicles, machine-
+learning traffic forecasting). The ten most-cited works span all three agendas.
+OpenAlex works for author A5001459918, grouped by publication year and by cited_by_count, extracted 3 Oct
+2026
+Rank Work 	Year Citations
+1 	Shared autonomous vehicle services: a
+comprehensive review
+2020 700
+2 	Public transit user satisfaction: variability and
+policy implications
+2008 526
+Constantinos Antoniou Research Profile
+Page 3 of 10
+
+-- 3 of 10 --
+
+Citation counts are OpenAlex values on 3 October 2026; Google Scholar counts for the
+same papers run roughly 40 to 60% higher.
+Topic migration
+The research agenda has widened from one problem to a portfolio. At MIT, 26 of 44 works
+(59%) sat in just two topics, traffic prediction and transportation optimization; at TUM
+the two largest topics cover only 29% of output, and "Transportation and Mobility
+Innovations" has become the single largest, with 66 works since 2016.
+Rank Work 	Year Citations
+3 	Factors affecting the adoption and use of urban air
+mobility
+2019 345
+4 	Factors affecting the adoption of vehicle sharing
+systems by young drivers
+2013 326
+5 	Explaining the road accident risk: weather effects 	2013 293
+6 	Exploring preferences for transportation modes in
+an urban air mobility environment: Munich case
+study
+2019 225
+7 	How do transport infrastructure and policies affect
+house prices and rents? Evidence from Athens
+2013 212
+8 	Nonlinear Kalman filtering algorithms for on-line
+calibration of dynamic traffic assignment models
+2007 192
+9 	Factors affecting modal choice in urban mobility 	2012 162
+10 	Long-term application potential of urban air
+mobility complementing public transport: an upper
+Bavaria example
+2020 157
+Constantinos Antoniou Research Profile
+Page 4 of 10
+
+-- 4 of 10 --
+
+The keyword record tells the same story in finer grain. The most frequent keywords
+across the whole career are road safety (57 works), dynamic traffic assignment (42),
+travel behavior (35), mode choice (30), microscopic traffic simulation (25) and driver
+behavior (24). The method vocabulary of the early years, online calibration (22), extended
+Kalman filter (12) and SPSA (12), sits alongside the TUM-era vocabulary of urban air
+mobility (21), car sharing (21), shared mobility (19), autonomous vehicles (18) and bike
+sharing (18). Two city names recur as study areas: Athens (17 works) and Munich (15).
+What has not changed is the quantitative core: statistical and machine-learning methods,
+discrete choice and stated-preference surveys (19 works), and simulation are the
+common thread from the 2004 PhD on online calibration to the 2020s work on automated
+and shared mobility.
+Seen through the UN Sustainable Development Goals, 149 works map to SDG 11
+(sustainable cities and communities), 43 to SDG 9 (industry, innovation and
+infrastructure), 21 to SDG 3 (good health and well-being, mostly road safety) and 13 to
+SDG 13 (climate action).
+OpenAlex primary_topic grouped by era for author A5001459918, extracted 3 Oct 2026 · 6 topics × 3 eras
+Constantinos Antoniou Research Profile
+Page 5 of 10
+
+-- 5 of 10 --
+
+Collaboration network
+The network is large, international and visibly multi-generational: 550+ distinct co-
+authors, 150+ institutions, 40 countries, and a top co-author list that pairs his own
+doctoral advisors with his own doctoral students.
+Germany (308 works), Greece (163) and the United States (74) reflect the three career
+bases. The next tier is European: United Kingdom 50, Denmark 29, Netherlands 25,
+Belgium 23, Switzerland 23, Sweden 20. China (29), Chile (15), Singapore (15), India (13)
+and Australia (10) extend the reach beyond Europe. Since 2016 the mix has shifted further
+outward: Greece falls to 63 of 362 works while the UK, China, Denmark, the Netherlands
+and Belgium all keep or grow their share.
+By institution, the most frequent partners after TUM (308) and NTUA (149) are MIT (43),
+UCL (28), DTU (27), Northeastern University (19), KTH (16), EPFL (14), Hasselt University
+(14), University of Cyprus (14), University of Chile (13) and TU Delft (13). Several of these
+OpenAlex works grouped by co-author institution country for author A5001459918, extracted 3 Oct 2026 · top
+20 of 40 countries
+Constantinos Antoniou Research Profile
+Page 6 of 10
+
+-- 6 of 10 --
+
+are where former group members now hold positions, so the collaboration graph doubles
+as an alumni map.
+Team sizes are compact: the median paper has 4 authors, 70% have between 2 and 4, and
+only 5 are single-authored; 15 works have 10 or more authors, mostly EU-project consortia
+and two large horizon-scanning papers with over 50 authors. 309 of 533 works (58%) are
+open access.
+Where the work appears
+The venue list is the field's own shortlist. Eight of the top eighteen outlets are journals in
+which he serves or has served as editor, and the three Elsevier flagships, Transportation
+Research Parts A and C and Accident Analysis & Prevention, together hold 60 of his
+papers.
+Co-author 	Joint
+works
+Relationship
+George Yannis (NTUA) 	54 	NTUA colleague, road safety
+Dimitrios Efthymiou 	41 	First PhD graduate (NTUA, 2014)
+Moshe Ben-Akiva (MIT) 	40 	MS and PhD advisor
+Haris Koutsopoulos
+(Northeastern)
+36 	PhD co-advisor
+Christelle Al Haddad 	35 	TUM doctoral researcher, urban air mobility
+Emmanouil Chaniotakis (UCL) 	34 	Former TUM group member
+Mohamed Abouelela 	31 	TUM doctoral researcher, shared mobility
+Santhanakrishnan Narayanan 	26 	TUM doctoral researcher, shared
+autonomous vehicles
+Eleonora Papadimitriou (TU
+Delft)
+24 	NTUA road-safety collaborator
+Qing-Long Lu 	22 	TUM doctoral researcher, traffic prediction
+Constantinos Antoniou Research Profile
+Page 7 of 10
+
+-- 7 of 10 --
+
+By publication type, OpenAlex counts 362 journal articles, 67 conference papers, 38
+preprints, 32 book chapters, 8 editorials and 2 books; the chair's own Scopus count is
+240+ journal articles, 80+ conference papers, 25+ book chapters and 4 books. TRB venues
+(Transportation Research Record plus the Annual Meeting compendia) and
+Transportation Research Procedia, which publishes selected papers from conferences
+such as hEART and mobil.TUM, account for the bulk of the conference stream.
+Beyond papers
+The publication record sits on top of a comparable record in funding, editing, supervision
+and service. In the last five years the chair has attracted over €4 million in third-party
+funding, and he has been principal investigator on nine EU-funded projects (SCUDO,
+CulturalRoad, MI-TRAP, AutoSUP, PHOEBE, i-DREAMS, MOMENTUM, Drive2theFuture,
+NOESIS) and five nationally funded ones (VOTAVI, SEE-FAr, D-Vanpool, TraMPA,
+PANAMERA). The three largest H2020 consortia he led a work package or partner role in
+had total budgets of €6.3 million (i-DREAMS), €4.0 million (Drive2theFuture) and €2.9
+million (MOMENTUM).
+OpenAlex works grouped by primary source for author A5001459918, extracted 3 Oct 2026 · top 18 venues
+Constantinos Antoniou Research Profile
+Page 8 of 10
+
+-- 8 of 10 --
+
+Alumni of the group now hold positions at UCL, DTU, UPC and the University of Arizona,
+among others, which is visible in the collaboration data above.
+Dimension 	Figure
+Third-party funding, last 5 years 	€4 million+
+EU-funded projects as PI 	9
+Nationally funded projects as PI 	5
+Editor-in-Chief roles 	Co-EiC, Transportation Research Part A (with
+Anming Zhang)
+Current editorial boards 	TR Part C, Accident Analysis & Prevention,
+Communications in Transportation Research
+Past editorial roles 	Deputy EiC IET ITS; AE Transportation Letters;
+Editor EURO J. Transportation and Logistics
+Doctorates completed / in progress 7 / 17+
+Scientific committees served on 	100+
+Journals reviewed for 	50+
+Conferences organised 	hEART 2018 (Athens), mobil.TUM 2018 and 2019,
+IEEE MT-ITS 2021, hEART 2025 (TUM), ISTTT26
+(Munich, July 2026)
+Programme directorships 	MS Transportation Systems (TUM); MS Rail
+Transport and Logistics (TUM Asia, Singapore)
+Dates from the chair's website data and the 2020 CV · 12 milestones, 1997 to 2025
+Constantinos Antoniou Research Profile
+Page 9 of 10
+
+-- 9 of 10 --
+
+The honours run from the 1997 Milton Pikarsky Award for the best MS thesis in the US,
+through the 2011 IEEE ITS Outstanding Application Award for the DynaMIT dynamic traffic
+assignment system, to the 2023 Francqui Chair at UHasselt and the Humboldt
+Foundation's Henriette Herz Scout designation in December 2025.
+Sources, method and caveats
+All charts are drawn from the OpenAlex record for author A5001459918 (ORCID 0000-
+0003-0203-9542), extracted on 3 October 2026; headline Scopus and Google Scholar
+figures are quoted from the chair's own profile text. The three databases differ because
+they index different things: Scopus counts only peer-reviewed items in its journal list
+(380+ works), OpenAlex adds preprints, reports, datasets and editorials (533 works), and
+Google Scholar also counts theses, working papers and citations from non-indexed
+documents, which is why its citation total (17,000+) and h-index (69) run highest.
+Three caveats for anyone reusing the numbers. OpenAlex year counts for 2025 and 2026
+include preprints and SSRN postings that may later appear again as journal versions, so
+the recent surge is partly a double count that Scopus would not show. Country and
+institution counts are per work, and a work with co-authors in several countries counts
+once in each. The 2026 citation count (7) reflects publication recency, not impact.
+Chair profile, TUM School of Engineering and Design (metrics as of January 2025)
+Curriculum vitae, June 2020 (projects, teaching, service, awards)
+TUM Research Portal profile (385 outputs, 10,475 citations, fingerprint)
+OpenAlex author record and works API
+Google Scholar profile and Scopus author page
+Website Data.docx supplied by Rakib (timeline, Scopus-based metrics, 2023 to 2026
+honours)
+Constantinos Antoniou Research Profile
+Page 10 of 10
+
+-- 10 of 10 --
+

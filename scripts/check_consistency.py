@@ -74,6 +74,36 @@ check(len(timeline["conferences_organised"]) == len({c["name"] for c in timeline
 hy = [h["year"] for h in profile["honours"]]
 check(hy == sorted(hy, reverse=True), "honours listed newest first")
 
+
+# Site pages vs data (the pages embed their numbers; data/ is the fact sheet)
+import re as _re
+def page_text(name):
+    try:
+        html = open(os.path.join(ROOT, name), encoding="utf-8").read()
+        m = _re.search(r'<script type="__bundler/template">(.*?)</script>', html, _re.S)
+        return _re.sub(r"<[^>]+>", " ", json.loads(m.group(1))) if m else html
+    except FileNotFoundError:
+        return ""
+idx, res = page_text("index.html"), page_text("research.html")
+sc = metrics["scopus"]
+# index.html stores its counters as {n:380,suffix:'+'}; rebuild the "380+" form before comparing
+tiles = {}
+for m in _re.finditer(r"\{n:(\d+),suffix:'([^']*)',label:'([^']*)'", idx):
+    tiles[m.group(3).lower()] = m.group(1) + m.group(2)
+pairs = (("scientific publications", sc["publications"]), ("h-index", str(sc["h_index"])), ("citations", sc["citations"]),
+         ("co-authors", sc["coauthors"]), ("journal articles", sc["journal_articles"]), ("conference papers", sc["conference_papers"]),
+         ("book chapters", sc["book_chapters"]))
+for label, val in pairs:
+    found = next((v for k, v in tiles.items() if label in k), None)
+    check(found == str(val), f"index.html 'By the numbers' {label}: page {found} vs metrics.json {val}")
+check(str(pm["doctorates_completed"]) in idx, f"doctorates completed {pm['doctorates_completed']} appears on index.html")
+check(str(pm["theses_supervised"]) in idx, f"theses supervised {pm['theses_supervised']} appears on index.html")
+if res:
+    check(str(ox["h_index"]) in res, f"OpenAlex h-index {ox['h_index']} appears on research.html")
+    check(str(ox["tum_era"]["works"]) in res or str(ox["tum_era"]["works"] - 1) in res, f"TUM-era works {ox['tum_era']['works']} appears on research.html")
+for h in profile["honours"][:3]:
+    check(h["what"].split(",")[0] in idx, f"honour '{h['what']}' appears on index.html")
+
 oks = [l for l in notes if l.startswith("ok")]
 for line in [l for l in notes if not l.startswith("ok")] + problems:
     print(line)

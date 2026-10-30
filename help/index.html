@@ -71,10 +71,10 @@ details p{margin-top:8px;color:var(--ink2);font-size:14.5px}
 
 <p class="eye">TSE portfolio · how to keep it current</p>
 <h1>What do you want to do <em>today?</em></h1>
-<p class="lead">Open the portfolio folder in Claude, find your situation below, and say the sentence. Claude edits the data, checks the numbers, and nothing goes public until you say "publish". Every sentence here has a copy button.</p>
+<p class="lead">Open the portfolio folder in Claude, find your situation below, and say the sentence. Claude edits the page and the fact sheet behind it, checks the numbers, and nothing goes public until you say "publish". Every sentence here has a copy button.</p>
 
 <div class="steps">
-  <div class="step"><div class="n">STEP 1</div><b>Open the folder in Claude</b><p>Cowork: add the <code class="code">antoniou-portfolio</code> folder. Terminal: <code class="code">cd antoniou-portfolio && claude</code>. The skills load by themselves.</p></div>
+  <div class="step"><div class="n">STEP 1</div><b>Open the folder in Claude</b><p>Cowork: add the <code class="code">portfolio</code> folder. Terminal: <code class="code">cd portfolio && claude</code>. The skills load by themselves.</p></div>
   <div class="step"><div class="n">STEP 2</div><b>Say what changed</b><p>In plain words, with names, dates and numbers. Claude asks if something is missing; it never guesses a figure.</p></div>
   <div class="step"><div class="n">STEP 3</div><b>Read the summary</b><p>Claude lists the edits and the result of the consistency check.</p></div>
   <div class="step"><div class="n">STEP 4</div><b>Say "publish"</b><p>Checks, commit, push. Live at your domain about a minute later.</p></div>
@@ -99,8 +99,35 @@ details p{margin-top:8px;color:var(--ink2);font-size:14.5px}
   <h3>Starting from scratch</h3>
   <p class="when">You have the folder on your computer and nothing else yet. Claude checks what exists and walks you through git, GitHub, Pages and your domain, one step at a time.</p>
   <div class="say"><button type="button">Copy</button>Onboard me: set up this portfolio from scratch.</div>
-  <p class="then"><b>Then:</b> repository created and pushed, Pages on, domain pointed, one test change published so you see the loop work. Two moments need you at a browser: GitHub and your domain registrar.</p>
+  <p class="then"><b>Then:</b> folder connected to github.com/cantoniou/portfolio, Pages on, domain pointed, one test change published so you see the loop work. One moment needs you at a browser: your domain registrar (and a GitHub login the first time).</p>
   <p class="where"><span>START-HERE.md</span> · <span>.claude/skills/onboard</span></p>
+</div>
+
+<div class="card" data-f="profile" data-t="text wording number change sentence page typo fix says">
+  <div class="k"><span>Any text</span><i>1 min</i></div>
+  <h3>Change a sentence or a number on the site</h3>
+  <p class="when">Anything on the home, projects or research page that reads wrong or has gone out of date. The pages come from Claude Design, so Claude uses a small tool that finds and replaces text inside them safely; do not edit the HTML files by hand.</p>
+  <div class="say"><button type="button">Copy</button>On the home page it says "15+ doctorates completed". Change it to "17 doctorates completed".</div>
+  <p class="then"><b>Then:</b> Claude replaces the text on the page, updates the matching field in data/, runs the check and shows you the result.</p>
+  <p class="where"><span>scripts/site_text.py</span> · <span>data/</span></p>
+</div>
+
+<div class="card" data-f="profile" data-t="photo picture image hero carousel slot portrait team photo">
+  <div class="k"><span>Photos</span><i>3 min</i></div>
+  <h3>Add or swap a photo in the hero</h3>
+  <p class="when">The home page has image slots in the hero carousel. Attach the photo (jpg or png, ideally under 500 KB) when you ask.</p>
+  <div class="say"><button type="button">Copy</button>Put this photo in the hero carousel, second slot. Caption: TSE team retreat, 2026.</div>
+  <p class="then"><b>Then:</b> the file goes into assets/, the slot assignment is saved, and you preview it before publishing.</p>
+  <p class="where"><span>assets/</span> · <span>.image-slots.state.json</span></p>
+</div>
+
+<div class="card" data-f="profile" data-t="design layout section new look redesign colours style claude design export">
+  <div class="k"><span>Design</span><i>30 min</i></div>
+  <h3>Add a section or change the look</h3>
+  <p class="when">A new section, a different layout, new colours: this is a design change, not a text edit. The sources are in design/ and open in Claude Design.</p>
+  <div class="say"><button type="button">Copy</button>I want a new "Teaching" section on the home page. Walk me through changing the design and exporting it back into the site.</div>
+  <p class="then"><b>Then:</b> Claude opens the right design file with you, you export the page, and Claude drops it in, restores the title and footer link, and re-runs the check.</p>
+  <p class="where"><span>design/*.dc.html</span></p>
 </div>
 
 <div class="card" data-f="people" data-t="new phd doctoral student researcher joins start team">

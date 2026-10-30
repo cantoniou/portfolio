@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  body{background:#f5f3ee;color:#16161d;font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden;}
+  ::selection{background:#3070B3;color:#f5f3ee;}
+  a{color:#16161d;text-decoration:none;}
+  a:hover{color:#3070B3;}
+  @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+</style>
+</helmet>
+<div style="position:relative; width:100%; max-width:100%;">
+
+  <!-- top bar -->
+  <header style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:15px clamp(20px,5vw,56px); background:#16161d; color:#f5f3ee; border-bottom:1px solid rgba(245,243,238,0.14);">
+    <a href="./Antoniou%20Website.dc.html" style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:inherit;">Constantinos Antoniou</a>
+    <nav style="display:flex; gap:clamp(14px,2.4vw,28px); align-items:center;">
+      <a href="./Antoniou%20Website.dc.html" style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:inherit; opacity:0.62;">Profile</a>
+      <a href="./Antoniou%20Projects.dc.html" style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:inherit; opacity:0.62;">Projects</a>
+      <a href="#top" style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:inherit; border-bottom:2px solid #3070B3; padding-bottom:3px;">Research in numbers</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="top" style="padding:clamp(120px,18vh,180px) clamp(20px,5vw,56px) clamp(50px,8vh,80px);">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:clamp(11px,1.1vw,13px); letter-spacing:0.22em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(16px,3vh,26px);">A bibliometric portrait · OpenAlex, extracted 3 Oct 2026</div>
+      <h1 data-reveal style="font-weight:600; letter-spacing:-0.03em; line-height:0.9; font-size:clamp(44px,8.5vw,128px); text-wrap:balance;">533 works,<br>three decades.</h1>
+      <p data-reveal style="margin-top:clamp(20px,3.5vh,34px); font-size:clamp(16px,1.7vw,23px); max-width:660px; line-height:1.45; color:#57544d;">Indexed research since 1997, cited about 11,800 times. Two thirds of the output dates from the TUM decade — and 2025 and 2026 are the two most productive years of the career so far.</p>
+
+      <div data-reveal style="margin-top:clamp(40px,7vh,72px); display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:1px; background:rgba(22,22,29,0.14); border:1px solid rgba(22,22,29,0.14);">
+        <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+          <div style="background:#f5f3ee; padding:clamp(22px,3vw,34px);">
+            <div style="display:flex; align-items:baseline; font-weight:600; letter-spacing:-0.03em; line-height:0.9; font-size:clamp(40px,5.4vw,76px);"><span data-count="{{ k.n }}" data-suffix="{{ k.suffix }}" data-comma="{{ k.comma }}">0{{ k.suffix }}</span></div>
+            <div style="margin-top:12px; font-size:clamp(14px,1.3vw,17px); color:#2c2b31; line-height:1.25;">{{ k.label }}</div>
+            <sc-if value="{{ k.note }}" hint-placeholder-val="x"><div style="margin-top:5px; font-family:'Space Mono',monospace; font-size:11px; color:#8a877f;">{{ k.note }}</div></sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THREE GEARS ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px); border-top:1px solid rgba(22,22,29,0.14);">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(14px,3vh,20px);">/ 01 — Three decades, three gears</div>
+      <p data-reveal style="font-size:clamp(16px,1.6vw,22px); max-width:680px; line-height:1.45; color:#57544d; margin-bottom:clamp(34px,6vh,60px);">Output rose with each career stage — roughly 4, then 18, then 33 works a year.</p>
+      <!-- stepped bars -->
+      <div data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,2vw,28px); align-items:end; height:clamp(170px,26vh,250px); margin-bottom:clamp(26px,4vh,40px); border-bottom:2px solid #16161d; padding-bottom:0;">
+        <sc-for list="{{ eras }}" as="e" hint-placeholder-count="3">
+          <div style="display:flex; flex-direction:column; justify-content:flex-end; height:100%;">
+            <div style="font-family:'Space Mono',monospace; font-size:clamp(12px,1.3vw,15px); font-weight:700; margin-bottom:8px;"><span data-count="{{ e.works }}" data-suffix="">0</span> works</div>
+            <div data-barv data-pct="{{ e.pct }}" style="width:100%; height:0; background:{{ e.color }}; transition:height 1.1s cubic-bezier(.2,.7,.2,1);"></div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,2vw,28px);">
+        <sc-for list="{{ eras }}" as="e" hint-placeholder-count="3">
+          <div data-reveal>
+            <div style="font-size:clamp(16px,1.7vw,21px); font-weight:600; letter-spacing:-0.01em;">{{ e.place }}</div>
+            <div style="font-family:'Space Mono',monospace; font-size:12px; color:#8a877f; margin:6px 0 10px;">{{ e.years }}</div>
+            <div style="display:flex; align-items:baseline; gap:6px;"><span style="font-size:clamp(26px,3.4vw,44px); font-weight:600; letter-spacing:-0.02em;" data-count="{{ e.rate }}" data-suffix="">0</span><span style="font-family:'Space Mono',monospace; font-size:13px; color:#57544d;">works / year</span></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THREE DATABASES ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px); background:#16161d; color:#f5f3ee;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(30px,5vh,52px);">/ 02 — The same career, three databases</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:clamp(30px,4vw,56px);">
+        <sc-for list="{{ databases }}" as="d" hint-placeholder-count="3">
+          <div data-reveal>
+            <div style="font-size:clamp(17px,1.8vw,24px); font-weight:600; margin-bottom:clamp(18px,3vh,26px);">{{ d.label }}</div>
+            <div style="display:flex; flex-direction:column; gap:18px;">
+              <sc-for list="{{ d.rows }}" as="r" hint-placeholder-count="3">
+                <div>
+                  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+                    <span style="display:flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#d9d6ce;"><span style="width:9px; height:9px; background:{{ r.color }};"></span>{{ r.src }}</span>
+                    <span style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(15px,1.6vw,20px);" data-count="{{ r.n }}" data-suffix="{{ r.suffix }}" data-comma="{{ r.comma }}">0{{ r.suffix }}</span>
+                  </div>
+                  <div style="position:relative; height:14px; background:rgba(245,243,238,0.12);">
+                    <div data-bar-fill data-pct="{{ r.pct }}" style="position:absolute; inset:0 auto 0 0; width:0; height:100%; background:{{ r.color }}; transition:width 1.1s cubic-bezier(.2,.7,.2,1);"></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <p data-reveal style="margin-top:clamp(22px,3.5vh,32px); font-family:'Space Mono',monospace; font-size:clamp(11px,1.1vw,13px); line-height:1.6; letter-spacing:0.02em; color:#8a877f; max-width:760px;">* They disagree because they index different things — Scopus counts peer-reviewed items, OpenAlex adds preprints and editorials, and Google Scholar also counts theses and non-indexed citations.</p>
+    </div>
+  </section>
+
+  <!-- ===== IMPACT SHAPE ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px); border-top:1px solid rgba(22,22,29,0.14);">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(14px,3vh,20px);">/ 03 — The shape of impact</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(36px,6vw,80px); align-items:center;">
+        <div>
+          <p data-reveal style="font-size:clamp(16px,1.6vw,22px); line-height:1.45; color:#57544d; margin-bottom:clamp(26px,4vh,38px);">Of 533 works, 407 have been cited at least once, 224 ten or more times, and 24 more than a hundred times each.</p>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <sc-for list="{{ funnel }}" as="fn" hint-placeholder-count="4">
+              <div data-reveal>
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+                  <span style="font-size:clamp(14px,1.4vw,18px); font-weight:500;">{{ fn.label }}</span>
+                  <span style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(15px,1.5vw,19px);" data-count="{{ fn.n }}" data-suffix="">0</span>
+                </div>
+                <div style="position:relative; height:20px; background:rgba(22,22,29,0.08);">
+                  <div data-bar-fill data-pct="{{ fn.pct }}" style="position:absolute; inset:0 auto 0 0; width:0; height:100%; background:{{ fn.color }}; transition:width 1s cubic-bezier(.2,.7,.2,1);"></div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div data-reveal style="border:1px solid rgba(22,22,29,0.14); padding:clamp(30px,4vw,52px); display:flex; flex-direction:column; gap:clamp(24px,4vh,40px);">
+          <div>
+            <div style="font-size:clamp(54px,9vw,104px); font-weight:600; letter-spacing:-0.03em; line-height:0.85; color:#3070B3;"><span data-count="24" data-suffix="">0</span></div>
+            <div style="margin-top:12px; font-size:clamp(14px,1.4vw,18px); color:#2c2b31; line-height:1.4;">papers cited more than 100 times each.</div>
+          </div>
+          <div style="border-top:1px solid rgba(22,22,29,0.14); padding-top:clamp(22px,3.5vh,34px);">
+            <div style="font-size:clamp(40px,6vw,74px); font-weight:600; letter-spacing:-0.03em; line-height:0.85;"><span data-count="76" data-suffix="%">0%</span></div>
+            <div style="margin-top:12px; font-size:clamp(14px,1.4vw,18px); color:#2c2b31; line-height:1.4;">of all works have been cited — 407 of 533.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOP CITED ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px); border-top:1px solid rgba(22,22,29,0.14);">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(14px,3vh,20px);">/ 04 — Ten most-cited works</div>
+      <p data-reveal style="font-size:clamp(15px,1.5vw,20px); max-width:680px; line-height:1.45; color:#57544d; margin-bottom:clamp(32px,5vh,52px);">Three research agendas, one list: <span style="color:#0a66c2;">■</span> calibration methods, <span style="color:#9a7b16;">■</span> NTUA policy &amp; safety, <span style="color:#3070B3;">■</span> TUM future mobility. OpenAlex counts; Scholar runs 40–60% higher.</p>
+      <div style="display:flex; flex-direction:column; gap:clamp(16px,2.4vh,24px);">
+        <sc-for list="{{ topCited }}" as="w" hint-placeholder-count="10">
+          <div data-reveal style="display:grid; grid-template-columns:clamp(26px,3vw,40px) minmax(0,1fr); gap:clamp(12px,2vw,24px); align-items:start;">
+            <div style="font-family:'Space Mono',monospace; font-size:clamp(13px,1.3vw,16px); color:#8a877f; padding-top:2px;">{{ w.rank }}</div>
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:9px;">
+                <span style="font-size:clamp(15px,1.5vw,20px); font-weight:500; line-height:1.25; max-width:760px;">{{ w.title }} <span style="color:#8a877f; font-family:'Space Mono',monospace; font-size:0.72em;">· {{ w.year }}</span></span>
+                <span style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(15px,1.6vw,21px); white-space:nowrap;" data-count="{{ w.cites }}" data-suffix="">0</span>
+              </div>
+              <div style="position:relative; height:10px; background:rgba(22,22,29,0.07);">
+                <div data-bar-fill data-pct="{{ w.pct }}" style="position:absolute; inset:0 auto 0 0; width:0; height:100%; background:{{ w.color }}; transition:width 1.1s cubic-bezier(.2,.7,.2,1);"></div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEYWORD CLOUD ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px); background:#16161d; color:#f5f3ee;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(14px,3vh,20px);">/ 05 — Keyword vocabulary</div>
+      <p data-reveal style="font-size:clamp(16px,1.6vw,22px); max-width:720px; line-height:1.45; color:#d9d6ce; margin-bottom:clamp(30px,5vh,52px);">The early method vocabulary — online calibration, Kalman filters, SPSA — sits alongside the TUM-era mobility vocabulary. Sized by number of works.</p>
+      <div data-reveal style="display:flex; flex-wrap:wrap; align-items:baseline; gap:clamp(14px,2vw,30px);">
+        <sc-for list="{{ keywords }}" as="k" hint-placeholder-count="16">
+          <span style="font-weight:600; letter-spacing:-0.02em; line-height:1; color:{{ k.color }}; font-size:{{ k.size }}px;">{{ k.label }}<span style="font-family:'Space Mono',monospace; font-weight:400; font-size:12px; color:#8a877f; vertical-align:super;"> {{ k.n }}</span></span>
+        </sc-for>
+      </div>
+      <div data-reveal style="display:flex; flex-wrap:wrap; gap:18px 26px; margin-top:clamp(34px,5vh,52px); font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#d9d6ce;">
+        <span style="display:flex; align-items:center; gap:8px;"><span style="width:10px; height:10px; background:#5aa6e6;"></span>Mobility &amp; TUM era</span>
+        <span style="display:flex; align-items:center; gap:8px;"><span style="width:10px; height:10px; background:#b5121b;"></span>Safety, behaviour &amp; choice</span>
+        <span style="display:flex; align-items:center; gap:8px;"><span style="width:10px; height:10px; background:#8aa0bf;"></span>Methods &amp; early years</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESEARCH NETWORK ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px); background:#16161d; color:#f5f3ee; border-top:1px solid rgba(245,243,238,0.12);">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(16px,3vh,22px);">/ 06 — Research topic network</div>
+      <p data-reveal style="font-size:clamp(16px,1.6vw,22px); max-width:640px; line-height:1.4; color:#d9d6ce; margin-bottom:clamp(28px,5vh,48px);">The themes connecting two decades of work — sized by emphasis, linked where projects overlap. Hover a node to trace its connections; click to pin.</p>
+      <div data-reveal data-network style="position:relative; width:100%;">{{ network }}</div>
+    </div>
+  </section>
+
+  <!-- ===== SDG ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px); border-top:1px solid rgba(22,22,29,0.14);">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(14px,3vh,20px);">/ 07 — Through the Sustainable Development Goals</div>
+      <p data-reveal style="font-size:clamp(16px,1.6vw,22px); max-width:680px; line-height:1.45; color:#57544d; margin-bottom:clamp(32px,5vh,52px);">Mapped to the UN SDGs, most works fall under sustainable cities.</p>
+      <div data-reveal style="display:flex; width:100%; height:clamp(40px,6vh,58px); border:1px solid rgba(22,22,29,0.14); overflow:hidden; margin-bottom:clamp(26px,4vh,42px);">
+        <sc-for list="{{ sdgs }}" as="s" hint-placeholder-count="4">
+          <div style="flex:0 0 {{ s.share }}%; background:{{ s.color }}; min-width:0;"></div>
+        </sc-for>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,165px),1fr)); gap:clamp(18px,2.4vw,34px);">
+        <sc-for list="{{ sdgs }}" as="s" hint-placeholder-count="4">
+          <div data-reveal>
+            <div style="display:flex; align-items:center; gap:9px; margin-bottom:12px;"><span style="width:12px; height:12px; background:{{ s.color }}; flex:none;"></span><span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.08em; color:#8a877f;">{{ s.code }}</span></div>
+            <div style="font-size:clamp(28px,3.4vw,46px); font-weight:600; letter-spacing:-0.02em; line-height:0.9;" data-count="{{ s.n }}" data-suffix="">0</div>
+            <div style="margin-top:9px; font-size:clamp(13px,1.3vw,16px); color:#201f26; line-height:1.35;">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COLLABORATION ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px); border-top:1px solid rgba(22,22,29,0.14);">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(14px,3vh,20px);">/ 08 — A multi-generational network</div>
+      <p data-reveal style="font-size:clamp(16px,1.6vw,22px); max-width:720px; line-height:1.45; color:#57544d; margin-bottom:clamp(34px,6vh,56px);">550+ co-authors across 150+ institutions in 40 countries — the top collaborators pair his own doctoral advisors with his own doctoral students.</p>
+      <h3 data-reveal style="font-size:clamp(17px,1.7vw,22px); font-weight:600; padding-bottom:14px; border-bottom:2px solid #16161d; margin-bottom:clamp(22px,3.5vh,32px);">Top co-authors · joint works</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,350px),1fr)); gap:0 clamp(40px,5vw,76px); margin-bottom:clamp(48px,8vh,88px); border-top:1px solid rgba(22,22,29,0.14);">
+        <sc-for list="{{ coauthors }}" as="c" hint-placeholder-count="10">
+          <div data-reveal style="display:grid; grid-template-columns:minmax(0,1fr) auto; gap:18px; align-items:baseline; padding:15px 0; border-bottom:1px solid rgba(22,22,29,0.12);">
+            <div>
+              <div style="display:flex; align-items:center; gap:10px; font-size:clamp(15px,1.5vw,20px); font-weight:600; letter-spacing:-0.01em;"><span style="width:7px; height:7px; border-radius:50%; background:{{ c.color }}; flex:none;"></span>{{ c.name }}</div>
+              <div style="font-family:'Space Mono',monospace; font-size:11px; color:#8a877f; line-height:1.4; margin-top:5px; padding-left:17px;">{{ c.rel }}</div>
+            </div>
+            <div style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(20px,2.4vw,30px); letter-spacing:-0.01em;" data-count="{{ c.n }}" data-suffix="">0</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; padding-bottom:14px; border-bottom:2px solid #16161d; margin-bottom:clamp(20px,3vh,28px);">
+        <h3 data-reveal style="font-size:clamp(17px,1.7vw,22px); font-weight:600;">Works by partner country</h3>
+        <span data-reveal style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.06em; color:#8a877f;">Top 10 of 40 · hover a country</span>
+      </div>
+      <div data-reveal style="width:100%; aspect-ratio:1000/540; background:#f5f3ee; border:1px solid rgba(22,22,29,0.14);">
+        <iframe src="./coauthor-map.html" title="Works by partner country" loading="lazy" style="width:100%; height:100%; border:none; display:block;"></iframe>
+      </div>
+      <div data-reveal style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.06em; color:#8a877f; margin-top:14px;">Germany (308), Greece (163) &amp; the United States (74) mark the three career bases; China, Chile, Singapore, India &amp; Australia extend the reach beyond Europe.</div>
+    </div>
+  </section>
+
+  <!-- ===== WHERE IT APPEARS ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px); background:#16161d; color:#f5f3ee;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(14px,3vh,20px);">/ 09 — Where the work appears</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:clamp(36px,6vw,80px); align-items:center;">
+        <div data-reveal style="display:flex; flex-direction:column; align-items:center; gap:24px;">
+          <div style="position:relative; width:min(78vw,300px); aspect-ratio:1;">
+            <svg viewBox="0 0 140 140" style="width:100%; height:100%; transform:rotate(-90deg);">
+              <circle cx="70" cy="70" r="52" fill="none" stroke="rgba(245,243,238,0.12)" stroke-width="16"></circle>
+              <circle cx="70" cy="70" r="52" fill="none" stroke="{{ pd0.color }}" stroke-width="16" stroke-dasharray="{{ pd0.dash }}" stroke-dashoffset="{{ pd0.off }}"></circle>
+              <circle cx="70" cy="70" r="52" fill="none" stroke="{{ pd1.color }}" stroke-width="16" stroke-dasharray="{{ pd1.dash }}" stroke-dashoffset="{{ pd1.off }}"></circle>
+              <circle cx="70" cy="70" r="52" fill="none" stroke="{{ pd2.color }}" stroke-width="16" stroke-dasharray="{{ pd2.dash }}" stroke-dashoffset="{{ pd2.off }}"></circle>
+              <circle cx="70" cy="70" r="52" fill="none" stroke="{{ pd3.color }}" stroke-width="16" stroke-dasharray="{{ pd3.dash }}" stroke-dashoffset="{{ pd3.off }}"></circle>
+              <circle cx="70" cy="70" r="52" fill="none" stroke="{{ pd4.color }}" stroke-width="16" stroke-dasharray="{{ pd4.dash }}" stroke-dashoffset="{{ pd4.off }}"></circle>
+            </svg>
+            <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+              <div style="font-size:clamp(30px,4vw,48px); font-weight:600; letter-spacing:-0.02em; line-height:1;">533</div>
+              <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#8a877f; margin-top:4px;">works</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <sc-for list="{{ pubTypes }}" as="p" hint-placeholder-count="6">
+              <div data-reveal style="display:flex; align-items:center; gap:14px;">
+                <span style="width:12px; height:12px; background:{{ p.color }}; flex:none;"></span>
+                <span style="flex:1; font-size:clamp(15px,1.5vw,19px);">{{ p.label }}</span>
+                <span style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(15px,1.5vw,19px);" data-count="{{ p.n }}" data-suffix="">0</span>
+              </div>
+            </sc-for>
+          </div>
+          <p data-reveal style="margin-top:clamp(24px,4vh,36px); padding-top:20px; border-top:1px solid rgba(245,243,238,0.16); font-size:clamp(14px,1.4vw,17px); line-height:1.5; color:#d9d6ce;">The three Elsevier flagships — Transportation Research A and C and Accident Analysis &amp; Prevention — together hold 60 of his papers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BEYOND PAPERS ===== -->
+  <section style="padding:clamp(60px,10vh,120px) clamp(20px,5vw,56px);">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal data-accent-fg style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(14px,3vh,20px);">/ 10 — Beyond the papers</div>
+      <p data-reveal style="font-size:clamp(16px,1.6vw,22px); max-width:720px; line-height:1.45; color:#57544d; margin-bottom:clamp(44px,7vh,72px);">Funding, editing and supervision run alongside the publication record.</p>
+
+      <!-- PILLAR 01 — FUNDING -->
+      <div style="display:grid; grid-template-columns:minmax(0,1fr); gap:clamp(26px,4vh,40px); border-top:2px solid #16161d; padding-top:clamp(22px,3.5vh,32px); margin-bottom:clamp(48px,8vh,84px);">
+        <div style="display:grid; grid-template-columns:clamp(110px,15vw,190px) minmax(0,1fr); gap:clamp(18px,3vw,44px);">
+          <div data-reveal style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#3070B3;">01<br><span style="color:#16161d;">Funding</span></div>
+          <div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr)); gap:clamp(20px,3vw,44px); margin-bottom:clamp(32px,5vh,52px);">
+              <sc-for list="{{ fundStats }}" as="s" hint-placeholder-count="3">
+                <div data-reveal>
+                  <div style="font-size:clamp(40px,5.4vw,78px); font-weight:600; letter-spacing:-0.03em; line-height:0.82; color:{{ s.color }};">{{ s.v }}</div>
+                  <div style="margin-top:12px; font-size:clamp(13px,1.3vw,16px); color:#2c2b31; line-height:1.35;">{{ s.label }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div data-reveal style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#8a877f; margin-bottom:16px;">Flagship H2020 consortia · total budget</div>
+            <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:clamp(30px,5vh,46px);">
+              <sc-for list="{{ consortia }}" as="c" hint-placeholder-count="3">
+                <div data-reveal>
+                  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:7px;">
+                    <span style="font-size:clamp(15px,1.5vw,20px); font-weight:500;">{{ c.name }}</span>
+                    <span style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(15px,1.5vw,20px); color:#3070B3;">{{ c.budget }}</span>
+                  </div>
+                  <div style="position:relative; height:11px; background:rgba(22,22,29,0.08);">
+                    <div data-bar-fill data-pct="{{ c.pct }}" style="position:absolute; inset:0 auto 0 0; width:0; height:100%; background:#3070B3; transition:width 1s cubic-bezier(.2,.7,.2,1);"></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <div data-reveal style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#8a877f; margin-bottom:14px;">Selected funded projects · EU and national</div>
+            <div data-reveal style="display:flex; flex-wrap:wrap; gap:9px;">
+              <sc-for list="{{ euProjects }}" as="p" hint-placeholder-count="9">
+                <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.03em; padding:7px 13px; border:1px solid rgba(22,22,29,0.22); color:#16161d;">{{ p }}</span>
+              </sc-for>
+              <sc-for list="{{ nationalProjects }}" as="p" hint-placeholder-count="5">
+                <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.03em; padding:7px 13px; border:1px solid rgba(22,22,29,0.22); color:#8a877f;">{{ p }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLARS 02 + 03 -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(36px,5vw,72px);">
+        <div data-reveal style="border-top:2px solid #16161d; padding-top:clamp(22px,3.5vh,32px);">
+          <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(20px,3.5vh,30px);">02 <span style="color:#16161d;">· Editorial &amp; review</span></div>
+          <div style="display:flex; flex-direction:column;">
+            <sc-for list="{{ editorial }}" as="e" hint-placeholder-count="4">
+              <div style="display:grid; grid-template-columns:minmax(0,1fr); gap:6px; padding:16px 0; border-bottom:1px solid rgba(22,22,29,0.12);">
+                <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8a877f;">{{ e.k }}</div>
+                <div style="font-size:clamp(15px,1.45vw,19px); line-height:1.4; color:#201f26;">{{ e.v }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div data-reveal style="border-top:2px solid #16161d; padding-top:clamp(22px,3.5vh,32px);">
+          <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#3070B3; margin-bottom:clamp(20px,3.5vh,30px);">03 <span style="color:#16161d;">· Supervision &amp; teaching</span></div>
+          <div style="display:flex; flex-direction:column;">
+            <sc-for list="{{ supervision }}" as="s" hint-placeholder-count="4">
+              <div style="display:grid; grid-template-columns:minmax(0,1fr); gap:6px; padding:16px 0; border-bottom:1px solid rgba(22,22,29,0.12);">
+                <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8a877f;">{{ s.k }}</div>
+                <div style="font-size:clamp(15px,1.45vw,19px); line-height:1.4; color:#201f26;">{{ s.v }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="padding:clamp(44px,8vh,80px) clamp(20px,5vw,56px); background:#16161d; color:#8a877f;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <p style="font-size:clamp(13px,1.3vw,16px); line-height:1.6; max-width:860px; color:#b9b6ae;">Charts are drawn from the OpenAlex record for author A5001459918 (ORCID 0000-0003-0203-9542), extracted 3 October 2026; headline Scopus and Google Scholar figures are quoted from the chair's own profile. The three databases differ because they index different kinds of work.</p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin-top:clamp(28px,4vh,44px); padding-top:20px; border-top:1px solid rgba(245,243,238,0.14); font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase;">
+        <span>Univ.-Prof. Dr. Constantinos Antoniou · TUM</span>
+        <span>Bibliometric portrait</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:1500},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3070B3&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#3070B3&quot;,&quot;#1f6aa8&quot;,&quot;#2d4a3e&quot;,&quot;#16161d&quot;]},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const red = '#3070B3';
+    const blue = '#2a4a73';
+    const gold = '#b5121b';
+    const green = 'oklch(0.56 0.11 155)';
+
+    // ---- publication-type donut (r=52) over total 533 ----
+    const C = 2 * Math.PI * 52;
+    const pdTotal = 533;
+    const pdSeg = (v, color, start) => ({ color, dash: (v / pdTotal * C).toFixed(2) + ' ' + C.toFixed(2), off: (-(start / pdTotal * C)).toFixed(2) });
+
+    const h = React.createElement;
+    const NAVY = '#0b0b10';
+    // ===== research-topic network =====
+    const W = 1100, H = 660, cx = 550, cy = 330;
+    const topics = [
+      { id: 't0', label: 'Traffic Simulation',            r: 40, ang: -90, dist: 250, color: red },
+      { id: 't1', label: 'Dynamic Traffic Assignment',    r: 38, ang: -50, dist: 258, color: red },
+      { id: 't2', label: 'Intelligent Transport Systems', r: 38, ang: -10, dist: 262, color: blue },
+      { id: 't3', label: 'Calibration & Estimation',      r: 32, ang: 30,  dist: 258, color: blue },
+      { id: 't4', label: 'Travel Demand',                 r: 30, ang: 70,  dist: 250, color: gold },
+      { id: 't5', label: 'Road Safety',                   r: 32, ang: 110, dist: 250, color: gold },
+      { id: 't6', label: 'Driver Behaviour',              r: 30, ang: 150, dist: 255, color: green },
+      { id: 't7', label: 'Freight & Logistics',           r: 30, ang: 190, dist: 262, color: green },
+      { id: 't8', label: 'Machine Learning',              r: 30, ang: 230, dist: 255, color: '#c9c6bd' },
+    ].map(t => {
+      const a = t.ang * Math.PI / 180;
+      return { ...t, x: cx + Math.cos(a) * t.dist, y: cy + Math.sin(a) * t.dist * 0.72 };
+    });
+    const hub = { id: 'hub', label: 'Transportation Systems', x: cx, y: cy, r: 64, color: red };
+    const nodeById = {}; topics.forEach(t => nodeById[t.id] = t); nodeById.hub = hub;
+    const edges = [
+      ['hub','t0'],['hub','t1'],['hub','t2'],['hub','t3'],['hub','t4'],
+      ['hub','t5'],['hub','t6'],['hub','t7'],['hub','t8'],
+      ['t0','t1'],['t1','t3'],['t3','t8'],['t2','t8'],['t0','t3'],
+      ['t4','t2'],['t5','t6'],['t6','t1'],['t7','t4'],['t2','t1'],
+    ];
+    const adj = {};
+    edges.forEach(([a,b]) => { (adj[a]=adj[a]||new Set()).add(b); (adj[b]=adj[b]||new Set()).add(a); });
+    const edgeEls = edges.map(([a,b], i) => {
+      const p = nodeById[a], q = nodeById[b];
+      return h('line', { key: 'e' + i, 'data-edge': a + '|' + b, x1: p.x, y1: p.y, x2: q.x, y2: q.y,
+        stroke: 'rgba(245,243,238,0.16)', strokeWidth: 1.4, strokeLinecap: 'round',
+        style: { transition: 'stroke .3s, stroke-width .3s' } });
+    });
+    const wrap = (str, max) => str.split(' ').reduce((ls, w) => {
+      if (!ls.length) return [w];
+      const last = ls[ls.length - 1];
+      if ((last + ' ' + w).length <= max) { ls[ls.length - 1] = last + ' ' + w; } else ls.push(w);
+      return ls;
+    }, []);
+    const mkHub = (n) => h('g', { key: n.id, 'data-node': n.id, 'data-bx': n.x, 'data-by': n.y, style: { willChange: 'transform' } }, [
+      h('circle', { key: 'halo', cx: n.x, cy: n.y, r: n.r + 12, fill: n.color, opacity: 0.28, filter: 'url(#netsoft)', style: { pointerEvents: 'none' } }),
+      h('circle', { key: 'c', 'data-circle': '1', cx: n.x, cy: n.y, r: n.r, fill: n.color, style: { transition: 'transform .35s cubic-bezier(.2,.7,.2,1)', transformOrigin: n.x + 'px ' + n.y + 'px' } }),
+      h('circle', { key: 'ring', cx: n.x, cy: n.y, r: n.r + 5, fill: 'none', stroke: n.color, strokeWidth: 1, opacity: 0.4, style: { pointerEvents: 'none' } }),
+      h('text', { key: 't', x: n.x, y: n.y, textAnchor: 'middle', dominantBaseline: 'middle', fill: '#f5f3ee', style: { fontFamily: "'Space Grotesk',sans-serif", fontWeight: 600, fontSize: 19, letterSpacing: '-0.01em', pointerEvents: 'none' } },
+        wrap(n.label, 13).map((line, li, arr) => h('tspan', { key: li, x: n.x, dy: li === 0 ? -(arr.length - 1) * 11 : 22 }, line))),
+    ]);
+    const mkNode = (n) => {
+      const dx = n.x - cx, dy = n.y - cy;
+      const len = Math.hypot(dx, dy) || 1;
+      const ux = dx / len, uy = dy / len;
+      const lx = n.x + ux * (n.r + 13);
+      const ly = n.y + uy * (n.r + 13);
+      const anchor = ux > 0.25 ? 'start' : ux < -0.25 ? 'end' : 'middle';
+      const lines = wrap(n.label, 16);
+      const lineH = 17;
+      const y0 = ly - (lines.length - 1) * lineH / 2;
+      return h('g', { key: n.id, 'data-node': n.id, 'data-bx': n.x, 'data-by': n.y, style: { cursor: 'pointer', willChange: 'transform' } }, [
+        h('circle', { key: 'halo', 'data-halo': '1', cx: n.x, cy: n.y, r: n.r + 8, fill: n.color, opacity: 0, filter: 'url(#netsoft)', style: { transition: 'opacity .3s', pointerEvents: 'none' } }),
+        h('circle', { key: 'c', 'data-circle': '1', cx: n.x, cy: n.y, r: n.r, fill: NAVY, stroke: n.color, strokeWidth: 2.5, style: { transition: 'transform .35s cubic-bezier(.2,.7,.2,1)', transformOrigin: n.x + 'px ' + n.y + 'px' } }),
+        h('circle', { key: 'dot', cx: n.x, cy: n.y, r: 3.5, fill: n.color, style: { pointerEvents: 'none' } }),
+        h('text', { key: 't', 'data-label': '1', x: lx, y: y0, textAnchor: anchor, dominantBaseline: 'middle', fill: '#e9e6de', style: { fontFamily: "'Space Grotesk',sans-serif", fontWeight: 500, fontSize: 14, letterSpacing: '-0.01em', pointerEvents: 'none', transition: 'fill .25s' } },
+          lines.map((line, li) => h('tspan', { key: li, x: lx, dy: li === 0 ? 0 : lineH }, line))),
+      ]);
+    };
+    const nodeEls = [mkHub(hub), ...topics.map(t => mkNode(t))];
+    const ringEls = [140, 230, 320].map((rr, i) => h('ellipse', { key: 'r' + i, cx: cx, cy: cy, rx: rr, ry: rr * 0.72, fill: 'none', stroke: 'rgba(245,243,238,0.055)', strokeWidth: 1 }));
+    const defs = h('defs', null, h('filter', { id: 'netsoft', x: '-60%', y: '-60%', width: '220%', height: '220%' }, h('feGaussianBlur', { in: 'SourceGraphic', stdDeviation: 7 })));
+    const networkEl = h('div', { style: { width: '100%' } },
+      h('svg', { viewBox: '0 0 ' + W + ' ' + H, 'data-net-svg': '1', style: { width: '100%', height: 'auto', display: 'block', overflow: 'visible' } },
+        [defs, h('g', { key: 'rings' }, ringEls), h('g', { key: 'edges', 'data-edges': '1' }, edgeEls), h('g', { key: 'nodes', 'data-nodes': '1' }, nodeEls)]));
+
+    // keyword cloud sizing
+    const kw = (label, n, color) => ({ label, n, color, size: Math.round(16 + (n - 12) / (57 - 12) * (46 - 16)) });
+    const kRed = '#5aa6e6', kGold = '#b5121b', kBlue = '#8aa0bf', kGrey = '#9b978d';
+
+    return {
+      network: networkEl,
+      _adj: adj,
+      kpis: [
+        { n: 533, suffix: '', comma: '', label: 'Indexed works', note: 'since 1997' },
+        { n: 11785, suffix: '', comma: '1', label: 'Citations', note: 'OpenAlex · 17k+ on Scholar' },
+        { n: 55, suffix: '', comma: '', label: 'h-index', note: '69 on Google Scholar' },
+        { n: 550, suffix: '+', comma: '', label: 'Distinct co-authors' },
+      ],
+      eras: [
+        { place: 'MIT & industry', years: '1997 – 2008', works: 45, rate: 4, pct: 12.5, color: blue },
+        { place: 'NTUA faculty', years: '2009 – 2015', works: 127, rate: 18, pct: 35.2, color: gold },
+        { place: 'TUM chair', years: '2016 – 2026', works: 361, rate: 33, pct: 100, color: red },
+      ],
+      databases: [
+        { label: 'Works indexed', rows: [
+          { src: 'OpenAlex', n: 533, suffix: '', comma: '', pct: 100, color: red },
+          { src: 'Scopus', n: 380, suffix: '+', comma: '', pct: 71.3, color: blue },
+          { src: 'Google Scholar', n: 500, suffix: '+', comma: '', pct: 93.8, color: gold },
+        ]},
+        { label: 'Citations', rows: [
+          { src: 'OpenAlex', n: 11785, suffix: '', comma: '1', pct: 69.3, color: red },
+          { src: 'Scopus', n: 10000, suffix: '+', comma: '1', pct: 58.8, color: blue },
+          { src: 'Google Scholar', n: 17000, suffix: '+', comma: '1', pct: 100, color: gold },
+        ]},
+        { label: 'h-index', rows: [
+          { src: 'OpenAlex', n: 55, suffix: '', comma: '', pct: 79.7, color: red },
+          { src: 'Scopus', n: 53, suffix: '', comma: '', pct: 76.8, color: blue },
+          { src: 'Google Scholar', n: 69, suffix: '', comma: '', pct: 100, color: gold },
+        ]},
+      ],
+      funnel: [
+        { label: 'All indexed works', n: 533, pct: 100, color: '#16161d' },
+        { label: 'Cited at least once', n: 407, pct: 76.4, color: red },
+        { label: 'Cited 10+ times', n: 224, pct: 42, color: gold },
+        { label: 'Cited 100+ times', n: 24, pct: 4.5, color: green },
+      ],
+      topCited: [
+        { rank: '01', title: 'Shared autonomous vehicle services: a comprehensive review', year: 2020, cites: 700, pct: 100, color: red },
+        { rank: '02', title: 'Public transit user satisfaction: variability and policy implications', year: 2008, cites: 526, pct: 75.1, color: gold },
+        { rank: '03', title: 'Factors affecting the adoption and use of urban air mobility', year: 2019, cites: 345, pct: 49.3, color: red },
+        { rank: '04', title: 'Factors affecting the adoption of vehicle sharing systems by young drivers', year: 2013, cites: 326, pct: 46.6, color: gold },
+        { rank: '05', title: 'Explaining the road accident risk: weather effects', year: 2013, cites: 293, pct: 41.9, color: gold },
+        { rank: '06', title: 'Preferences for transport modes in an urban air mobility environment: Munich', year: 2019, cites: 225, pct: 32.1, color: red },
+        { rank: '07', title: 'How transport infrastructure and policies affect house prices: Athens', year: 2013, cites: 212, pct: 30.3, color: gold },
+        { rank: '08', title: 'Nonlinear Kalman filtering for on-line calibration of dynamic traffic assignment', year: 2007, cites: 192, pct: 27.4, color: blue },
+        { rank: '09', title: 'Factors affecting modal choice in urban mobility', year: 2012, cites: 162, pct: 23.1, color: gold },
+        { rank: '10', title: 'Urban air mobility complementing public transport: an upper Bavaria example', year: 2020, cites: 157, pct: 22.4, color: red },
+      ],
+      keywords: [
+        kw('road safety', 57, kGold),
+        kw('dynamic traffic assignment', 42, kRed),
+        kw('travel behavior', 35, kGold),
+        kw('mode choice', 30, kGold),
+        kw('microscopic simulation', 25, kRed),
+        kw('driver behavior', 24, kGold),
+        kw('online calibration', 22, kBlue),
+        kw('urban air mobility', 21, kRed),
+        kw('car sharing', 21, kRed),
+        kw('shared mobility', 19, kRed),
+        kw('stated preference', 19, kBlue),
+        kw('autonomous vehicles', 18, kRed),
+        kw('bike sharing', 18, kRed),
+        kw('extended Kalman filter', 12, kBlue),
+        kw('SPSA', 12, kBlue),
+      ],
+      sdgs: [
+        { code: 'SDG 11', label: 'Sustainable cities & communities', n: 149, share: 65.9, color: '#3070B3' },
+        { code: 'SDG 9', label: 'Industry, innovation & infrastructure', n: 43, share: 19.0, color: '#3a3a44' },
+        { code: 'SDG 3', label: 'Good health & well-being · road safety', n: 21, share: 9.3, color: '#6b6861' },
+        { code: 'SDG 13', label: 'Climate action', n: 13, share: 5.8, color: '#a6a299' },
+      ],
+      coauthors: [
+        { name: 'George Yannis', n: 54, pct: 100, rel: 'NTUA colleague · road safety', color: gold },
+        { name: 'Dimitrios Efthymiou', n: 41, pct: 75.9, rel: 'First PhD graduate, NTUA · now Senior PM, Amazon', color: gold },
+        { name: 'Moshe Ben-Akiva', n: 40, pct: 74.1, rel: 'MS & PhD advisor · MIT', color: blue },
+        { name: 'Haris Koutsopoulos', n: 36, pct: 66.7, rel: 'PhD co-advisor · Northeastern', color: blue },
+        { name: 'Christelle Al Haddad', n: 35, pct: 64.8, rel: 'TUM doctorate, UAM · now Transport Specialist, World Bank', color: red },
+        { name: 'Emmanouil Chaniotakis', n: 34, pct: 63, rel: 'Former TUM group member · now Associate Professor, UCL', color: red },
+        { name: 'Mohamed Abouelela', n: 31, pct: 57.4, rel: 'TUM doctorate, shared mobility · now postdoc at the chair', color: red },
+        { name: 'S. Narayanan', n: 26, pct: 48.1, rel: 'TUM doctorate, shared AVs · now postdoc at the chair', color: red },
+        { name: 'Eleonora Papadimitriou', n: 24, pct: 44.4, rel: 'Road-safety collaborator · TU Delft', color: green },
+        { name: 'Qing-Long Lu', n: 22, pct: 40.7, rel: 'TUM doctorate, traffic prediction · now Associate Professor, Sun Yat-sen', color: red },
+      ],
+      geography: [
+        { country: 'Germany', n: 308, pct: 100, color: red },
+        { country: 'Greece', n: 163, pct: 52.9, color: gold },
+        { country: 'United States', n: 74, pct: 24, color: blue },
+        { country: 'United Kingdom', n: 50, pct: 16.2, color: green },
+        { country: 'China', n: 29, pct: 9.4, color: '#16161d' },
+        { country: 'Denmark', n: 29, pct: 9.4, color: '#16161d' },
+        { country: 'Netherlands', n: 25, pct: 8.1, color: '#16161d' },
+        { country: 'Belgium', n: 23, pct: 7.5, color: '#16161d' },
+        { country: 'Switzerland', n: 23, pct: 7.5, color: '#16161d' },
+        { country: 'Sweden', n: 20, pct: 6.5, color: '#16161d' },
+      ],
+      pubTypes: [
+        { label: 'Journal articles', n: 362, color: red },
+        { label: 'Conference papers', n: 67, color: blue },
+        { label: 'Preprints', n: 38, color: gold },
+        { label: 'Book chapters', n: 32, color: green },
+        { label: 'Editorials', n: 8, color: '#c9c6bd' },
+        { label: 'Books', n: 2, color: '#6b6861' },
+      ],
+      pd0: pdSeg(362, red, 0),
+      pd1: pdSeg(67, blue, 362),
+      pd2: pdSeg(38, gold, 429),
+      pd3: pdSeg(32, green, 467),
+      pd4: pdSeg(8, '#c9c6bd', 499),
+      consortia: [
+        { name: 'i-DREAMS', budget: '€6.3M', pct: 100 },
+        { name: 'Drive2theFuture', budget: '€4.0M', pct: 63 },
+        { name: 'MOMENTUM', budget: '€2.9M', pct: 46 },
+      ],
+      euProjects: ['NOESIS', 'HumAV', 'i-DREAMS', 'MOMENTUM', 'Drive2theFuture', 'PHOEBE', 'MI-TRAP', 'AUTOSUP', 'CulturalRoad', 'SCUDO'],
+      nationalProjects: ['D-Vanpool', 'TraMPA', 'VOTAVI', 'SEE-FAr', 'i-TRAUM', 'PANAMERA'],
+      fundStats: [
+        { v: '€4M+', label: 'Third-party funding, last 5 years', color: red },
+        { v: '33', label: 'Funded projects at TUM since 2017', color: '#16161d' },
+        { v: '€3.0M', label: 'TUM share of active funding', color: '#16161d' },
+      ],
+      editorial: [
+        { k: 'Editor-in-Chief', v: 'Co-EiC, Transportation Research Part A — with Anming Zhang, since 2025' },
+        { k: 'Editorial boards', v: 'TR Part C · Accident Analysis & Prevention · Communications in Transportation Research' },
+        { k: 'Past roles', v: 'Deputy EiC, IET ITS · AE, Transportation Letters · Editor, EURO J. Transportation & Logistics' },
+        { k: 'Peer review', v: '100+ scientific committees served · reviewer for 50+ journals' },
+      ],
+      supervision: [
+        { k: 'Doctorates', v: '15+ completed · 20+ in progress · 100+ theses supervised' },
+        { k: 'Programme directorships', v: 'MS Transportation Systems (TUM) · MS Rail Transport & Logistics (TUM Asia, Singapore)' },
+        { k: 'Conferences organised', v: 'hEART 2018 · mobil.TUM 2019 · IEEE MT-ITS 2021 · hEART 2025 · ISTTT26 2026' },
+        { k: 'Alumni placements', v: 'Ten now hold faculty posts — UCL, Imperial, DTU, Twente, USC, Sun Yat-sen & more; others at the World Bank, Amazon & Traton' },
+      ],
+    };
+  }
+
+  componentWillUnmount() {
+    if (this._netRaf) cancelAnimationFrame(this._netRaf);
+  }
+
+  componentDidMount() {
+    const root = this.el || document;
+    const motion = this.props.motion ?? true;
+    const accent = this.props.accent;
+
+    if (accent) {
+      root.querySelectorAll('[data-accent-fg]').forEach(e => { e.style.color = accent; });
+    }
+
+    // reveals
+    const reveals = Array.from(root.querySelectorAll('[data-reveal]'));
+    reveals.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+    });
+    const rio = new IntersectionObserver((ents) => {
+      ents.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; rio.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    reveals.forEach(el => rio.observe(el));
+
+    // ===== research network — gentle float + interactive highlight / pin =====
+    const svg = root.querySelector('[data-net-svg]');
+    if (svg) {
+      const adj = this.renderVals()._adj || {};
+      const nodeGs = Array.from(svg.querySelectorAll('[data-node]'));
+      const edgeLs = Array.from(svg.querySelectorAll('[data-edge]'));
+      const netMotion = motion;
+      const accentC = () => this.props.accent || '#3070B3';
+      const M = {};
+      nodeGs.forEach(g => {
+        const id = g.getAttribute('data-node');
+        M[id] = { g, bx: +g.getAttribute('data-bx'), by: +g.getAttribute('data-by'),
+          phase: Math.random() * Math.PI * 2, speed: 0.4 + Math.random() * 0.35,
+          amp: id === 'hub' ? 2.5 : 5 + Math.random() * 4, ox: 0, oy: 0,
+          circle: g.querySelector('[data-circle]'), halo: g.querySelector('[data-halo]'), label: g.querySelector('[data-label]') };
+      });
+      const setEdge = (e) => {
+        const [a, b] = e.getAttribute('data-edge').split('|');
+        const p = M[a], q = M[b];
+        e.setAttribute('x1', (p.bx + p.ox).toFixed(1)); e.setAttribute('y1', (p.by + p.oy).toFixed(1));
+        e.setAttribute('x2', (q.bx + q.ox).toFixed(1)); e.setAttribute('y2', (q.by + q.oy).toFixed(1));
+      };
+      let hoverId = null, pinId = null, dash = 0;
+      const apply = () => {
+        const id = hoverId || pinId;
+        if (!id) {
+          nodeGs.forEach(g => {
+            const m = M[g.getAttribute('data-node')];
+            g.style.opacity = '1';
+            if (m.circle) m.circle.style.transform = 'scale(1)';
+            if (m.halo && g.getAttribute('data-node') !== 'hub') m.halo.style.opacity = '0';
+            if (m.label) m.label.style.fill = '#e9e6de';
+          });
+          edgeLs.forEach(e => { e.style.stroke = 'rgba(245,243,238,0.16)'; e.style.strokeWidth = '1.4'; e.style.strokeDasharray = 'none'; });
+          return;
+        }
+        const near = adj[id] || new Set();
+        nodeGs.forEach(g => {
+          const mid = g.getAttribute('data-node'), m = M[mid];
+          const on = mid === id || near.has(mid);
+          g.style.opacity = on ? '1' : '0.18';
+          if (m.circle) m.circle.style.transform = mid === id ? 'scale(1.16)' : 'scale(1)';
+          if (m.halo && mid !== 'hub') m.halo.style.opacity = mid === id ? '0.55' : '0';
+          if (m.label) m.label.style.fill = mid === id ? '#f5f3ee' : '#e9e6de';
+        });
+        edgeLs.forEach(e => {
+          const [a, b] = e.getAttribute('data-edge').split('|');
+          const on = a === id || b === id;
+          e.style.stroke = on ? accentC() : 'rgba(245,243,238,0.05)';
+          e.style.strokeWidth = on ? '2.6' : '1';
+          e.style.strokeDasharray = on ? '7 7' : 'none';
+        });
+      };
+      nodeGs.forEach(g => {
+        const id = g.getAttribute('data-node');
+        g.addEventListener('mouseenter', () => { hoverId = id; apply(); });
+        g.addEventListener('mouseleave', () => { hoverId = null; apply(); });
+        g.addEventListener('click', (ev) => { ev.stopPropagation(); pinId = pinId === id ? null : id; apply(); });
+      });
+      svg.addEventListener('click', () => { pinId = null; hoverId = null; apply(); });
+      const t0 = performance.now();
+      const frame = (now) => {
+        const t = (now - t0) / 1000;
+        for (const id in M) {
+          const m = M[id];
+          m.ox = Math.cos(t * m.speed + m.phase) * m.amp;
+          m.oy = Math.sin(t * m.speed * 0.85 + m.phase) * m.amp;
+          m.g.style.transform = 'translate(' + m.ox.toFixed(2) + 'px,' + m.oy.toFixed(2) + 'px)';
+        }
+        edgeLs.forEach(setEdge);
+        const hid = hoverId || pinId;
+        if (hid) { dash -= 0.7; edgeLs.forEach(e => { const [a, b] = e.getAttribute('data-edge').split('|'); if (a === hid || b === hid) e.style.strokeDashoffset = dash.toFixed(1); }); }
+        this._netRaf = requestAnimationFrame(frame);
+      };
+      if (netMotion) this._netRaf = requestAnimationFrame(frame);
+      else edgeLs.forEach(setEdge);
+      apply();
+    }
+
+    // count-up (with optional comma formatting)
+    const fmt = (v, comma) => comma ? v.toLocaleString('en-US') : String(v);
+    const countTo = (el) => {
+      const target = parseFloat(el.getAttribute('data-count')) || 0;
+      const suffix = el.getAttribute('data-suffix') || '';
+      const comma = !!el.getAttribute('data-comma');
+      if (!motion) { el.textContent = fmt(target, comma) + suffix; return; }
+      const dur = 1300, start = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / dur);
+        const v = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        el.textContent = fmt(v, comma) + suffix;
+        if (p < 1) requestAnimationFrame(tick); else el.textContent = fmt(target, comma) + suffix;
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const anim = new IntersectionObserver((ents) => {
+      ents.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        anim.unobserve(el);
+        if (el.hasAttribute('data-count')) countTo(el);
+        if (el.hasAttribute('data-bar-fill')) { if (!motion) el.style.transition = 'none'; el.style.width = el.getAttribute('data-pct') + '%'; }
+        if (el.hasAttribute('data-barv')) { if (!motion) el.style.transition = 'none'; el.style.height = el.getAttribute('data-pct') + '%'; }
+      });
+    }, { threshold: 0.3 });
+    root.querySelectorAll('[data-count],[data-bar-fill],[data-barv]').forEach(el => anim.observe(el));
+  }
+}
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@ This folder is your research portfolio website, plus everything Claude needs to 
 
 ## 1. Put the folder somewhere permanent
 
-Move this folder out of Downloads to a place it will stay, for example `Documents/antoniou-portfolio`. Claude always works on this same folder, so it should not move again.
+Move this folder out of Downloads to a place it will stay, for example `Documents/portfolio`. Claude always works on this same folder, so it should not move again.
 
 ## 2. Open it in Claude
 
@@ -19,7 +19,7 @@ Claude reads `CLAUDE.md` and the skills in `.claude/skills/` by itself. You do n
 
 > Onboard me: set up this portfolio from scratch.
 
-Claude will check what already exists, then walk you through, one step at a time: turning the folder into a git repository, creating the GitHub repository, switching on GitHub Pages, pointing your domain at it (you type a few records at your domain registrar; Claude tells you exactly which), and a first test change so you see the whole loop work. Budget 20 minutes. Two moments need you at a browser: creating the GitHub repository and the DNS records; Claude cannot log in for you.
+Claude will check what already exists, then walk you through, one step at a time: turning the folder into a git repository, connecting it to your GitHub repository (github.com/cantoniou/portfolio), switching on GitHub Pages, pointing your domain at it (you type a few records at your domain registrar; Claude tells you exactly which), and a first test change so you see the whole loop work. Budget 20 minutes. One moment needs you at a browser: the DNS records (and a GitHub login the first time you push); Claude cannot log in for you.
 
 ## From then on
 
@@ -27,6 +27,8 @@ Open the folder in Claude and say what happened:
 
 - "Add a new doctoral researcher, M.Sc. Anna Beispiel, started in October."
 - "AgiMo was extended to 2030."
+- "My new Scopus numbers: 395 publications, h-index 54."
+- "Put this photo in the hero."
 - "Refresh the publication numbers."
 - "Publish."
 
