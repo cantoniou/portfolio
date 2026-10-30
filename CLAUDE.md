@@ -9,6 +9,7 @@ This repository is the public research portfolio of Prof. Dr. Constantinos Anton
 | `index.html` | Landing page (hero, career, honours, "By the numbers", roles, team) | text and numbers: `scripts/site_text.py`; layout: re-export from `design/` |
 | `projects.html` | Funded projects page with funder logos | same |
 | `research.html` | "Research in Numbers" data portrait (bibliometrics, co-author map) | same |
+| `impressum.html` | Legal notice (German binding, English courtesy), linked from every footer. Plain HTML | by hand; keep address/phone in step with `data/profile.json` |
 | `anniversary/index.html` | The ten-year anniversary presentation, 2026 snapshot (self-contained) | rarely; by hand |
 | `help/index.html` | The professor's own task guide (sentences to copy) | keep in step with the skills |
 | `data/*.json` | **The fact sheet**: profile, metrics, projects, people, timeline. Every number on the site must agree with it | hand; `metrics.openalex` by script only |

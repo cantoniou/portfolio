@@ -104,6 +104,13 @@ if res:
 for h in profile["honours"][:3]:
     check(h["what"].split(",")[0] in idx, f"honour '{h['what']}' appears on index.html")
 
+imp = open(os.path.join(ROOT, "impressum.html"), encoding="utf-8").read() if os.path.exists(os.path.join(ROOT, "impressum.html")) else ""
+if imp:
+    for key in ("address", "email", "phone"):
+        check(profile[key].split(",")[0] in imp, f"impressum.html contains profile {key}")
+    for page in ("index.html", "projects.html", "research.html"):
+        check('impressum.html' in open(os.path.join(ROOT, page), encoding="utf-8").read(), f"{page} links to the Impressum")
+
 oks = [l for l in notes if l.startswith("ok")]
 for line in [l for l in notes if not l.startswith("ok")] + problems:
     print(line)
