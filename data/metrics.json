@@ -19,18 +19,6 @@
     "h_index": 69,
     "citations": "17k+"
   },
-  "cv": {
-    "_comment": "Figures printed on the CVs (October 2026 one-pager). The CV does not name the database; Costa is choosing per figure in the discrepancy report (rows 1-7). Do not change without his OK. CV texts refer to these as {metrics.cv.<field>}.",
-    "as_of": "2026-10-15",
-    "source": "not stated (probably Google Scholar)",
-    "publications": ">600",
-    "journal_articles": ">270",
-    "conference_papers": "300",
-    "books": 3,
-    "book_chapters": 30,
-    "h_index": 69,
-    "citations": ">17,700"
-  },
   "funding": {
     "_comment": "Shown on projects.html, research.html and every CV.",
     "third_party_last_5_years": ">€4M"
