@@ -293,16 +293,10 @@
         "id": "agimo"
       },
       {
-        "name": "GASTRA",
-        "status": "active",
-        "funder": "DFG",
-        "not_in_projects_json": true
+        "id": "gastra"
       },
       {
-        "name": "TransfuseAccess",
-        "status": "active",
-        "funder": "DFG",
-        "not_in_projects_json": true
+        "id": "transfuseaccess"
       },
       {
         "id": "i-traum"

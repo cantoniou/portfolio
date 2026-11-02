@@ -113,6 +113,13 @@ if imp:
     for page in ("index.html", "projects.html", "research.html"):
         check('impressum.html' in open(os.path.join(ROOT, page), encoding="utf-8").read(), f"{page} links to the Impressum")
 
+# Project count shown on the pages vs the fact sheet
+count = sum(v["ongoing"] + v["finished"] for v in ov.values()) if ov else len(P)
+for page in ("projects.html", "research.html"):
+    txt = page_text(page)
+    if txt:
+        check(f"v: '{count}', label: 'Funded projects at TUM since 2017'" in txt, f"{page} shows {count} funded projects (projects.json)")
+
 # CV data (data/cv.json) vs the fact sheet
 cv_path = os.path.join(ROOT, "data", "cv.json")
 if os.path.exists(cv_path):
