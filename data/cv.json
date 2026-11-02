@@ -256,9 +256,9 @@
       "status": "past"
     }
   ],
-  "projects_heading": "Funded projects",
+  "projects_heading": "Funded projects as PI",
   "projects_as_pi": {
-    "_comment": "Projects listed on the CV. Roles (PI, Partner, ...) come from projects.json; the website says PI only where that is the role, so the CV heading is just \"Funded projects\". 'id' = entry in data/projects.json (name, status and years come from there). Entries with 'not_in_projects_json' are on the CV only; their status awaits Costa (report rows 18-19).",
+    "_comment": "Projects listed on the CV. Costa is PI (principal investigator for the TUM share, one of one or more PIs) in every project listed, so the heading says \"as PI\". The role field in projects.json is TUM's role in the consortium (Partner, Host, ...), not his PI status; do not print it as his role. 'id' = entry in data/projects.json (name, status and years come from there). Entries with 'not_in_projects_json' are on the CV only; their status awaits Costa (report rows 18-19).",
     "eu": [
       {
         "id": "scudo"

@@ -1,5 +1,5 @@
 {
-  "_comment": "One entry per funded project. 'funder_group' must be one of: EU, DFG, German ministries, TUM IGSSE, DAAD, Other. 'status' is computed from 'end' by the site; set 'status' only to override. Budgets are TUM share in EUR unless 'budget_scope' says 'consortium'.",
+  "_comment": "Costa is PI (for the TUM share; one of one or more PIs) in every project listed here. The per-project 'role' field is TUM's role in the project (Partner, Host, ...), not his PI status. One entry per funded project. 'funder_group' must be one of: EU, DFG, German ministries, TUM IGSSE, DAAD, Other. 'status' is computed from 'end' by the site; set 'status' only to override. Budgets are TUM share in EUR unless 'budget_scope' says 'consortium'.",
   "as_of": "2026-11-02",
   "active_funding_tum_share_eur": {"DFG": 1500000, "Horizon Europe": 1200000, "TUM IGSSE": 345000},
   "projects": [
