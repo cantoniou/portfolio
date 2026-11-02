@@ -486,10 +486,10 @@
   "honours": {
     "short": [
       "Humboldt Henriette Herz Scout (2025–)",
-      "Francqui Chair, U. of Hasselt (2022–23)",
-      "TRB Best Paper Award (2018)",
+      "Francqui Chair, U. of Hasselt (2023)",
+      "TRB Best Simulation Application Paper Award (2018)",
       "IEEE ITS Outstanding Application Award (2011)",
-      "Marie Curie Fellow (2006–08)"
+      "Marie Curie Fellow (2006)"
     ],
     "full": [
       {
@@ -497,7 +497,7 @@
         "text": "Henriette Herz Scout, Alexander von Humboldt Foundation"
       },
       {
-        "year": "2022–23",
+        "year": "2023",
         "text": "Francqui Chair, Francqui Foundation, at the University of Hasselt"
       },
       {
@@ -510,7 +510,7 @@
       },
       {
         "year": "2018",
-        "text": "Best Paper Award, TRB Simulation Joint Subcommittee, for Prakash et al. (2018), Improving scalability of generic online calibration of dynamic traffic assignment systems"
+        "text": "Best Simulation Application Paper Award, TRB Simulation Joint Subcommittee, for Prakash et al. (2018), Improving scalability of generic online calibration of dynamic traffic assignment systems"
       },
       {
         "year": "2017",
@@ -537,8 +537,8 @@
         "text": "IEEE ITS Outstanding Application Award (DynaMIT DTA model)"
       },
       {
-        "year": "2006–08",
-        "text": "Marie Curie Fellow (International Reintegration Grant, EU)"
+        "year": "2006",
+        "text": "Marie Curie Fellowship (International Reintegration Grant, EU)"
       },
       {
         "year": "2005–06",
@@ -563,7 +563,7 @@
   ],
   "service": {
     "onepager": [
-      "Co-Editor-in-Chief, *Transportation Research Part A* (2025–); editorial boards: Transportation Research Part C, Accident Analysis & Prevention, Communications in Transportation Research, J. Intelligent Transportation Systems, Smart Cities",
+      "Co-Editor-in-Chief, *Transportation Research Part A* (2025–); editorial boards: Transportation Research Part C, Accident Analysis & Prevention, Communications in Transportation Research",
       "Steering Committee, hEART (European Association for Research in Transportation); FGSV Committee 3.10",
       "Chairman, Hellenic Institute of Transportation Engineers (2014–16); President, MIT Club of Greece (2015–17)"
     ],
@@ -574,7 +574,7 @@
       },
       {
         "when": "",
-        "text": "Editorial board member: *Transportation Research Part C*, *Accident Analysis & Prevention*, *Communications in Transportation Research*, *Journal of Intelligent Transportation Systems*, *Smart Cities*, *Data Science for Transportation*"
+        "text": "Editorial board member: *Transportation Research Part C*, *Accident Analysis & Prevention*, *Communications in Transportation Research*"
       },
       {
         "when": "past",
