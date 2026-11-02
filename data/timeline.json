@@ -22,6 +22,7 @@
   ],
   "conferences_organised": [
     {"year": 2018, "name": "hEART 2018", "where": "Athens", "with": "NTUA"},
+    {"year": 2018, "name": "mobil.TUM 2018", "where": "Munich", "role": "Co-organiser"},
     {"year": 2019, "name": "mobil.TUM 2019", "where": "Munich"},
     {"year": 2021, "name": "IEEE MT-ITS 2021", "where": "online"},
     {"year": 2025, "name": "hEART 2025", "where": "Munich", "with": "Chair of Traffic Engineering and Control"},
