@@ -251,8 +251,9 @@
       "where": "TUM Asia, Singapore"
     }
   ],
+  "projects_heading": "Funded projects",
   "projects_as_pi": {
-    "_comment": "Projects listed on the CV as PI. 'id' = entry in data/projects.json (name, status and years come from there). Entries with 'not_in_projects_json' are on the CV only; their status awaits Costa (report rows 18-19).",
+    "_comment": "Projects listed on the CV. Roles (PI, Partner, ...) come from projects.json; the website says PI only where that is the role, so the CV heading is just \"Funded projects\". 'id' = entry in data/projects.json (name, status and years come from there). Entries with 'not_in_projects_json' are on the CV only; their status awaits Costa (report rows 18-19).",
     "eu": [
       {
         "id": "scudo"
