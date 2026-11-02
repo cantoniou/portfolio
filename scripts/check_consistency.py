@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check that the numbers in data/*.json agree with each other.
+"""Check that the numbers in data/*.json agree with each other, with the site pages and with the CV data (data/cv.json).
 
 Usage:  python3 scripts/check_consistency.py
 Exit code 0 = all good, 1 = something to fix. Run it before every deploy.
@@ -110,6 +110,41 @@ if imp:
         check(profile[key].split(",")[0] in imp, f"impressum.html contains profile {key}")
     for page in ("index.html", "projects.html", "research.html"):
         check('impressum.html' in open(os.path.join(ROOT, page), encoding="utf-8").read(), f"{page} links to the Impressum")
+
+# CV data (data/cv.json) vs the fact sheet
+cv_path = os.path.join(ROOT, "data", "cv.json")
+if os.path.exists(cv_path):
+    sys.path.insert(0, os.path.join(ROOT, "scripts"))
+    import cv_tokens
+    cv = D("cv.json")
+    for path, _ in cv_tokens.tokens(cv):
+        try:
+            cv_tokens.lookup(metrics, path); ok = True
+        except (KeyError, TypeError):
+            ok = False
+        check(ok, f"cv.json token {{metrics.{path}}} exists in metrics.json")
+    rendered = json.dumps(cv_tokens.render(cv, metrics), ensure_ascii=False)
+    check("{metrics." not in rendered, "cv.json: every number token renders")
+    per, ids_ = cv["person"], cv["person"]["ids"]
+    check(per["email"] == profile["email"], f"cv.json email {per['email']} vs profile.json {profile['email']}")
+    for k, pk in (("orcid", "orcid"), ("scopus", "scopus_author_id"), ("scholar", "google_scholar_id")):
+        check(str(ids_[k]) == str(profile[pk]), f"cv.json {k} {ids_[k]} vs profile.json {profile[pk]}")
+    for k in ("nationality", "date_of_birth", "home_address", "phone_private"):
+        check(k not in per, f"cv.json has no private field '{k}' (the repo is public)")
+    pids = set(ids)
+    cv_only = []
+    for grp, items in cv["projects_as_pi"].items():
+        if grp.startswith("_"):
+            continue
+        for it in items:
+            for i in ([it["id"]] if "id" in it else it.get("ids", [])):
+                check(i in pids, f"cv.json project id '{i}' exists in projects.json")
+            if it.get("not_in_projects_json"):
+                cv_only.append(it["name"])
+    if cv_only:
+        notes.append("note on the CV but not in projects.json (awaiting Costa): " + ", ".join(cv_only))
+    age = (datetime.date.today() - datetime.date.fromisoformat(cv["as_of"])).days
+    check(age < 200, f"cv.json as_of {cv['as_of']} is {age} days old")
 
 oks = [l for l in notes if l.startswith("ok")]
 for line in [l for l in notes if not l.startswith("ok")] + problems:

@@ -1,6 +1,6 @@
 {
   "_comment": "Headline numbers. 'scopus' and 'scholar' are typed in by hand from the profile pages. 'openalex' is written by scripts/refresh_openalex.py; do not edit it by hand. Pages show Scopus for career totals and OpenAlex for the per-year chart, and say so.",
-  "as_of": "2026-10-03",
+  "as_of": "2026-11-02",
   "scopus": {
     "as_of": "2026-09-30",
     "publications": "380+",
@@ -18,6 +18,22 @@
     "as_of": "2026-09-30",
     "h_index": 69,
     "citations": "17k+"
+  },
+  "cv": {
+    "_comment": "Figures printed on the CVs (October 2026 one-pager). The CV does not name the database; Costa is choosing per figure in the discrepancy report (rows 1-7). Do not change without his OK. CV texts refer to these as {metrics.cv.<field>}.",
+    "as_of": "2026-10-15",
+    "source": "not stated (probably Google Scholar)",
+    "publications": ">600",
+    "journal_articles": ">270",
+    "conference_papers": "300",
+    "books": 3,
+    "book_chapters": 30,
+    "h_index": 69,
+    "citations": ">17,700"
+  },
+  "funding": {
+    "_comment": "Shown on projects.html, research.html and every CV.",
+    "third_party_last_5_years": ">€4M"
   },
   "openalex": {
     "as_of": "2026-10-03",
@@ -88,6 +104,7 @@
     "alumni": 25,
     "alumni_in_faculty_positions": 10,
     "doctorates_completed": "20+",
+    "doctorates_in_progress": "20+",
     "theses_supervised": "100+",
     "visiting_professors": 8,
     "visiting_phd_candidates": 19,

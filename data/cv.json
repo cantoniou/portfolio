@@ -1,0 +1,657 @@
+{
+  "_comment": "CV content: the single source for every CV version (one-pager, full EU CV, later funder and topic CVs). Headline numbers are NOT stored here: texts use tokens like {metrics.cv.publications} (a path into data/metrics.json); add '|words' to print '>600' as 'more than 600'. Projects refer to data/projects.json by id; status and years come from there. Contact ids must match data/profile.json. Private details (date of birth, home address, phone, nationality) never go in this public file. Run scripts/check_consistency.py after every change.",
+  "as_of": "2026-11-02",
+  "metrics_as_of_label": "October 2026",
+  "person": {
+    "title": "Prof. Dr.",
+    "name": "Constantinos Antoniou",
+    "short_name": "Costas Antoniou",
+    "position": "Full Professor, Chair of Transportation Systems Engineering",
+    "position_long": "Full Professor, Head of the Chair of Transportation Systems Engineering",
+    "affiliation": [
+      "Chair of Transportation Systems Engineering",
+      "TUM School of Engineering and Design",
+      "Technical University of Munich (TUM)"
+    ],
+    "work_address": "Arcisstrasse 21, 80333 Munich, Germany",
+    "email": "c.antoniou@tum.de",
+    "links": [
+      {
+        "label": "mos.ed.tum.de/vvs",
+        "url": "https://www.mos.ed.tum.de/vvs/"
+      },
+      {
+        "label": "antoniou.org",
+        "url": "https://antoniou.org"
+      }
+    ],
+    "ids": {
+      "orcid": "0000-0003-0203-9542",
+      "scholar": "0rDCk00AAAAJ",
+      "scopus": "7004031914"
+    },
+    "photo": "assets/CV_photo_circle.png"
+  },
+  "metrics_box": [
+    {
+      "value": "{metrics.cv.publications}",
+      "label": "publications"
+    },
+    {
+      "value": "{metrics.cv.h_index}",
+      "label": "h-index"
+    },
+    {
+      "value": "{metrics.cv.citations}",
+      "label": "citations"
+    },
+    {
+      "value": "{metrics.funding.third_party_last_5_years}",
+      "label": "third-party funding, last 5 years"
+    },
+    {
+      "value": "{metrics.people.doctorates_completed}",
+      "label": "PhDs supervised to completion"
+    }
+  ],
+  "publication_breakdown": [
+    {
+      "value": "{metrics.cv.publications}",
+      "label": "scientific publications"
+    },
+    {
+      "value": "{metrics.cv.journal_articles}",
+      "label": "journal papers"
+    },
+    {
+      "value": "{metrics.cv.conference_papers}",
+      "label": "conference papers"
+    },
+    {
+      "value": "{metrics.cv.books}",
+      "label": "books"
+    },
+    {
+      "value": "{metrics.cv.book_chapters}",
+      "label": "book chapters"
+    }
+  ],
+  "profile_short": "Full Professor at TUM with a PhD from MIT. Research on evidence-based transport policy, modelling and optimisation of transportation systems, data analytics and statistical learning, and human factors for future mobility. Principal investigator of numerous EU, DFG and national projects. Co-Editor-in-Chief of *Transportation Research Part A*.",
+  "profile_long": "Constantinos Antoniou is a Full Professor and Head of the Chair of Transportation Systems Engineering at the Technical University of Munich (TUM), Germany. He holds a Diploma in Civil Engineering from NTUA (1995), an MS in Transportation (1997) and a PhD in Transportation Systems (2004), both from MIT. His research focuses on evidence-based transport policy, modelling and optimisation of transportation systems, data analytics and statistical learning for transportation, and human factors for future mobility. He has authored {metrics.cv.publications|words} scientific publications, including {metrics.cv.journal_articles|words} papers in international peer-reviewed journals, {metrics.cv.conference_papers} in international conference proceedings, {metrics.cv.books} books and {metrics.cv.book_chapters} book chapters (h-index {metrics.cv.h_index}, {metrics.cv.citations|words} citations). In the last five years he has brought in {metrics.funding.third_party_last_5_years|words} of third-party funding from EU, national and regional sources. He is Co-Editor-in-Chief of *Transportation Research Part A: Policy and Practice*.",
+  "research_interests": {
+    "short": [
+      "Transport policy and demand",
+      "Modelling, simulation and optimisation",
+      "Data analytics and AI for mobility",
+      "Urban air mobility",
+      "Road safety and human factors"
+    ],
+    "long": [
+      "Evidence-based transport policy",
+      "Modelling and simulation of transportation systems, behavioural aspects and demand modelling",
+      "Calibration and optimisation: derivative-free, large-scale algorithms for stochastic systems",
+      "Big data, data analytics and statistical/machine learning for transportation",
+      "Factors affecting user acceptance and perception of transport modes",
+      "Road safety and human factors for future mobility",
+      "Urban air mobility (UAM)"
+    ]
+  },
+  "languages": [
+    {
+      "lang": "Greek",
+      "level": "native"
+    },
+    {
+      "lang": "English",
+      "level": "fluent"
+    },
+    {
+      "lang": "German",
+      "level": "very good"
+    }
+  ],
+  "skills": {
+    "programming": "C/C++, Python, Matlab/Octave, bash/tcsh, Delphi/Pascal, SQL",
+    "transport_software": "DynaMIT, MITSIMLab, TransModeler, AIMSUN, SATURN, Vissim",
+    "statistics": "R, SPSS, STATA, Biogeme, SST"
+  },
+  "education": [
+    {
+      "degree": "PhD in Transportation Systems",
+      "short": "PhD, Transportation Systems",
+      "institution": "MIT",
+      "institution_long": "Massachusetts Institute of Technology, Cambridge MA, USA",
+      "start": 2001,
+      "end": 2004,
+      "thesis": "On-line calibration for dynamic traffic assignment",
+      "supervisors": "M. Ben-Akiva, H. N. Koutsopoulos"
+    },
+    {
+      "degree": "MS in Transportation",
+      "short": "MS, Transportation",
+      "institution": "MIT",
+      "institution_long": "Massachusetts Institute of Technology, Cambridge MA, USA",
+      "start": 1995,
+      "end": 1997,
+      "thesis": "Demand simulation for dynamic traffic assignment",
+      "supervisors": "M. Ben-Akiva"
+    },
+    {
+      "degree": "Diploma (5-year) in Civil Engineering, Transportation specialisation",
+      "short": "Diploma, Civil Engineering",
+      "institution": "NTUA Athens",
+      "institution_long": "National Technical University of Athens, Greece",
+      "start": 1990,
+      "end": 1995
+    }
+  ],
+  "career": [
+    {
+      "start": "09/2016",
+      "end": "present",
+      "title": "Full Professor, Head of the Chair of Transportation Systems Engineering",
+      "employer": "Technical University of Munich, Germany",
+      "onepager": {
+        "title": "Full Professor, Head of Chair of Transportation Systems Engineering",
+        "where": "Technical University of Munich, Germany",
+        "when": "2016–present"
+      }
+    },
+    {
+      "start": "04/2016",
+      "end": "06/2016",
+      "title": "Visiting Professor",
+      "employer": "ETH Zurich, Switzerland",
+      "onepager": {
+        "title": "Visiting Professor",
+        "where": "ETH Zurich and EPFL, Switzerland",
+        "when": "2016"
+      }
+    },
+    {
+      "start": "02/2016",
+      "end": "03/2016",
+      "title": "Visiting Professor",
+      "employer": "EPFL, Switzerland"
+    },
+    {
+      "start": "09/2009",
+      "end": "09/2015",
+      "title": "Associate Professor (tenured 2014; Assistant Professor before)",
+      "employer": "National Technical University of Athens, Greece",
+      "onepager": {
+        "title": "Associate Professor (tenured 2014; Assistant Professor from 2009)",
+        "where": "National Technical University of Athens, Greece",
+        "when": "2009–2015"
+      }
+    },
+    {
+      "start": "07/2008",
+      "end": "present",
+      "title": "Research Affiliate",
+      "employer": "Massachusetts Institute of Technology, USA",
+      "onepager": {
+        "title": "Research Affiliate (2008–); Post-doctoral Research Associate (2004–08)",
+        "where": "Massachusetts Institute of Technology, USA",
+        "when": "2004–now"
+      }
+    },
+    {
+      "start": "06/2006",
+      "end": "06/2008",
+      "title": "Director of Athens Branch (transport consultancy)",
+      "employer": "TREDIT S.A., Athens, Greece"
+    },
+    {
+      "start": "10/2004",
+      "end": "06/2008",
+      "title": "Post-doctoral Research Associate",
+      "employer": "Massachusetts Institute of Technology, USA"
+    },
+    {
+      "start": "09/2001",
+      "end": "09/2004",
+      "title": "Research Assistant",
+      "employer": "Massachusetts Institute of Technology, USA"
+    },
+    {
+      "start": "06/2000",
+      "end": "05/2001",
+      "title": "Senior Transportation Consultant",
+      "employer": "TRD International SA, Athens, Greece"
+    },
+    {
+      "start": "04/2000",
+      "end": "03/2008",
+      "title": "Research Associate",
+      "employer": "National Technical University of Athens, Greece"
+    },
+    {
+      "start": "05/1999",
+      "end": "02/2000",
+      "title": "Senior Transportation Engineer",
+      "employer": "IBI Group UK Ltd., Athens, Greece"
+    },
+    {
+      "start": "03/1997",
+      "end": "08/1997",
+      "title": "Transportation Engineer",
+      "employer": "DENCO Ltd., Athens, Greece"
+    },
+    {
+      "start": "09/1995",
+      "end": "02/1997",
+      "title": "Research Assistant",
+      "employer": "Massachusetts Institute of Technology, USA"
+    }
+  ],
+  "programme_roles": [
+    {
+      "role": "Director of the MS in Rail and Urban Transport",
+      "where": "TUM Asia, Singapore"
+    }
+  ],
+  "projects_as_pi": {
+    "_comment": "Projects listed on the CV as PI. 'id' = entry in data/projects.json (name, status and years come from there). Entries with 'not_in_projects_json' are on the CV only; their status awaits Costa (report rows 18-19).",
+    "eu": [
+      {
+        "id": "scudo"
+      },
+      {
+        "id": "mi-trap"
+      },
+      {
+        "id": "culturalroad"
+      },
+      {
+        "id": "autosup"
+      },
+      {
+        "id": "phoebe"
+      },
+      {
+        "id": "i-dreams"
+      },
+      {
+        "id": "momentum"
+      },
+      {
+        "id": "drive2thefuture"
+      },
+      {
+        "id": "noesis"
+      }
+    ],
+    "dfg": [
+      {
+        "id": "agimo"
+      },
+      {
+        "name": "GASTRA",
+        "status": "active",
+        "funder": "DFG",
+        "not_in_projects_json": true
+      },
+      {
+        "name": "TransfuseAccess",
+        "status": "active",
+        "funder": "DFG",
+        "not_in_projects_json": true
+      },
+      {
+        "id": "i-traum"
+      },
+      {
+        "id": "votavi"
+      },
+      {
+        "id": "see-far"
+      },
+      {
+        "id": "trampa"
+      },
+      {
+        "id": "d-vanpool"
+      }
+    ],
+    "national": [
+      {
+        "name": "DZM RISE",
+        "status": "active",
+        "funder": "",
+        "not_in_projects_json": true
+      },
+      {
+        "name": "MCube",
+        "ids": [
+          "mcube-aqt",
+          "mcube-sasim",
+          "mcube-coltoc"
+        ]
+      },
+      {
+        "id": "panamera"
+      },
+      {
+        "id": "daruma"
+      },
+      {
+        "id": "futurtrans"
+      },
+      {
+        "id": "verkehr-sutra"
+      }
+    ]
+  },
+  "publications_selected": [
+    "Guo, T., Wu, H., Lu, Q. L., **Antoniou, C.** (2025). Planning UAM network under uncertain travelers' preferences. *Transportation Research Part A*, 200, 104632.",
+    "Wu, H., Zame, S. I., Guo, T., Lu, Q. L., **Antoniou, C.** (2025). A sustainable multi-objective framework for vertiport siting. *Communications in Transportation Research*, 5, 100186.",
+    "Guo, T., Yang, N., Yu, K., Angeloudis, P., **Antoniou, C.** (2026). Relation-diffusion augmented network-wide traffic state estimation. *Communications in Transportation Research*, 6(3).",
+    "Tzachristas, I., Narayanan, S., **Antoniou, C.** (2026). LLM-PDM: An LLM persona-driven method for replicating personal mobility preferences at scale. *Communications in Transportation Research*, 6(1).",
+    "Narayanan, S., Chaniotakis, E., **Antoniou, C.** (2020). Shared autonomous vehicle services: a comprehensive review. *Transportation Research Part C*, 111, 255–293.",
+    "Al Haddad, C., Chaniotakis, E., Straubinger, A., Plötner, K., **Antoniou, C.** (2020). Factors affecting the adoption and use of urban air mobility. *Transportation Research Part A*, 132, 696–712."
+  ],
+  "teaching": {
+    "onepager": "Master's courses at TUM since 2016 (statistics, optimisation, discrete choice, statistical learning, road safety, emerging mobility, transportation economics) and courses at TUM Asia, Singapore",
+    "tum_masters": [
+      "ITS Systems Architecture and Applications",
+      "Optimisation for Transportation Systems",
+      "Road Safety",
+      "Emerging Mobility and Urban Operations Research",
+      "Statistical Learning and Data Analytics for Transportation Systems",
+      "Applied Statistics for Transportation Systems",
+      "Special Topics on Model Calibration",
+      "Transportation Economics",
+      "Discrete Choice Analysis",
+      "Travel Behavior",
+      "Cross-Cutting Fundamentals"
+    ],
+    "tum_doctoral": [
+      "Doctoral Seminar - Transportation Systems Engineering"
+    ],
+    "tum_asia": [
+      "Decision Support for Logistics Management",
+      "Transportation Modelling and Simulation Tools"
+    ],
+    "ntua": [
+      "Design of Transportation Facilities other than Highways and Principles of Transportation Economics",
+      "Highway Engineering II (Traffic Engineering)",
+      "Highway Engineering III (Intersection Design and Operation)",
+      "Transportation Systems",
+      "Railway Engineering",
+      "Highway Design and Operation",
+      "Telematics Applications in Transportation Infrastructure (MSc GeoInformatics)"
+    ],
+    "summer_schools": "MULTITUDE (Ispra 2012, Chios 2014, Nicosia 2015, Napoli 2017); Big Data and Mobility Summer School, Nicosia"
+  },
+  "supervision": {
+    "onepager": "{metrics.people.doctorates_completed|words} PhDs supervised to completion and {metrics.people.doctorates_in_progress|words} in progress",
+    "ntua": "2 PhDs, 5 MS and 17 diploma theses at NTUA",
+    "committees": "Opponent/examiner in >15 dissertations; advisory committees for >30 PhD students in the last five years",
+    "phd_completed": [
+      {
+        "name": "Roxani Gkavra",
+        "year": 2025,
+        "title": "Exploring Travel Behaviour in the Shared Micromobility Context: Adoption and Usage Patterns of Bike and E-Scooter Sharing"
+      },
+      {
+        "name": "Rajesh Chouhan",
+        "year": 2025,
+        "title": "Applications of Unmanned Aerial Vehicle Data in Traffic Operations and Safety under Mixed Traffic Conditions"
+      },
+      {
+        "name": "Qinglong Lu",
+        "year": 2024,
+        "title": "Evaluation and Simulation-Based Optimization of Urban Traffic Resilience"
+      },
+      {
+        "name": "Sadid Hashmatullah",
+        "year": 2024,
+        "title": "Microscopic Behavioral Modelling, and Simulation-based Evaluation of Autonomous Vehicles Deployment Scenarios"
+      },
+      {
+        "name": "Yannic Wolf",
+        "year": 2024,
+        "title": "Industrial AI: A Development Methodology for Industrial Machine Learning Applications"
+      },
+      {
+        "name": "Mohammad Sadrani",
+        "year": 2024,
+        "title": "Modeling, planning, and optimizing public transport systems with automated, electric, and mixed-sized bus fleets"
+      },
+      {
+        "name": "Mohamed Abouelela",
+        "year": 2024,
+        "title": "Developing a Multi-Dimensional Framework for the Deployment of Free-Floating Shared Mobility Services"
+      },
+      {
+        "name": "Vishal Mahajan",
+        "year": 2023,
+        "title": "Data openness and efficient methods to address data insufficiency in mobility analyses and simulation calibration"
+      },
+      {
+        "name": "Santhanakrishnan Narayanan",
+        "year": 2023,
+        "title": "Aggregate four-step and disaggregate agent-based modelling approaches, but what is in between?"
+      },
+      {
+        "name": "Moeid Qurashi",
+        "year": 2023,
+        "title": "Microscopic modeling, optimization, and demand estimation for autonomous mobility-on-demand ride-splitting"
+      },
+      {
+        "name": "Christelle Al Haddad",
+        "year": 2022,
+        "title": "Developing an Enriched Multi-source Data Collection Framework for Driving Behavior Modeling"
+      },
+      {
+        "name": "Syrus Gomari",
+        "year": 2022,
+        "title": "Developing a Methodology for Quality Assessment of Mobility-Related Information Systems for Connected Vehicles"
+      },
+      {
+        "name": "Roja Ezzati Amini",
+        "year": 2022,
+        "title": "An Interaction Game for Prediction of Road Users' Conflict Resolution Strategies in Uncontrolled Traffic Environments"
+      },
+      {
+        "name": "Raoul Rothfeld",
+        "year": 2021,
+        "title": "Agent-based Modelling and Simulation of Urban Air Mobility Operation"
+      },
+      {
+        "name": "Emmanouil Chaniotakis",
+        "year": 2020,
+        "title": "Mobility-related Information from Emerging Data Sources: the Case of Social Media"
+      },
+      {
+        "name": "Vasileia Papathanasopoulou",
+        "year": 2018,
+        "title": "Towards data-driven microscopic traffic simulation models"
+      },
+      {
+        "name": "Dimitris Efthymiou",
+        "year": 2014,
+        "title": "Extending the Integrated Land-Use and Transport Model Framework: Spatial Econometrics and Policy Evaluation"
+      }
+    ]
+  },
+  "honours": {
+    "short": [
+      "Humboldt Henriette Herz Scout (2025–)",
+      "Francqui Chair, U. of Hasselt (2022–23)",
+      "TRB Best Paper Award (2018)",
+      "IEEE ITS Outstanding Application Award (2011)",
+      "Marie Curie Fellow (2006–08)"
+    ],
+    "full": [
+      {
+        "year": "2025–",
+        "text": "Henriette Herz Scout, Alexander von Humboldt Foundation"
+      },
+      {
+        "year": "2022–23",
+        "text": "Francqui Chair, Francqui Foundation, at the University of Hasselt"
+      },
+      {
+        "year": "2022",
+        "text": "Excellent Reviewer, *Transportation Research Part A* (2019–2020)"
+      },
+      {
+        "year": "2022",
+        "text": "Most cited paper since 2020 in *Transportation Research Part C*: Narayanan, Chaniotakis, Antoniou (2020), Shared autonomous vehicle services: a comprehensive review"
+      },
+      {
+        "year": "2018",
+        "text": "Best Paper Award, TRB Simulation Joint Subcommittee, for Prakash et al. (2018), Improving scalability of generic online calibration of dynamic traffic assignment systems"
+      },
+      {
+        "year": "2017",
+        "text": "Certificate of Appreciation, TRB, for service as committee secretary"
+      },
+      {
+        "year": "2017",
+        "text": "Recognition for Life-Time Contribution, Hellenic Institute of Transportation Engineers"
+      },
+      {
+        "year": "2013",
+        "text": "Outstanding Paper Award, TRB Committee ANB20, for Antoniou and Yannis, Assessment of exposure proxies for macroscopic road safety prediction"
+      },
+      {
+        "year": "2013",
+        "text": "COST Short-term Scientific Mission grant"
+      },
+      {
+        "year": "2012",
+        "text": "COST Conference Grant for Early Stage Researchers, 91st TRB Annual Meeting"
+      },
+      {
+        "year": "2011",
+        "text": "IEEE ITS Outstanding Application Award (DynaMIT DTA model)"
+      },
+      {
+        "year": "2006–08",
+        "text": "Marie Curie Fellow (International Reintegration Grant, EU)"
+      },
+      {
+        "year": "2005–06",
+        "text": "\"All-round Excellence\" Grant, Austrian Research Centers (ARC)"
+      },
+      {
+        "year": "2004",
+        "text": "FHWA Scholarship, travel grant to IEEE ITSC 2004, Washington D.C."
+      },
+      {
+        "year": "1997",
+        "text": "Milton Pikarsky Award for an Outstanding Master of Science Thesis, CUTC"
+      }
+    ]
+  },
+  "student_awards": [
+    "ITS Bavaria Award for best PhD dissertation: Raoul Rothfeld (2022), Mohamed Abouelela",
+    "ITS Bavaria Award for best MS thesis: Qinglong Lu (2022), Ningkang Yang (2023), Tao Guo (2024, shared)",
+    "2nd and 6th place, NeurIPS Traffic4Cast competition (2022): Cheng Lyu, Qinglong Lu, Vishal Mahajan (with Xinhua Wu)",
+    "Best Paper Award \"Matthew Karlaftis\", ICTR 2017: Emmanouil Chaniotakis",
+    "Oikopolis Award 2013 for best diploma thesis in transport: Markos Kladeftiras"
+  ],
+  "service": {
+    "onepager": [
+      "Co-Editor-in-Chief, *Transportation Research Part A* (2025–); editorial boards: Transportation Research Part C, Accident Analysis & Prevention, Communications in Transportation Research, J. Intelligent Transportation Systems, Smart Cities",
+      "Steering Committee, hEART (European Association for Research in Transportation); FGSV Committee 3.10",
+      "Chairman, Hellenic Institute of Transportation Engineers (2014–16); President, MIT Club of Greece (2015–17)"
+    ],
+    "editorial": [
+      {
+        "when": "2025–",
+        "text": "Co-Editor-in-Chief, *Transportation Research Part A: Policy and Practice* (Associate Editor before)"
+      },
+      {
+        "when": "",
+        "text": "Editorial board member: *Transportation Research Part C*, *Accident Analysis & Prevention*, *Communications in Transportation Research*, *Journal of Intelligent Transportation Systems*, *Smart Cities*, *Data Science for Transportation*"
+      },
+      {
+        "when": "past",
+        "text": "Deputy Editor-in-Chief, *IET Intelligent Transport Systems*; Associate Editor, *Transportation Letters*; Editor, *EURO Journal on Transportation and Logistics*"
+      },
+      {
+        "when": "",
+        "text": "Guest editor of several special issues (IEEE Transactions on ITS, Transportation Research Part C, Accident Analysis & Prevention)"
+      }
+    ],
+    "committees": [
+      {
+        "when": "2014–",
+        "text": "Steering Committee, hEART (European Association for Research in Transportation)"
+      },
+      {
+        "when": "",
+        "text": "Member, FGSV Committee 3.10 Theoretical Foundations of Road Traffic"
+      },
+      {
+        "when": "",
+        "text": "Member, TRB ABJ70 Artificial Intelligence and Advanced Computing Applications; TRB Task Force on Data Privacy, Security and Protection Policy"
+      },
+      {
+        "when": "–2022",
+        "text": "Member, TRB AHB45 Traffic Flow Theory and Characteristics"
+      },
+      {
+        "when": "–2019",
+        "text": "Member, TRB Task Force on Simulation"
+      },
+      {
+        "when": "–2017",
+        "text": "Secretary, TRB AND20 User Information Systems"
+      }
+    ],
+    "professional": [
+      {
+        "when": "2010–2016",
+        "text": "Hellenic Institute of Transportation Engineers: Chairman (2014–16), Vice-Chairman (2012–14), General Secretary (2010–12)"
+      },
+      {
+        "when": "1999–2017",
+        "text": "MIT Club of Greece: President (2015–17), Vice-President (2011–15), Secretary (2005–11), Board member (1999–2001)"
+      },
+      {
+        "when": "2013–",
+        "text": "MIT Enterprise Forum Greece: co-founder and board member"
+      }
+    ],
+    "conferences": [
+      {
+        "when": "2026",
+        "text": "Co-organiser, ISTTT 2026"
+      },
+      {
+        "when": "2025",
+        "text": "Co-organiser, hEART 2025"
+      },
+      {
+        "when": "2021",
+        "text": "Organiser, MT-ITS 2021"
+      },
+      {
+        "when": "2020",
+        "text": "Special Sessions Chair, IEEE ITSC 2020"
+      },
+      {
+        "when": "2019",
+        "text": "Organiser, mobil.TUM 2019"
+      },
+      {
+        "when": "2018",
+        "text": "Co-organiser, mobil.TUM 2018; Co-organiser, hEART 2018"
+      },
+      {
+        "when": "2016–17",
+        "text": "Publications Chair, IEEE ITSC 2016 and IEEE MT-ITS 2017"
+      },
+      {
+        "when": "2010",
+        "text": "Special Sessions Co-Chair, IEEE ITSC 2010"
+      }
+    ],
+    "reviewing": "Member of >100 scientific committees. Reviewer for >70 journals, >100 conferences and proposals for >15 research organisations."
+  }
+}

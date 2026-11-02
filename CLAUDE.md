@@ -13,6 +13,7 @@ This repository is the public research portfolio of Prof. Dr. Constantinos Anton
 | `anniversary/index.html` | The ten-year anniversary presentation, 2026 snapshot (self-contained) | rarely; by hand |
 | `help/index.html` | The professor's own task guide (sentences to copy) | keep in step with the skills |
 | `data/*.json` | **The fact sheet**: profile, metrics, projects, people, timeline. Every number on the site must agree with it | hand; `metrics.openalex` by script only |
+| `data/cv.json` | **CV content** for every CV version (career, awards, roles, teaching, projects as PI by id). Numbers are tokens like `{metrics.cv.publications}` filled from `metrics.json` by `scripts/cv_tokens.py`; no private data (public repo) | hand; numbers only via `metrics.json` |
 | `scripts/site_text.py` | Safe find/replace inside the three site pages (`find`, `replace`, `dump`) | run, don't edit |
 | `scripts/refresh_openalex.py` | Pulls fresh OpenAlex figures into `data/metrics.json` | run, don't edit |
 | `scripts/check_consistency.py` | Checks the JSON files against each other **and** against the numbers shown on the pages | run before every deploy |
