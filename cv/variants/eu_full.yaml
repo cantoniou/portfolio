@@ -1,0 +1,3 @@
+# Full EU-style CV (Europass section order, multi-page). PDF via XeLaTeX.
+template: eu_full.tex.j2
+output: CV_EU_full_Antoniou

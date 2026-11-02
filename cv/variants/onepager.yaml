@@ -1,0 +1,10 @@
+# One-page CV (A4, exactly one page). PDF via XeLaTeX + matching Word file.
+template: onepager.tex.j2
+output: CV_onepager_Antoniou
+word: true          # also build the .docx via docx/onepager.js
+# Spacing knobs: tighten these if new content makes the page overflow.
+section_gap: 7pt
+side_gap: 8pt
+main_font: 8.9
+main_lead: 11.25
+programme_line: true  # 'Programme direction' line under Career; set false if the page overflows

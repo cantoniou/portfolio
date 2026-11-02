@@ -1,0 +1,124 @@
+((= One-page CV. Layout only: all content comes from data/cv.yaml =))
+\documentclass[9pt,a4paper]{article}
+\usepackage[a4paper,top=10mm,bottom=9mm,left=12mm,right=12mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Inter}[Scale=0.96]
+\usepackage{xcolor,enumitem,graphicx,microtype}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{0065BD}
+\definecolor{ink}{HTML}{1B1F24}
+\definecolor{muted}{HTML}{5B6670}
+\definecolor{panel}{HTML}{F2F5F9}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}
+\color{ink}
+\setlist[itemize]{leftmargin=8pt,itemsep=1.2pt,topsep=1pt,parsep=0pt,label={\color{accent}\textbullet}}
+\newcommand{\sechead}[1]{\vspace{((( v.section_gap )))}\secheadfirst{#1}}
+\newcommand{\secheadfirst}[1]{{\color{accent}\bfseries\fontsize{8.5}{10}\selectfont\MakeUppercase{#1}}\par\nointerlineskip\vspace{2pt}{\color{accent}\rule{\linewidth}{0.6pt}}\par\nointerlineskip\vspace{3.5pt}}
+\newcommand{\role}[3]{\textbf{#1}\hfill{\color{muted}#3}\\[-0.5pt]{\color{muted}#2}\par\vspace{2.5pt}}
+\newcommand{\sidehead}[1]{{\color{accent}\bfseries\fontsize{8}{10}\selectfont\MakeUppercase{#1}}\par\vspace{2pt}}
+\newcommand{\stat}[2]{{\color{accent}\bfseries\fontsize{14}{16}\selectfont #1}\\[-1pt]{\color{muted}\fontsize{7.8}{9}\selectfont #2}\par\vspace{3.6pt}}
+\newcommand{\closed}[1]{{\color{muted}\itshape #1}}
+\begin{document}
+% ---------- header ----------
+\noindent
+\begin{minipage}[c]{24mm}\includegraphics[width=23mm]{((( d.person.photo )))}\end{minipage}%
+\begin{minipage}[c]{0.56\textwidth}
+{\fontsize{10}{12}\selectfont\bfseries ((( d.person.title|tex )))}\\[1pt]
+{\color{accent}\fontsize{23}{26}\selectfont\bfseries ((( d.person.name|tex )))}\\[4pt]
+{\fontsize{9.6}{12}\selectfont\bfseries ((( d.person.position|tex )))}\\[0.5pt]
+((* for line in d.person.affiliation[1:] *))
+{\color{muted}\fontsize{8.8}{11}\selectfont ((( line|tex )))}((* if not loop.last *))\\[0.5pt]((* endif *))
+((* endfor *))
+\end{minipage}\hfill
+\begin{minipage}[c]{0.27\textwidth}\raggedleft\color{muted}\fontsize{8.1}{11}\selectfont
+\href{mailto:((( d.person.email )))}{((( d.person.email|tex )))}\\
+((* for l in d.person.links *))\href{((( l.url )))}{((( l.label|tex )))}\\
+((* endfor *))
+ORCID \href{https://orcid.org/((( d.person.ids.orcid )))}{((( d.person.ids.orcid )))}
+\end{minipage}
+\par\vspace{5pt}
+{\color{accent}\rule{\textwidth}{1.4pt}}
+\par\vspace{4pt}
+
+\noindent
+% ---------- left panel ----------
+\begin{minipage}[t]{0.285\textwidth}
+\fontsize{8.4}{11}\selectfont
+\colorbox{panel}{\begin{minipage}[t]{\dimexpr\linewidth-2\fboxsep\relax}
+\vspace{3pt}
+\sidehead{In numbers}
+((* for m in d.metrics *))\stat{((( m.value|tex )))}{((( m.label|tex )))}
+((* endfor *))
+{\color{muted}\fontsize{6.6}{8}\selectfont ((( d.metrics_source_label|tex ))).}\par
+\vspace{1pt}
+\end{minipage}}
+
+\par\vspace{((( v.side_gap )))}
+\sidehead{Education}
+((* for e in d.education *))\textbf{((( e.short|tex )))}\\((( e.institution|tex ))), ((( e.end )))((* if not loop.last *))\\[3pt]((* endif *))
+((* endfor *))
+
+\par\vspace{((( v.side_gap )))}
+\sidehead{Research interests}
+((* for r in d.research_interests.short *))((( r|tex )))((* if not loop.last *))\\((* endif *))
+((* endfor *))
+
+\par\vspace{((( v.side_gap )))}
+\sidehead{Languages}
+((* for l in d.languages *))((( l.lang ))) ((( '(' ~ l.level ~ ')' )))((* if not loop.last *))\\((* endif *))
+((* endfor *))
+
+\par\vspace{((( v.side_gap )))}
+\sidehead{Honours}
+((* for h in d.honours.short *))((( h|tex )))((* if not loop.last *))\\[1pt]((* endif *))
+((* endfor *))
+
+\par\vspace{((( v.side_gap )))}
+\sidehead{Links}
+Google Scholar \href{https://scholar.google.com/citations?user=((( d.person.ids.scholar )))}{((( d.person.ids.scholar|tex )))}\\
+Scopus \href{https://www.scopus.com/authid/detail.uri?authorId=((( d.person.ids.scopus )))}{((( d.person.ids.scopus )))}\\
+ORCID \href{https://orcid.org/((( d.person.ids.orcid )))}{((( d.person.ids.orcid )))}
+\end{minipage}\hfill
+% ---------- main column ----------
+\begin{minipage}[t]{0.685\textwidth}
+\fontsize{((( v.main_font )))}{((( v.main_lead )))}\selectfont\raggedright
+\secheadfirst{Profile}
+((( d.profile_short|tex )))
+
+\sechead{Career}
+((* for c in d.career if c.get('onepager') *))\role{((( c.onepager.title|tex )))}{((( c.onepager.where|tex )))}{((( c.onepager.when|tex )))}
+((* endfor *))((* if v.programme_line *))\textbf{Programme direction:} ((* for r in d.programme_roles *))((( r.role|tex ))), ((( r.where|tex )))((( ' (past)' if r.status == 'past' else '' )))((* if not loop.last *)); ((* endif *))((* endfor *))\par
+((* endif *))
+
+\sechead{((( d.projects_heading|default('Funded projects', true)|tex )))}
+\begin{itemize}
+((* for key, label in [('eu','EU'),('dfg','DFG'),('national','National')] *))
+\item \textbf{((( label ))):} ((* for p in d.projects[key] *))((* if p.status == 'closed' *))\closed{((( p.name|tex )))}((* else *))((( p.name|tex )))((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *))
+((* endfor *))
+\end{itemize}
+{\color{muted}\fontsize{7.2}{9}\selectfont Active projects in regular type, completed in \textit{grey italics}.}
+
+\sechead{Selected publications}
+\begin{itemize}[itemsep=1.8pt]
+((* for p in d.publications_selected *))\item ((( p|tex )))
+((* endfor *))
+\end{itemize}
+
+\sechead{Teaching and supervision}
+\begin{itemize}
+\item ((( (d.supervision.onepager[:1]|upper ~ d.supervision.onepager[1:])|tex )))
+\item ((( d.teaching.onepager|tex )))
+\end{itemize}
+
+\sechead{Service and leadership}
+\begin{itemize}
+((* for s in d.service.onepager *))\item ((( s|tex )))
+((* endfor *))
+\end{itemize}
+\end{minipage}
+
+\vfill
+{\color{muted}\fontsize{7}{8}\selectfont ((( d.metrics_source_label|tex ))). Other figures as of ((( d.metrics_as_of ))). Full publication list: \href{https://orcid.org/((( d.person.ids.orcid )))}{orcid.org/((( d.person.ids.orcid )))}}
+\end{document}

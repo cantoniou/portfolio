@@ -14,6 +14,8 @@ This repository is the public research portfolio of Prof. Dr. Constantinos Anton
 | `help/index.html` | The professor's own task guide (sentences to copy) | keep in step with the skills |
 | `data/*.json` | **The fact sheet**: profile, metrics, projects, people, timeline. Every number on the site must agree with it | hand; `metrics.openalex` by script only |
 | `data/cv.json` | **CV content** for every CV version (career, awards, roles, teaching, projects as PI by id). Numbers are tokens like `{metrics.cv.publications}` filled from `metrics.json` by `scripts/cv_tokens.py`; no private data (public repo) | hand; numbers only via `metrics.json` |
+| `cv/` | **CV builds**: `python3 cv/build.py` makes the one-pager (PDF + Word) and the full EU CV from `data/`. Layouts only, no content. `cv/out/` and `cv/data/private.yaml` are git-ignored (see `cv/README.md`) | layouts: edit `cv/templates/`; content: `data/cv.json` |
+| `scripts/sync_numbers.py` | Writes the `data/metrics.json` figures into the landing page's "By the numbers" tiles (`--apply`; default is a dry run) | run, don't edit |
 | `scripts/site_text.py` | Safe find/replace inside the three site pages (`find`, `replace`, `dump`) | run, don't edit |
 | `scripts/refresh_openalex.py` | Pulls fresh OpenAlex figures into `data/metrics.json` | run, don't edit |
 | `scripts/check_consistency.py` | Checks the JSON files against each other **and** against the numbers shown on the pages | run before every deploy |
@@ -38,6 +40,7 @@ If this folder is not yet a git repository (`git rev-parse --is-inside-work-tree
 1. **Every change goes to two places:** the page (via `site_text.py`) and the matching field in `data/`. The checker will tell you if you forgot one.
 2. **Never invent a figure.** If a number is not in `data/`, in a source the professor gave you, or in the OpenAlex script output, ask for it.
 3. **Precedence when sources disagree:** the professor's own statement > the chair's magazine or profile page > Scopus > OpenAlex. OpenAlex counts preprints and reports, so its totals run higher than Scopus; the site labels which database each number comes from, and so must you.
+3b. **One master:** a number is typed once, in `data/metrics.json`. The site tiles (`scripts/sync_numbers.py --apply`) and every CV (`cv/build.py`) read it from there. CVs show Scopus figures with the source named; the site shows Scopus, OpenAlex and Scholar. Rebuild the CVs after any change to `data/`.
 4. **Run `python3 scripts/check_consistency.py` after every change** and fix anything it flags before deploying.
 5. **Dates:** update the `as_of` field of any data file you change to today's date (YYYY-MM-DD).
 6. **People:** use names and positions exactly as given; never guess where someone works now.
