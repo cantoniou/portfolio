@@ -385,7 +385,8 @@
     "summer_schools": "MULTITUDE (Ispra 2012, Chios 2014, Nicosia 2015, Napoli 2017); Big Data and Mobility Summer School, Nicosia"
   },
   "supervision": {
-    "onepager": "{metrics.people.doctorates_completed|words} PhDs supervised to completion and {metrics.people.doctorates_in_progress|words} in progress",
+    "onepager": "{metrics.people.doctorates_completed|words} PhDs supervised to completion and {metrics.people.doctorates_in_progress|words} in progress; {metrics.people.theses_supervised|words} theses supervised overall",
+    "theses": "{metrics.people.theses_supervised|words} theses supervised overall",
     "ntua": "2 PhDs, 5 MS and 17 diploma theses at NTUA",
     "committees": "Opponent/examiner in >15 dissertations; advisory committees for >30 PhD students in the last five years",
     "phd_completed": [
@@ -652,7 +653,7 @@
         "text": "Special Sessions Co-Chair, IEEE ITSC 2010"
       }
     ],
-    "reviewing": "Member of >100 scientific committees. Reviewer for >70 journals, >100 conferences and proposals for >15 research organisations."
+    "reviewing": "{metrics.people.scientific_committees|words} scientific committees served; reviewer for {metrics.people.reviewer_journals|words} journals."
   },
   "metrics_source_label": "Publications, citations and h-index: Scopus, as of {metrics.scopus.as_of}"
 }

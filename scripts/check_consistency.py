@@ -97,6 +97,8 @@ for label, val in pairs:
     found = next((v for k, v in tiles.items() if label in k), None)
     check(found == str(val), f"index.html 'By the numbers' {label}: page {found} vs metrics.json {val}")
 check(str(pm["doctorates_completed"]) in idx, f"doctorates completed {pm['doctorates_completed']} appears on index.html")
+if res:
+    check(f"{pm['scientific_committees']} scientific committees served · reviewer for {pm['reviewer_journals']} journals" in res, "peer-review counts on research.html match metrics.json")
 check(str(pm["theses_supervised"]) in idx, f"theses supervised {pm['theses_supervised']} appears on index.html")
 if res:
     check(str(ox["h_index"]) in res, f"OpenAlex h-index {ox['h_index']} appears on research.html")
