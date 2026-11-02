@@ -54,7 +54,7 @@
       "Optimisation for Transportation Systems",
       "Road Safety",
       "Emerging Mobility and Urban Operations Research",
-      "Statistical Learning for Transportation Systems",
+      "Statistical Learning and Data Analytics for Transportation Systems",
       "Applied Statistics for Transportation Systems",
       "Special Topics on Model Calibration",
       "Transportation Economics",
@@ -62,6 +62,7 @@
       "Travel Behavior",
       "Cross-Cutting Fundamentals"
     ],
-    "doctoral": ["Doctoral Seminar"]
+    "doctoral": ["Doctoral Seminar - Transportation Systems Engineering"],
+    "tum_asia_singapore": ["Decision Support for Logistics Management", "Transportation Modelling and Simulation Tools"]
   }
 }
