@@ -3,7 +3,7 @@
 \usepackage[a4paper,top=10mm,bottom=9mm,left=12mm,right=12mm]{geometry}
 \usepackage{fontspec}
 \setmainfont{Inter}[Scale=0.96]
-\usepackage{xcolor,enumitem,graphicx,microtype}
+\usepackage{xcolor,enumitem,graphicx,microtype,tikz}
 \usepackage[hidelinks]{hyperref}
 \definecolor{accent}{HTML}{0065BD}
 \definecolor{ink}{HTML}{1B1F24}
@@ -23,8 +23,12 @@
 \begin{document}
 % ---------- header ----------
 \noindent
-\begin{minipage}[c]{24mm}\includegraphics[width=23mm]{((( d.person.photo )))}\end{minipage}%
-\begin{minipage}[c]{0.56\textwidth}
+{\setlength{\fboxsep}{0pt}\colorbox{panel}{\begin{minipage}{\textwidth}
+\vspace{2mm}\hspace{3mm}%
+\begin{minipage}[c]{25mm}
+\begin{tikzpicture}\node[inner sep=0] {\includegraphics[width=24mm]{assets/CV_photo_circle.png}};\draw[white,line width=1.6pt] (0,0) circle (12mm);\end{tikzpicture}
+\end{minipage}\hspace{2mm}%
+\begin{minipage}[c]{0.53\textwidth}
 {\fontsize{10}{12}\selectfont\bfseries ((( d.person.title|tex )))}\\[1pt]
 {\color{accent}\fontsize{23}{26}\selectfont\bfseries ((( d.person.name|tex )))}\\[4pt]
 {\fontsize{9.6}{12}\selectfont\bfseries ((( d.person.position|tex )))}\\[0.5pt]
@@ -32,13 +36,15 @@
 {\color{muted}\fontsize{8.8}{11}\selectfont ((( line|tex )))}((* if not loop.last *))\\[0.5pt]((* endif *))
 ((* endfor *))
 \end{minipage}\hfill
-\begin{minipage}[c]{0.27\textwidth}\raggedleft\color{muted}\fontsize{8.1}{11}\selectfont
+\begin{minipage}[c]{0.25\textwidth}\raggedleft\color{muted}\fontsize{8.1}{11}\selectfont
 \href{mailto:((( d.person.email )))}{((( d.person.email|tex )))}\\
 ((* for l in d.person.links *))\href{((( l.url )))}{((( l.label|tex )))}\\
 ((* endfor *))
 ORCID \href{https://orcid.org/((( d.person.ids.orcid )))}{((( d.person.ids.orcid )))}
-\end{minipage}
-\par\vspace{5pt}
+\end{minipage}\hspace{3mm}
+\vspace{2mm}
+\end{minipage}}}
+\par\nointerlineskip
 {\color{accent}\rule{\textwidth}{1.4pt}}
 \par\vspace{4pt}
 
