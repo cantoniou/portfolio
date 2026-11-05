@@ -80,9 +80,9 @@ footer a{{color:inherit}}
   <a class="brand" href="index.html">Constantinos Antoniou</a>
   <nav>
     <a href="index.html">Profile</a>
+    <a class="on" href="#top">People</a>
     <a href="projects.html">Projects</a>
     <a href="research.html">Research in numbers</a>
-    <a class="on" href="#top">People</a>
   </nav>
 </header>
 <section class="hero" id="top"><div class="wrap">
