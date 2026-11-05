@@ -86,7 +86,6 @@ for (const c of data.career.filter((c) => c.onepager)) {
     { tabStops: [{ type: d.TabStopType.RIGHT, position: mm(122) }] }));
   main.push(P(runs(c.onepager.where, { color: MUTED }), { after: 50 }));
 }
-main.push(P([...runs("Programme direction: ", { bold: true }), ...runs(data.programme_roles.map((r) => `${r.role}, ${r.where}${r.status === "past" ? " (past)" : ""}`).join("; "))]));
 main.push(mainHead(data.projects_heading || "Funded projects"));
 for (const [k, label] of [["eu", "EU"], ["dfg", "DFG"], ["national", "National"]]) {
   const ch = runs(label + ": ", { bold: true });

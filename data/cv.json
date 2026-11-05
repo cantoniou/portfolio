@@ -247,6 +247,10 @@
   ],
   "programme_roles": [
     {
+      "role": "Director of the MS in Transportation Systems",
+      "where": "TUM"
+    },
+    {
       "role": "Director of the MS in Rail and Urban Transport",
       "where": "TUM Asia, Singapore"
     },
@@ -387,18 +391,45 @@
   "supervision": {
     "onepager": "{metrics.people.doctorates_completed|words} PhDs supervised to completion and {metrics.people.doctorates_in_progress|words} in progress; {metrics.people.theses_supervised|words} theses supervised overall",
     "theses": "{metrics.people.theses_supervised|words} theses supervised overall",
-    "ntua": "2 PhDs, 5 MS and 17 diploma theses at NTUA",
-    "committees": "Opponent/examiner in >15 dissertations; advisory committees for >30 PhD students in the last five years",
     "phd_completed": [
+      {
+        "name": "Hao Wu",
+        "year": 2026,
+        "title": "Simulation-Based Optimization and Evaluation of Urban Air Mobility - From User Preferences to Network Planning and Service Operation"
+      },
+      {
+        "name": "Cheng Lyu",
+        "year": 2026,
+        "title": "Tackling data sparsity and scarcity in transportation systems - Robust imputation and generative modeling"
+      },
+      {
+        "name": "Mengying Fu",
+        "year": 2026,
+        "title": "Demand Analysis of Regional Air Mobility. Modeling Acceptance, Willingness to Pay, and Transportation System Impacts"
+      },
+      {
+        "name": "Md Rakibul Alam",
+        "year": 2026,
+        "title": "From Fragmentation to Meaning: Engineering Naturalistic Driving Data Systems Through Architecture and Semantics"
+      },
+      {
+        "name": "Filippos Adamidis",
+        "year": 2026,
+        "title": "Modelling Car-Use Reduction Policies. Behavioural Intentions, Effectiveness and Equity Implications"
+      },
       {
         "name": "Roxani Gkavra",
         "year": 2025,
-        "title": "Exploring Travel Behaviour in the Shared Micromobility Context: Adoption and Usage Patterns of Bike and E-Scooter Sharing"
+        "role": "Co-supervisor",
+        "title": "Exploring Travel Behaviour in the Shared Micromobility Context: Adoption and Usage Patterns of Bike and E-Scooter Sharing",
+        "institution": "BOKU University, Austria"
       },
       {
-        "name": "Rajesh Chouhan",
+        "name": "Rajesh Chauhan",
         "year": 2025,
-        "title": "Applications of Unmanned Aerial Vehicle Data in Traffic Operations and Safety under Mixed Traffic Conditions"
+        "role": "Co-supervisor",
+        "title": "Applications of Unmanned Aerial Vehicle Data in Traffic Operations and Safety under Mixed Traffic Conditions",
+        "institution": "VSNIT, India"
       },
       {
         "name": "Qinglong Lu",
@@ -468,14 +499,17 @@
       {
         "name": "Vasileia Papathanasopoulou",
         "year": 2018,
-        "title": "Towards data-driven microscopic traffic simulation models"
+        "title": "Towards data-driven microscopic traffic simulation models",
+        "institution": "NTUA, Greece"
       },
       {
         "name": "Dimitris Efthymiou",
         "year": 2014,
-        "title": "Extending the Integrated Land-Use and Transport Model Framework: Spatial Econometrics and Policy Evaluation"
+        "title": "Extending the Integrated Land-Use and Transport Model Framework: Spatial Econometrics and Policy Evaluation",
+        "institution": "NTUA, Greece"
       }
-    ]
+    ],
+    "phd_completed_note": "All at TUM, with Constantinos Antoniou as main or sole supervisor, unless indicated otherwise."
   },
   "honours": {
     "short": [
