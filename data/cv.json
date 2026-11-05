@@ -247,12 +247,12 @@
   ],
   "programme_roles": [
     {
-      "role": "Director of the MS in Rail and Urban Transport",
-      "where": "TUM Asia, Singapore"
-    },
-    {
       "role": "Director of the MS in Transportation Systems",
       "where": "TUM"
+    },
+    {
+      "role": "Director of the MS in Rail and Urban Transport",
+      "where": "TUM Asia, Singapore"
     },
     {
       "role": "Academic Programme Director (APD) for Mobility",
