@@ -391,6 +391,37 @@
     "committees": "Opponent/examiner in >15 dissertations; advisory committees for >30 PhD students in the last five years",
     "phd_completed": [
       {
+        "name": "Hao Wu",
+        "year": 2026,
+        "title": "Simulation-Based Optimization and Evaluation of Urban Air Mobility - From User Preferences to Network Planning and Service Operation"
+      },
+      {
+        "name": "Cheng Lyu",
+        "year": 2026,
+        "title": "Tackling data sparsity and scarcity in transportation systems - Robust imputation and generative modeling"
+      },
+      {
+        "name": "Mengying Fu",
+        "year": 2026,
+        "title": "Demand Analysis of Regional Air Mobility. Modeling Acceptance, Willingness to Pay, and Transportation System Impacts"
+      },
+      {
+        "name": "Md Rakibul Alam",
+        "year": 2026,
+        "title": "From Fragmentation to Meaning: Engineering Naturalistic Driving Data Systems Through Architecture and Semantics"
+      },
+      {
+        "name": "Filippos Adamidis",
+        "year": 2026,
+        "title": "Modelling Car-Use Reduction Policies. Behavioural Intentions, Effectiveness and Equity Implications"
+      },
+      {
+        "name": "Rajesh Chauhan",
+        "year": 2025,
+        "role": "Co-supervisor",
+        "title": "Applications of Unmanned Aerial Vehicle Data in Traffic Operations and Safety under Mixed Traffic Conditions"
+      },
+      {
         "name": "Qinglong Lu",
         "year": 2024,
         "title": "Evaluation and Simulation-Based Optimization of Urban Traffic Resilience"
