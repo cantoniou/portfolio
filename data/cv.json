@@ -419,13 +419,15 @@
         "name": "Roxani Gkavra",
         "year": 2025,
         "role": "Co-supervisor",
-        "title": "Exploring Travel Behaviour in the Shared Micromobility Context: Adoption and Usage Patterns of Bike and E-Scooter Sharing"
+        "title": "Exploring Travel Behaviour in the Shared Micromobility Context: Adoption and Usage Patterns of Bike and E-Scooter Sharing",
+        "institution": "BOKU University, Austria"
       },
       {
         "name": "Rajesh Chauhan",
         "year": 2025,
         "role": "Co-supervisor",
-        "title": "Applications of Unmanned Aerial Vehicle Data in Traffic Operations and Safety under Mixed Traffic Conditions"
+        "title": "Applications of Unmanned Aerial Vehicle Data in Traffic Operations and Safety under Mixed Traffic Conditions",
+        "institution": "VSNIT, India"
       },
       {
         "name": "Qinglong Lu",
@@ -495,14 +497,17 @@
       {
         "name": "Vasileia Papathanasopoulou",
         "year": 2018,
-        "title": "Towards data-driven microscopic traffic simulation models"
+        "title": "Towards data-driven microscopic traffic simulation models",
+        "institution": "NTUA, Greece"
       },
       {
         "name": "Dimitris Efthymiou",
         "year": 2014,
-        "title": "Extending the Integrated Land-Use and Transport Model Framework: Spatial Econometrics and Policy Evaluation"
+        "title": "Extending the Integrated Land-Use and Transport Model Framework: Spatial Econometrics and Policy Evaluation",
+        "institution": "NTUA, Greece"
       }
-    ]
+    ],
+    "phd_completed_note": "All at TUM, with Constantinos Antoniou as main or sole supervisor, unless indicated otherwise."
   },
   "honours": {
     "short": [
