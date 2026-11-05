@@ -1,6 +1,6 @@
 {
   "_comment": "CV content: the single source for every CV version (one-pager, full EU CV, later funder and topic CVs). Headline numbers are NOT stored here: texts use tokens like {metrics.scopus.publications} (a path into data/metrics.json); add '|words' to print '>600' as 'more than 600'. Projects refer to data/projects.json by id; status and years come from there. Contact ids must match data/profile.json. Private details (date of birth, home address, phone, nationality) never go in this public file. Run scripts/check_consistency.py after every change.",
-  "as_of": "2026-11-02",
+  "as_of": "2026-11-05",
   "metrics_as_of_label": "October 2026",
   "person": {
     "title": "Prof. Dr.",
@@ -390,16 +390,6 @@
     "ntua": "2 PhDs, 5 MS and 17 diploma theses at NTUA",
     "committees": "Opponent/examiner in >15 dissertations; advisory committees for >30 PhD students in the last five years",
     "phd_completed": [
-      {
-        "name": "Roxani Gkavra",
-        "year": 2025,
-        "title": "Exploring Travel Behaviour in the Shared Micromobility Context: Adoption and Usage Patterns of Bike and E-Scooter Sharing"
-      },
-      {
-        "name": "Rajesh Chouhan",
-        "year": 2025,
-        "title": "Applications of Unmanned Aerial Vehicle Data in Traffic Operations and Safety under Mixed Traffic Conditions"
-      },
       {
         "name": "Qinglong Lu",
         "year": 2024,
