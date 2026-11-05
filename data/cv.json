@@ -387,8 +387,6 @@
   "supervision": {
     "onepager": "{metrics.people.doctorates_completed|words} PhDs supervised to completion and {metrics.people.doctorates_in_progress|words} in progress; {metrics.people.theses_supervised|words} theses supervised overall",
     "theses": "{metrics.people.theses_supervised|words} theses supervised overall",
-    "ntua": "2 PhDs, 5 MS and 17 diploma theses at NTUA",
-    "committees": "Opponent/examiner in >15 dissertations; advisory committees for >30 PhD students in the last five years",
     "phd_completed": [
       {
         "name": "Hao Wu",
