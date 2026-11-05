@@ -11,8 +11,9 @@ phds = [p for p in team if p["type"] == "doctoral"]
 ext = [p for p in team if p["type"] == "external"]
 KINDS = [("faculty", "Academia: faculty"), ("research", "Academia: research"), ("industry", "Industry"), ("public", "Public sector")]
 
-def person(name, line1="", line2=""):
-    a = f'<div class="n">{e(name)}</div>'
+def person(name, line1="", line2="", url=""):
+    nm = f'<a href="{e(url, quote=True)}" target="_blank" rel="noopener">{e(name)}</a>' if url else e(name)
+    a = f'<div class="n">{nm}</div>'
     if line1: a += f'<div class="r">{e(line1)}</div>'
     if line2: a += f'<div class="w">{e(line2)}</div>'
     return f'<li>{a}</li>'
@@ -25,15 +26,15 @@ def block(num, title, intro, items, dark=False):
 {items}
 </div></section>'''
 
-pd = "<ul class='grid'>" + "".join(person(p["name"], p.get("role", "")) for p in postdocs) + "</ul>"
-ph = "<ul class='grid'>" + "".join(person(p["name"], p.get("note", "")) for p in phds) + "</ul>"
+pd = "<ul class='grid'>" + "".join(person(p["name"], p.get("role", ""), url=p.get("url", "")) for p in postdocs) + "</ul>"
+ph = "<ul class='grid'>" + "".join(person(p["name"], p.get("note", ""), url=p.get("url", "")) for p in phds) + "</ul>"
 if ext:
     ph += "<h3>External doctoral candidates</h3><ul class='grid'>" + "".join(person(p["name"], p.get("employer", "")) for p in ext) + "</ul>"
 al = ""
 for k, label in KINDS:
     rows = [a for a in alumni if a["kind"] == k]
     if rows:
-        al += f"<h3>{e(label)}</h3><ul class='grid'>" + "".join(person(a["name"], a.get("now", ""), a.get("where", "")) for a in rows) + "</ul>"
+        al += f"<h3>{e(label)}</h3><ul class='grid'>" + "".join(person(a["name"], a.get("now", ""), a.get("where", ""), a.get("url", "")) for a in rows) + "</ul>"
 
 page = f'''<!DOCTYPE html>
 <html lang="en">
@@ -66,7 +67,7 @@ section.dark .intro{{color:#cdd6e2}}
 h3{{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;margin:clamp(30px,5vh,46px) 0 14px;opacity:.7}}
 .grid{{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));padding:1px 0 0 1px}}
 .grid li{{padding:18px 20px;border:1px solid rgba(22,22,29,.14);margin:-1px 0 0 -1px}} .dark .grid li{{border-color:rgba(245,243,238,.14)}}
-.n{{font-size:17px;font-weight:600;letter-spacing:-.01em}}
+.n{{font-size:17px;font-weight:600;letter-spacing:-.01em}} .n a{{border-bottom:1px solid rgba(48,112,179,.5)}} .dark .n a{{color:#f5f3ee}} .dark .n a:hover{{color:#5aa6e6}}
 .r{{margin-top:4px;font-size:14px;color:#2c2b31;line-height:1.35}} .w{{font-size:14px;color:#57544d;line-height:1.35}}
 .dark .r{{color:#cdd6e2}} .dark .w{{color:#8a97ab}}
 footer{{padding:clamp(44px,8vh,80px) clamp(20px,5vw,56px);background:#16161d;color:#8a97ab}}
