@@ -91,7 +91,7 @@
 ((* endif *))\entry{NTUA}{((( d.supervision.ntua|tex ))).}
 \entry{Committees}{((( d.supervision.committees|tex ))).}
 \eusub{Completed doctorates (selection)}
-((* for s in d.supervision.phd_completed *))\entry{((( s.year )))}{\textbf{((( s.name|tex )))}((* if s.role *)) ((( "(" ~ s.role ~ ")" ))) ((* endif *)): \textit{((( s.title|tex )))}}
+((* for s in d.supervision.phd_completed *))\entry{((( s.year )))}{\textbf{((( s.name|tex )))}((* if s.role *))\ \textnormal{\char40}((( s.role|tex )))\textnormal{\char41}((* endif *)): \textit{((( s.title|tex )))}}
 ((* endfor *))
 
 \eusec{Honours and awards}
