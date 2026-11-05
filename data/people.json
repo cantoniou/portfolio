@@ -1,6 +1,6 @@
 {
   "_comment": "Team and alumni. Keep 'type' as one of: postdoc, doctoral, external, staff. Alumni 'kind': faculty, industry, public, research. The site counts these lists; metrics.json 'people' should agree with them (scripts/check_consistency.py verifies).",
-  "as_of": "2026-09-30",
+  "as_of": "2026-11-05",
   "team": [
     {"name": "Dr.-Ing. Mohamed Abouelela", "type": "postdoc", "role": "Head of project administration; lead, Big Data and Machine Learning"},
     {"name": "Dr.-Ing. Santhanakrishnan Narayanan", "type": "postdoc"},
@@ -30,13 +30,13 @@
   "alumni": [
     {"name": "Dr. Emmanouil (Manos) Chaniotakis", "was": "doctoral", "now": "Associate Professor, head of MUSA-Lab", "where": "University College London", "kind": "faculty"},
     {"name": "Dr. Ramandeep Singh", "was": "postdoc", "now": "Assistant Professor", "where": "Imperial College London", "kind": "faculty"},
-    {"name": "Dr. Guido Cantelmo", "was": "postdoc", "now": "Assistant Professor", "where": "Technical University of Denmark", "kind": "faculty"},
+    {"name": "Dr. Guido Cantelmo", "was": "postdoc", "now": "Associate Professor", "where": "Technical University of Denmark", "kind": "faculty"},
     {"name": "Dr. Mohammad Sadrani", "was": "doctoral", "now": "Assistant Professor", "where": "University of Twente", "kind": "faculty"},
     {"name": "Dr. Tao Ma", "was": "postdoc", "now": "Senior Lecturer", "where": "University of Southern California", "kind": "faculty"},
     {"name": "Dr. Qinglong Lu", "was": "doctoral", "now": "Associate Professor", "where": "Sun Yat-sen University", "kind": "faculty"},
     {"name": "Dr. Jia Guo", "was": "postdoc", "now": "Associate Professor", "where": "Soochow University", "kind": "faculty"},
     {"name": "Dr. Hao Wu", "was": "doctoral", "now": "Assistant Professor", "where": "Central South University", "kind": "faculty"},
-    {"name": "Dr. Athanasios Theofilatos", "was": "postdoc", "now": "Assistant Professor", "where": "University of Thessaly", "kind": "faculty"},
+    {"name": "Dr. Athanasios Theofilatos", "was": "postdoc", "now": "Associate Professor", "where": "University of Thessaly", "kind": "faculty"},
     {"name": "Dr. Panagiotis Papantoniou", "was": "postdoc", "now": "Associate Professor", "where": "University of West Attica", "kind": "faculty"},
     {"name": "Dr. Santa Maiti", "was": "postdoc", "now": "Research Fellow", "where": "University College London", "kind": "research"},
     {"name": "Dr. Moeid Qurashi", "was": "doctoral", "now": "Postdoctoral Researcher", "where": "TU Dresden", "kind": "research"},
