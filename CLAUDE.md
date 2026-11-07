@@ -18,6 +18,7 @@ This repository is the public research portfolio of Prof. Dr. Constantinos Anton
 | `scripts/sync_numbers.py` | Writes the `data/metrics.json` figures into the landing page's "By the numbers" tiles (`--apply`; default is a dry run) | run, don't edit |
 | `scripts/site_text.py` | Safe find/replace inside the three site pages (`find`, `replace`, `dump`) | run, don't edit |
 | `scripts/refresh_openalex.py` | Pulls fresh OpenAlex figures into `data/metrics.json` | run, don't edit |
+| `scripts/seo.py` | Writes search-engine tags (description, canonical, social preview, Person structured data from `data/profile.json`), a plain-text copy of the profile for crawlers, `sitemap.xml` and `robots.txt`. Re-run after changing a page title, adding a page, or adding a profile link (`links` in `profile.json`, e.g. LinkedIn). After a merge conflict on a page's long template line, take the other side and re-run | run, don't edit |
 | `scripts/check_consistency.py` | Checks the JSON files against each other **and** against the numbers shown on the pages | run before every deploy |
 | `design/*.dc.html`, `design/sources/` | The Claude Design source files the pages were exported from, and the raw material (CV text, bibliometrics) | only for redesigns |
 | `assets/` | Funder logos, TUM logo | add files, don't rename |

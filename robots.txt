@@ -1,0 +1,8 @@
+# antoniou.org
+User-agent: *
+Disallow: /design/
+Disallow: /cv/
+Disallow: /scripts/
+Disallow: /data/
+
+Sitemap: https://antoniou.org/sitemap.xml
