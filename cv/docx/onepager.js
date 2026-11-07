@@ -76,6 +76,7 @@ data.honours.short.forEach((h) => left.push(P(runs(h, { size: SIDE }), { after: 
 left.push(sideHead("Links"));
 left.push(P([...runs("Google Scholar ", { size: SIDE }), link(p.ids.scholar, "https://scholar.google.com/citations?user=" + p.ids.scholar, SIDE)]));
 left.push(P([...runs("Scopus ", { size: SIDE }), link(p.ids.scopus, "https://www.scopus.com/authid/detail.uri?authorId=" + p.ids.scopus, SIDE)]));
+if (p.ids.linkedin) left.push(P([...runs("LinkedIn ", { size: SIDE }), link(p.ids.linkedin, "https://www.linkedin.com/in/" + p.ids.linkedin + "/", SIDE)]));
 left.push(P([...runs("ORCID ", { size: SIDE }), link(p.ids.orcid, "https://orcid.org/" + p.ids.orcid, SIDE)]));
 
 // ---------- main column ----------

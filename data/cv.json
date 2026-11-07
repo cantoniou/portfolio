@@ -1,6 +1,6 @@
 {
   "_comment": "CV content: the single source for every CV version (one-pager, full EU CV, later funder and topic CVs). Headline numbers are NOT stored here: texts use tokens like {metrics.scopus.publications} (a path into data/metrics.json); add '|words' to print '>600' as 'more than 600'. Projects refer to data/projects.json by id; status and years come from there. Contact ids must match data/profile.json. Private details (date of birth, home address, phone, nationality) never go in this public file. Run scripts/check_consistency.py after every change.",
-  "as_of": "2026-11-05",
+  "as_of": "2026-11-07",
   "metrics_as_of_label": "October 2026",
   "person": {
     "title": "Prof. Dr.",
@@ -28,7 +28,8 @@
     "ids": {
       "orcid": "0000-0003-0203-9542",
       "scholar": "0rDCk00AAAAJ",
-      "scopus": "7004031914"
+      "scopus": "7004031914",
+      "linkedin": "constantinosantoniou"
     },
     "photo": "assets/CV_photo_circle.png"
   },
