@@ -37,12 +37,12 @@
 {\color{muted}((( d.person.affiliation[1:]|join(' · ')|tex )))}\\[5pt]
 {\fontsize{8.6}{11.5}\selectfont
 \textbf{Email} \href{mailto:((( d.person.email )))}{((( d.person.email|tex )))}\quad
-\textbf{Web} ((* for l in d.person.links *))\href{((( l.url )))}{((( l.label|tex )))}((* if not loop.last *)), ((* endif *))((* endfor *))\\
+\textbf{Web} ((* for l in d.person.links *))\href{((( l.url )))}{((( l.label|tex )))}((* if not loop.last *)), ((* endif *))((* endfor *))((* if d.person.ids.linkedin *))\quad
+\textbf{LinkedIn} \href{https://www.linkedin.com/in/((( d.person.ids.linkedin )))/}{((( d.person.ids.linkedin|tex )))}((* endif *))\\
 \textbf{Work address} ((( d.person.work_address|tex )))\quad \textbf{Nationality} ((( d.person.nationality|tex )))\\
 \textbf{ORCID} \href{https://orcid.org/((( d.person.ids.orcid )))}{((( d.person.ids.orcid )))}\quad
 \textbf{Google Scholar} \href{https://scholar.google.com/citations?user=((( d.person.ids.scholar )))}{((( d.person.ids.scholar|tex )))}\quad
-\textbf{Scopus} \href{https://www.scopus.com/authid/detail.uri?authorId=((( d.person.ids.scopus )))}{((( d.person.ids.scopus )))}((* if d.person.ids.linkedin *))\quad
-\textbf{LinkedIn} \href{https://www.linkedin.com/in/((( d.person.ids.linkedin )))/}{((( d.person.ids.linkedin|tex )))}((* endif *))}
+\textbf{Scopus} \href{https://www.scopus.com/authid/detail.uri?authorId=((( d.person.ids.scopus )))}{((( d.person.ids.scopus )))}}
 \end{minipage}
 \par\vspace{6pt}{\color{accent}\rule{\textwidth}{1.4pt}}\par
 
