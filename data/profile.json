@@ -17,6 +17,7 @@
   "openalex_author_id": "A5001459918",
   "scopus_author_id": "7004031914",
   "google_scholar_id": "0rDCk00AAAAJ",
+  "links": {"LinkedIn": "https://www.linkedin.com/in/constantinosantoniou/"},
   "bio": "Constantinos Antoniou is Full Professor and head of the Chair of Transportation Systems Engineering at TUM since September 2016. He holds a Diploma in Civil Engineering from NTUA (1995), and an MS (1997) and PhD (2004) in Transportation from MIT. He was a postdoctoral researcher at MIT (2004 to 2008) and a faculty member at NTUA (2009 to 2015). His research covers modelling and simulation of transportation systems, calibration and optimisation, road safety and human factors, and machine learning for transport.",
   "roles": [
     {"role": "Co-Editor-in-Chief", "where": "Transportation Research Part A: Policy and Practice", "since": 2025, "note": "Associate Editor before"},
