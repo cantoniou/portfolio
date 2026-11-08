@@ -1,6 +1,6 @@
 {
   "_comment": "CV content: the single source for every CV version (one-pager, full EU CV, later funder and topic CVs). Headline numbers are NOT stored here: texts use tokens like {metrics.scopus.publications} (a path into data/metrics.json); add '|words' to print '>600' as 'more than 600'. Projects refer to data/projects.json by id; status and years come from there. Contact ids must match data/profile.json. Private details (date of birth, home address, phone, nationality) never go in this public file. Run scripts/check_consistency.py after every change.",
-  "as_of": "2026-11-07",
+  "as_of": "2026-11-08",
   "metrics_as_of_label": "October 2026",
   "person": {
     "title": "Prof. Dr.",
@@ -514,6 +514,7 @@
   },
   "honours": {
     "short": [
+      "RERITE Reproducible Research Prize, hEART (2026)",
       "Humboldt Henriette Herz Scout (2025–)",
       "Francqui Chair, University of Hasselt (2023)",
       "TRB Best Simulation Application Paper Award (2018)",
@@ -521,6 +522,10 @@
       "Marie Curie Fellow (2006)"
     ],
     "full": [
+      {
+        "year": "2026",
+        "text": "Inaugural RERITE Reproducible Research Prize at the hEART 2026 conference in Paris"
+      },
       {
         "year": "2025–",
         "text": "Henriette Herz Scout, Alexander von Humboldt Foundation"
