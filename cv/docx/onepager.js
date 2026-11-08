@@ -71,7 +71,7 @@ left.push(sideHead("Research interests"));
 data.research_interests.short.forEach((r) => left.push(P(runs(r, { size: SIDE }), { after: 10 })));
 left.push(sideHead("Languages"));
 data.languages.forEach((l) => left.push(P(runs(`${l.lang} (${l.level})`, { size: SIDE }), { after: 10 })));
-left.push(sideHead("Honours"));
+left.push(sideHead("Honours (selected)"));
 data.honours.short.forEach((h) => left.push(P(runs(h, { size: SIDE }), { after: 20 })));
 left.push(sideHead("Links"));
 left.push(P([...runs("Google Scholar ", { size: SIDE }), link(p.ids.scholar, "https://scholar.google.com/citations?user=" + p.ids.scholar, SIDE)]));

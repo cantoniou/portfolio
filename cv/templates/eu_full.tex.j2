@@ -52,7 +52,7 @@
 \vspace{7pt}
 \noindent\colorbox{panel}{\parbox{\dimexpr\textwidth-2\fboxsep}{\vspace{4pt}%
 ((* for m in d.metrics *))\parbox[t]{\dimexpr(\linewidth)/((( d.metrics|length )))}{\centering{\color{accent}\bfseries\fontsize{13.5}{16}\selectfont ((( m.value|tex )))}\\[1pt]{\color{muted}\fontsize{7.6}{9}\selectfont ((( m.label|tex )))}}((* endfor *))\vspace{4pt}}}
-\par\vspace{2pt}{\color{muted}\fontsize{7.6}{9}\selectfont\hfill ((( d.metrics_source_label|tex ))). Other figures as of ((( d.metrics_as_of ))).}
+\par\vspace{2pt}\noindent{\color{muted}\fontsize{7.6}{9}\selectfont ((( d.metrics_source_label|tex ))). Other figures as of ((( d.metrics_as_of ))).}
 
 \eusec{Work experience}
 ((* for c in d.career *))\entry{((( c.start ))) – ((( c.end )))}{\textbf{((( c.title|tex )))}\\{\color{muted}((( c.employer|tex )))}}
