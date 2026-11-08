@@ -114,7 +114,7 @@ const body = new d.Table({
     new d.TableCell({ children: main }),
   ] })],
 });
-const footer = P([...runs(`${data.metrics_source_label}. Other figures as of ${data.metrics_as_of}. Full publication list: `, { color: MUTED, size: SMALL }), link("orcid.org/" + p.ids.orcid, "https://orcid.org/" + p.ids.orcid, SMALL)], { before: 120 });
+const footer = P([...runs(`${data.metrics_source_label}. Other figures as of ${data.metrics_as_of}. Full publication list: `, { color: MUTED, size: SMALL }), link("orcid.org/" + p.ids.orcid, "https://orcid.org/" + p.ids.orcid, SMALL), ...runs(`. Generated ${data.generated}.`, { color: MUTED, size: SMALL })], { before: 120 });
 
 const doc = new d.Document({
   creator: "CV master", title: `CV ${p.name}`,

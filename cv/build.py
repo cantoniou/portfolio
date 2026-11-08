@@ -82,6 +82,11 @@ def load_data():
         for k, v in (yaml.safe_load(open(priv)) or {}).items():
             cv["person"][k] = v
     cv["person"]["photo"] = "assets/CV_photo_circle.png"
+    # build timestamp shown in every CV footer (Munich time)
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    now = datetime.now(ZoneInfo("Europe/Berlin"))
+    cv["generated"] = f"{now.day} {MONTHS[now.month - 1]} {now.year}, {now:%H:%M} {now.tzname()}"
     return cv
 
 def env():
