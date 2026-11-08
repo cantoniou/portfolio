@@ -17,7 +17,8 @@
   "scholar": {
     "as_of": "2026-11-08",
     "h_index": 70,
-    "citations": "18k+"
+    "citations": "18k+",
+    "i100_index": 42
   },
   "funding": {
     "_comment": "Shown on projects.html, research.html and every CV.",
