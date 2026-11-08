@@ -71,7 +71,7 @@ left.push(sideHead("Research interests"));
 data.research_interests.short.forEach((r) => left.push(P(runs(r, { size: SIDE }), { after: 10 })));
 left.push(sideHead("Languages"));
 data.languages.forEach((l) => left.push(P(runs(`${l.lang} (${l.level})`, { size: SIDE }), { after: 10 })));
-left.push(sideHead("Honours"));
+left.push(sideHead("Honours (selected)"));
 data.honours.short.forEach((h) => left.push(P(runs(h, { size: SIDE }), { after: 20 })));
 left.push(sideHead("Links"));
 left.push(P([...runs("Google Scholar ", { size: SIDE }), link(p.ids.scholar, "https://scholar.google.com/citations?user=" + p.ids.scholar, SIDE)]));
@@ -114,7 +114,7 @@ const body = new d.Table({
     new d.TableCell({ children: main }),
   ] })],
 });
-const footer = P([...runs(`${data.metrics_source_label}. Other figures as of ${data.metrics_as_of}. Full publication list: `, { color: MUTED, size: SMALL }), link("orcid.org/" + p.ids.orcid, "https://orcid.org/" + p.ids.orcid, SMALL)], { before: 120 });
+const footer = P([...runs(`${data.metrics_source_label}. Other figures as of ${data.metrics_as_of}. Full publication list: `, { color: MUTED, size: SMALL }), link("orcid.org/" + p.ids.orcid, "https://orcid.org/" + p.ids.orcid, SMALL), ...runs(`. Generated ${data.generated}.`, { color: MUTED, size: SMALL })], { before: 120 });
 
 const doc = new d.Document({
   creator: "CV master", title: `CV ${p.name}`,

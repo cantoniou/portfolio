@@ -35,15 +35,15 @@
   },
   "metrics_box": [
     {
-      "value": "{metrics.scopus.publications}",
+      "value": "{metrics.scholar.publications}/{metrics.scopus.publications}",
       "label": "publications"
     },
     {
-      "value": "{metrics.scopus.h_index}",
+      "value": "{metrics.scholar.h_index}/{metrics.scopus.h_index}",
       "label": "h-index"
     },
     {
-      "value": "{metrics.scopus.citations}",
+      "value": "{metrics.scholar.citations}/{metrics.scopus.citations}",
       "label": "citations"
     },
     {
@@ -78,7 +78,7 @@
     }
   ],
   "profile_short": "Full Professor at TUM with a PhD from MIT. Research on evidence-based transport policy, modelling and optimisation of transportation systems, data analytics and statistical learning, and human factors for future mobility. Principal investigator of numerous EU, DFG and national projects. Co-Editor-in-Chief of *Transportation Research Part A*.",
-  "profile_long": "Constantinos Antoniou is a Full Professor and Head of the Chair of Transportation Systems Engineering at the Technical University of Munich (TUM), Germany. He holds a Diploma in Civil Engineering from NTUA (1995), an MS in Transportation (1997) and a PhD in Transportation Systems (2004), both from MIT. His research focuses on evidence-based transport policy, modelling and optimisation of transportation systems, data analytics and statistical learning for transportation, and human factors for future mobility. He has authored {metrics.scopus.publications|words} scientific publications, including {metrics.scopus.journal_articles|words} papers in international peer-reviewed journals, {metrics.scopus.conference_papers|words} in international conference proceedings, {metrics.scopus.books} books and {metrics.scopus.book_chapters|words} book chapters (h-index {metrics.scopus.h_index}, {metrics.scopus.citations|words} citations). In the last five years he has brought in {metrics.funding.third_party_last_5_years|words} of third-party funding from EU, national and regional sources. He is Co-Editor-in-Chief of *Transportation Research Part A: Policy and Practice*.",
+  "profile_long": "Constantinos Antoniou is a Full Professor and Head of the Chair of Transportation Systems Engineering at the Technical University of Munich (TUM), Germany. He holds a Diploma in Civil Engineering from NTUA (1995), an MS in Transportation (1997) and a PhD in Transportation Systems (2004), both from MIT. His research focuses on evidence-based transport policy, modelling and optimisation of transportation systems, data analytics and statistical learning for transportation, and human factors for future mobility. He has authored {metrics.scholar.publications|words} scientific publications (Google Scholar; h-index {metrics.scholar.h_index}, {metrics.scholar.citations|words} citations). Scopus lists {metrics.scopus.publications|words}, including {metrics.scopus.journal_articles|words} papers in international peer-reviewed journals, {metrics.scopus.conference_papers|words} in international conference proceedings, {metrics.scopus.books} books and {metrics.scopus.book_chapters|words} book chapters (h-index {metrics.scopus.h_index}, {metrics.scopus.citations|words} citations). In the last five years he has brought in {metrics.funding.third_party_last_5_years|words} of third-party funding from EU, national and regional sources. He is Co-Editor-in-Chief of *Transportation Research Part A: Policy and Practice*.",
   "research_interests": {
     "short": [
       "Transport policy and demand",
@@ -702,5 +702,5 @@
     ],
     "reviewing": "{metrics.people.scientific_committees|words} scientific committees served; reviewer for {metrics.people.reviewer_journals|words} journals."
   },
-  "metrics_source_label": "Publications, citations and h-index: Scopus, as of {metrics.scopus.as_of}"
+  "metrics_source_label": "Publications, h-index and citations: Google Scholar (first figure) and Scopus (second), as of {metrics.scholar.as_of} and {metrics.scopus.as_of}"
 }
