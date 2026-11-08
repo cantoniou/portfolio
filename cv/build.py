@@ -39,7 +39,10 @@ def month(s):
     return re.sub(r"\b(\d{4})-(\d{2})-\d{2}\b", lambda m: f"{MONTHS[int(m.group(2)) - 1]} {m.group(1)}", s)
 
 def display(v):
-    """Number style for the CV boxes: '20+' -> '>20', '>€4M' -> '>4 M€'."""
+    """Number style for the CV boxes: '20+' -> '>20', '>€4M' -> '>4 M€'.
+    'a/b' (Google Scholar/Scopus) is styled part by part: '18k+/10k+' -> '>18,000/>10,000'."""
+    if "/" in str(v):
+        return "/".join(display(x) for x in str(v).split("/"))
     v = kilo(str(v))
     m = re.fullmatch(r"(>?)€(\d+(?:[.,]\d+)?)M", v)
     if m:
